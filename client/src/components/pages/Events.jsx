@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './events.css';
 
-const API = 'http://localhost:5000';
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -14,7 +14,7 @@ const Events = () => {
 
   const fetchEvents = async () => {
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const apiUrl = API;
       const res = await fetch(`${apiUrl}/api/events`);
       const data = await res.json();
       // Only show published events

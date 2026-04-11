@@ -10,7 +10,7 @@ import TNPSCGroupTableFour from '../tnpsc/TNPSCGroupTableFour';
 import TnpscgroupFourAtitude from '../tnpsc/TnpscgroupFourAtitude';
 import TnpscForm from '../forms/TnpscForm';
 
-const API = 'http://localhost:5000';
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const TNPSC = () => {
   const [activeTab, setActiveTab] = useState('group1');

@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import EnquiryForm from '../forms/EnquiryForm';
 import './blog.css';
 
-const API = 'http://localhost:5000';
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const BlogDetail = () => {
   const { slug } = useParams();

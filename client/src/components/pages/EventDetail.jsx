@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './events.css';
 
-const API = 'http://localhost:5000';
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const EventDetail = () => {
   const { slug } = useParams();
@@ -17,7 +17,7 @@ const EventDetail = () => {
 
   const fetchEvent = async () => {
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const apiUrl = API;
       const res = await fetch(`${apiUrl}/api/events/${slug}`);
       if (!res.ok) throw new Error('Event not found');
       const data = await res.json();
