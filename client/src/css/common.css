@@ -1,0 +1,549 @@
+/* ============================================================
+   common.css — Shared Utility Stylesheet
+   Kingmakers IAS Academy
+   Import this ONCE via globals.css. Do not import per component.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (extend globals.css variables)
+   ---------------------------------------------------------- */
+:root {
+    /* Brand colours */
+    --primary: #043053;
+    /* deep navy  */
+    --primary-light: #0a4a7a;
+    --gold: #c0a77d;
+    /* brand gold */
+    --gold-hover: #a8905e;
+    --gold-light: #f5f0e8;
+
+    /* Neutrals */
+    --white: #ffffff;
+    --off-white: #f8f9fa;
+    --light-bg: #f0f4f8;
+    --border: #e0e0e0;
+    --body-text: #555555;
+    --dark-gray: #333333;
+
+    /* Typography */
+    --font-heading: 'Figtree', sans-serif;
+    --font-body: 'Source Sans 3', system-ui, sans-serif;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(4, 48, 83, 0.08);
+    --shadow-md: 0 4px 20px rgba(4, 48, 83, 0.12);
+    --shadow-lg: 0 8px 40px rgba(4, 48, 83, 0.16);
+    --shadow-gold: 0 4px 15px rgba(192, 167, 125, 0.35);
+
+    /* Border radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 20px;
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --transition: all 0.3s ease;
+    --transition-fast: all 0.18s ease;
+}
+
+/* ----------------------------------------------------------
+   2. SECTION BADGE (small label above headings)
+   ---------------------------------------------------------- */
+.section-badge {
+    display: inline-block;
+    padding: 4px 16px;
+    background: var(--gold-light);
+    color: var(--gold);
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(192, 167, 125, 0.35);
+    margin-bottom: 12px;
+}
+
+/* ----------------------------------------------------------
+   3. SECTION TITLE BLOCK (centered badge + h2 + subtitle)
+   ---------------------------------------------------------- */
+.section-title-block {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title-block .section-badge {
+    margin-bottom: 14px;
+}
+
+.section-title-block h2 {
+    font-size: 36px;
+    color: var(--primary);
+    margin-bottom: 14px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title-block h2::after {
+    content: '';
+    display: block;
+    width: 56px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin: 10px auto 0;
+}
+
+.section-title-block .subtitle {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--body-text);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* ----------------------------------------------------------
+   4. GOLD DIVIDER LINE
+   ---------------------------------------------------------- */
+.gold-divider {
+    width: 56px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin: 10px 0 18px;
+}
+
+.gold-divider--center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ----------------------------------------------------------
+   5. CARD BASE STYLES
+   ---------------------------------------------------------- */
+.card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.card--bordered {
+    border: 1px solid var(--border);
+    box-shadow: none;
+}
+
+.card--gold {
+    border: 1px solid rgba(192, 167, 125, 0.3);
+    background: linear-gradient(135deg, #fffdf8 0%, #fff9f0 100%);
+}
+
+/* ----------------------------------------------------------
+   6. BUTTONS (extend globals.css)
+   ---------------------------------------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 28px;
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    letter-spacing: 0.4px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #c9a96e 0%, #b8924a 60%, #a07a38 100%);
+    color: var(--white);
+    border-radius: var(--radius-full);
+    letter-spacing: 0.6px;
+    box-shadow: 0 4px 18px rgba(176, 140, 60, 0.38);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 13px 32px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #d4b37a 0%, #c09a56 60%, #a87e3e 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(176, 140, 60, 0.52);
+    color: var(--white);
+    filter: brightness(1.08);
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--white);
+}
+
+.btn-gold:hover {
+    background: var(--gold-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+    color: var(--white);
+}
+
+.btn-navy {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-navy:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: var(--white);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--gold);
+}
+
+.btn-ghost:hover {
+    background: var(--gold);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 8px 20px;
+    font-size: 14px;
+}
+
+.btn-lg {
+    padding: 15px 38px;
+    font-size: 18px;
+}
+
+/* ----------------------------------------------------------
+   7. IMAGE / ICON WRAPPER
+   ---------------------------------------------------------- */
+.icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-md);
+    background: var(--gold-light);
+    color: var(--gold);
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.icon-wrap--circle {
+    border-radius: var(--radius-full);
+}
+
+.icon-wrap--navy {
+    background: rgba(4, 48, 83, 0.08);
+    color: var(--primary);
+}
+
+/* ----------------------------------------------------------
+   8. TAG / CHIP
+   ---------------------------------------------------------- */
+.tag {
+    display: inline-block;
+    padding: 3px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    background: var(--gold-light);
+    color: var(--gold-hover);
+}
+
+.tag--navy {
+    background: rgba(4, 48, 83, 0.08);
+    color: var(--primary);
+}
+
+/* ----------------------------------------------------------
+   9. RIBBON / BANNER STRIP
+   ---------------------------------------------------------- */
+.ribbon {
+    display: inline-block;
+    padding: 4px 14px;
+    background: var(--gold);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+}
+
+.ribbon--navy {
+    background: var(--primary);
+}
+
+/* ----------------------------------------------------------
+   10. UTILITY — LAYOUT
+   ---------------------------------------------------------- */
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-gap-8 {
+    gap: 8px;
+}
+
+.flex-gap-12 {
+    gap: 12px;
+}
+
+.flex-gap-16 {
+    gap: 16px;
+}
+
+.flex-gap-24 {
+    gap: 24px;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* ----------------------------------------------------------
+   11. UTILITY — SPACING
+   ---------------------------------------------------------- */
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mt-12 {
+    margin-top: 12px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.mt-24 {
+    margin-top: 24px;
+}
+
+.mt-32 {
+    margin-top: 32px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.mb-12 {
+    margin-bottom: 12px;
+}
+
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.mb-32 {
+    margin-bottom: 32px;
+}
+
+/* ----------------------------------------------------------
+   12. UTILITY — TEXT
+   ---------------------------------------------------------- */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-gold {
+    color: var(--gold);
+}
+
+.text-navy {
+    color: var(--primary);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-muted {
+    color: var(--body-text);
+}
+
+.text-sm {
+    font-size: 14px;
+}
+
+.text-xs {
+    font-size: 12px;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-semi {
+    font-weight: 600;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.tracking-wide {
+    letter-spacing: 1px;
+}
+
+/* ----------------------------------------------------------
+   13. OVERLAY (image dark scrim)
+   ---------------------------------------------------------- */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(4, 48, 83, 0.75) 0%, transparent 60%);
+    border-radius: inherit;
+}
+
+/* ----------------------------------------------------------
+   14. SECTION WRAPPER (consistent vertical padding)
+   ---------------------------------------------------------- */
+.section {
+    padding: 80px 0;
+}
+
+.section--sm {
+    padding: 50px 0;
+}
+
+.section--light {
+    background: var(--off-white);
+}
+
+.section--navy {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* ----------------------------------------------------------
+   15. RESPONSIVE GRID HELPERS
+   ---------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-title-block h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .grid-4,
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .section--sm {
+        padding: 30px 0;
+    }
+
+    .section-title-block {
+        margin-bottom: 32px;
+    }
+
+    .section-title-block h2 {
+        font-size: 26px;
+    }
+
+    .section-title-block .subtitle {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 10px 22px;
+        font-size: 15px;
+    }
+
+    .btn-lg {
+        padding: 12px 28px;
+        font-size: 16px;
+    }
+}

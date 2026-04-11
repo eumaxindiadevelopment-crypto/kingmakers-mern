@@ -1,0 +1,398 @@
+/* ============================
+   VIDEO REVIEWS — FEATURED + RAIL
+   ============================ */
+
+.vr-section {
+    padding: var(--section-padding);
+    /* background: linear-gradient(160deg, var(--heading-color) 0%, #073d66 100%); */
+    background: linear-gradient(180deg, #001A65 0%, #001969 50%, #01165A 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dot-grid overlay */
+.vr-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 26px 26px;
+    pointer-events: none;
+}
+
+/* ---- Header ---- */
+.vr-header {
+    text-align: center;
+    margin-bottom: 52px;
+    position: relative;
+}
+
+.vr-badge {
+    display: inline-block;
+    padding: 5px 16px;
+    background: rgba(192, 167, 125, 0.18);
+    color: var(--button-bg);
+    font-family: 'Figtree', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: 1px solid rgba(192, 167, 125, 0.35);
+    margin-bottom: 14px;
+}
+
+.vr-header h2 {
+    color: #ffffff;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.vr-header p {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 17px;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.75;
+}
+
+/* ---- Main layout ---- */
+.vr-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 28px;
+    align-items: start;
+    position: relative;
+}
+
+/* ---- Featured player ---- */
+.vr-featured {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vr-player-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    background: #000;
+    position: relative;
+}
+
+.vr-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Featured info below player */
+.vr-featured-info {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 14px;
+    padding: 20px 24px;
+}
+
+.vr-featured-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.vr-featured-rank {
+    font-family: 'Figtree', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--button-bg);
+    background: rgba(192, 167, 125, 0.18);
+    padding: 3px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(192, 167, 125, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.vr-featured-service {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.vr-featured-info h3 {
+    font-family: 'Figtree', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.vr-featured-info p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.65;
+    margin: 0;
+    font-style: italic;
+}
+
+/* ---- Thumbnail rail ---- */
+.vr-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.vr-rail-label {
+    font-family: 'Figtree', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vr-rail-count {
+    background: rgba(192, 167, 125, 0.25);
+    color: var(--button-bg);
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(192, 167, 125, 0.3);
+    letter-spacing: 0.5px;
+}
+
+/* ---- Collapsible extra videos ---- */
+.vr-extra {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.vr-extra--open {
+    max-height: 800px;
+}
+
+/* ---- Show more button ---- */
+.vr-show-more {
+    width: 100%;
+    padding: 9px 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.65);
+    font-family: 'Figtree', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    text-align: center;
+}
+
+.vr-show-more:hover {
+    background: rgba(192, 167, 125, 0.15);
+    border-color: var(--button-bg);
+    color: var(--button-bg);
+}
+
+/* Thumbnail card */
+.vr-thumb {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+    text-align: left;
+    width: 100%;
+    padding: 0;
+}
+
+.vr-thumb:hover {
+    background: rgba(255, 255, 255, 0.11);
+    border-color: rgba(192, 167, 125, 0.4);
+    transform: translateX(3px);
+}
+
+.vr-thumb--active {
+    background: rgba(192, 167, 125, 0.15);
+    border-color: var(--button-bg);
+    transform: none;
+    cursor: default;
+}
+
+/* Thumbnail image */
+.vr-thumb-img {
+    position: relative;
+    width: 110px;
+    flex-shrink: 0;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #000;
+}
+
+.vr-thumb-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.vr-thumb:hover .vr-thumb-img img {
+    transform: scale(1.06);
+}
+
+/* Play overlay */
+.vr-play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.42);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.vr-thumb:hover .vr-play-overlay {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.vr-play-btn {
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 1;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+}
+
+/* Now playing overlay */
+.vr-playing-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(192, 167, 125, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vr-playing-overlay span {
+    font-family: 'Figtree', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Thumbnail info */
+.vr-thumb-info {
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+}
+
+.vr-thumb-info strong {
+    font-family: 'Figtree', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+    display: block;
+}
+
+.vr-thumb-info span {
+    font-size: 12px;
+    color: var(--button-bg);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 1024px) {
+    .vr-layout {
+        grid-template-columns: 1fr 280px;
+        gap: 20px;
+    }
+
+    .vr-thumb-img {
+        width: 90px;
+    }
+}
+
+@media (max-width: 768px) {
+    .vr-header h2 {
+        font-size: 26px;
+    }
+
+    .vr-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .vr-rail {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 12px;
+        padding-bottom: 8px;
+    }
+
+    .vr-rail-label {
+        display: none;
+    }
+
+    .vr-thumb {
+        flex-direction: column;
+        min-width: 160px;
+        flex-shrink: 0;
+    }
+
+    .vr-thumb-img {
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+
+    .vr-thumb-info {
+        padding: 10px 12px;
+    }
+
+    .vr-thumb:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .vr-header h2 {
+        font-size: 22px;
+    }
+
+    .vr-featured-info {
+        padding: 16px 18px;
+    }
+
+    .vr-featured-info h3 {
+        font-size: 17px;
+    }
+}

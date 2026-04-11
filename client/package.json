@@ -1,0 +1,27 @@
+{
+  "name": "kingmakers-ias-academy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node server/server.js",
+    "server:dev": "npx nodemon --ext js,json,env --watch server server/server.js",
+    "dev:all": "npx concurrently \"npm run dev\" \"npm run server:dev\""
+  },
+  "dependencies": {
+    "@tinymce/tinymce-react": "^6.3.0",
+    "bootstrap": "^5.3.8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.13.1",
+    "tinymce": "^8.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "concurrently": "^8.2.2",
+    "vite": "^5.0.0"
+  }
+}

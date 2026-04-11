@@ -1,0 +1,1063 @@
+/* ============================================
+   UPSC COURSES PAGE STYLES
+   ============================================ */
+
+.upsc-page {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Hero Section */
+.upsc-hero {
+  background: linear-gradient(135deg, #043053 0%, #0a5a8f 50%, #1a7ab3 100%);
+  padding: 120px 0 100px;
+  position: relative;
+  overflow: hidden;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+}
+
+.upsc-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(192, 167, 125, 0.05);
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
+}
+
+.upsc-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 50%;
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.upsc-hero .reg-text {
+  padding-right: 40px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.upsc-hero .reg-text h2 {
+  font-size: 3.2rem;
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.upsc-hero .reg-text p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.upsc-hero .reg-features {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.upsc-hero .reg-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #c0a77d;
+}
+
+.upsc-hero .feat-icon {
+  font-size: 1.25rem;
+  width: 24px;
+  text-align: center;
+}
+
+.upsc-hero .reg-form-container {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Quick Registration Section - Removed as it's now in Hero */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Quick Registration Section */
+.upsc-quick-reg {
+  background: #ffffff;
+  padding: 60px 0;
+  margin-top: -60px;
+  position: relative;
+  z-index: 5;
+}
+
+.upsc-quick-reg .reg-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(4, 48, 83, 0.12);
+  border: 1px solid rgba(192, 167, 125, 0.15);
+}
+
+.upsc-quick-reg .reg-text {
+  flex: 1;
+}
+
+.upsc-quick-reg .reg-text h2 {
+  font-size: 2.2rem;
+  color: #043053;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.upsc-quick-reg .reg-text p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.upsc-quick-reg .reg-features {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.upsc-quick-reg .reg-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0a5a8f;
+}
+
+.upsc-quick-reg .feat-icon {
+  font-size: 1.4rem;
+}
+
+.upsc-quick-reg .reg-form-container {
+  flex: 0 0 450px;
+}
+
+@media (max-width: 992px) {
+  .upsc-hero {
+    padding: 80px 0;
+    min-height: auto;
+  }
+
+  .upsc-hero .reg-text {
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .upsc-hero .reg-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .upsc-hero .reg-text p {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+/* ============================================
+   UPCOMING BATCHES SECTION
+   ============================================ */
+.upsc-page .batches-section {
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+}
+
+.upsc-page .batches-table-wrap {
+  overflow-x: auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.09);
+}
+
+.upsc-page .batches-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  min-width: 700px;
+}
+
+.upsc-page .batches-table thead tr {
+  background: linear-gradient(135deg, #043053, #0a5a8f);
+  color: white;
+}
+
+.upsc-page .batches-table th {
+  padding: 16px 18px;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.upsc-page .batches-table td {
+  padding: 16px 18px;
+  font-size: 0.9rem;
+  color: #444;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+
+.upsc-page .batches-table tbody tr:hover {
+  background: rgba(10, 90, 143, 0.04);
+}
+
+.upsc-page .batches-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.upsc-page .batch-course {
+  font-weight: 600;
+  color: #043053;
+}
+
+.upsc-page .batch-date-badge {
+  background: rgba(10, 90, 143, 0.1);
+  color: #0a5a8f;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.upsc-page .seats-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.upsc-page .seats-limited {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+}
+
+.upsc-page .seats-open {
+  background: rgba(22, 163, 74, 0.1);
+  color: #16a34a;
+}
+
+.upsc-page .btn-register {
+  background: linear-gradient(135deg, #c0a77d, #d4b895);
+  color: #043053;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.upsc-page .btn-register:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(192, 167, 125, 0.4);
+}
+
+
+
+/* Container */
+.upsc-page .container-upsc {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Overview Section */
+.upsc-page .upsc-overview {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  position: relative;
+}
+
+.upsc-page .upsc-overview h2 {
+  font-size: 2.5rem;
+  color: #043053;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.upsc-page .upsc-overview h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #0a5a8f, #c0a77d);
+  border-radius: 2px;
+}
+
+.upsc-page .overview-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.upsc-page .features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.upsc-page .feature-card {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-top: 4px solid #0a5a8f;
+}
+
+.upsc-page .feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border-top-color: #c0a77d;
+}
+
+.upsc-page .feature-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 15px;
+  color: var(--button-bg);
+}
+
+.upsc-page .feature-card h3 {
+  font-size: 1.2rem;
+  color: #043053;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.upsc-page .feature-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Program Structure Section */
+.upsc-page .program-structure {
+  padding: 80px 20px;
+  background: white;
+  position: relative;
+}
+
+.upsc-page .program-structure h2 {
+  font-size: 2.5rem;
+  color: #043053;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.upsc-page .program-structure h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #0a5a8f, #c0a77d);
+  border-radius: 2px;
+}
+
+.upsc-page .phases-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.upsc-page .phase-card {
+  background: linear-gradient(135deg, #f9f9f9, #ffffff);
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.upsc-page .phase-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  border-color: #0a5a8f;
+  background: linear-gradient(135deg, #f0f8ff, #ffffff);
+}
+
+.upsc-page .phase-number {
+  background: linear-gradient(135deg, #0a5a8f, #1a7ab3);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 15px;
+}
+
+.upsc-page .phase-card h3 {
+  font-size: 1.1rem;
+  color: #043053;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.upsc-page .phase-card .duration {
+  font-size: 0.9rem;
+  color: #c0a77d;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+}
+
+.upsc-page .phase-card .description {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* UPSC Programs Section */
+.upsc-page .upsc-programs {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  position: relative;
+}
+
+.upsc-page .upsc-programs h2 {
+  font-size: 2.5rem;
+  color: #043053;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.upsc-page .upsc-programs h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #0a5a8f, #c0a77d);
+  border-radius: 2px;
+}
+
+.upsc-page .programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.upsc-page .program-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 5px solid #0a5a8f;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.upsc-page .program-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  border-left-color: #c0a77d;
+}
+
+.upsc-page .program-header {
+  background: linear-gradient(135deg, #0a5a8f 0%, #1a7ab3 100%);
+  padding: 25px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upsc-page .program-icon {
+  font-size: 2.5rem;
+}
+
+.upsc-page .program-batch {
+  background: #c0a77d;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.upsc-page .program-card h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  /* margin: 20px 20px 10px 20px; */
+  font-weight: 700;
+}
+
+.upsc-page .program-description {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 10px 20px 15px 20px;
+  line-height: 1.6;
+}
+
+.upsc-page .program-details {
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  /* border-bottom: 1px solid #eee; */
+  padding-bottom: 15px;
+}
+
+.upsc-page .detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.upsc-page .detail-label {
+  color: #666;
+  font-weight: 600;
+}
+
+.upsc-page .detail-value {
+  color: #0a5a8f;
+  font-weight: 600;
+}
+
+.upsc-page .price {
+  font-size: 1.3rem;
+  color: #c0a77d;
+  font-weight: 700;
+}
+
+.upsc-page .price small {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.upsc-page .highlights {
+  padding: 15px 20px;
+  flex-grow: 1;
+}
+
+.upsc-page .highlights ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.upsc-page .highlights li {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 8px;
+  padding-left: 10px;
+}
+
+.upsc-page .highlights li:last-child {
+  margin-bottom: 0;
+}
+
+.upsc-page .program-actions {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  /* border-top: 1px solid #eee; */
+}
+
+.upsc-page .section-tag {
+  display: inline-block;
+  background: rgba(10, 90, 143, 0.1);
+  color: #0a5a8f;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  border: 1px solid rgba(10, 90, 143, 0.2);
+}
+
+.upsc-page .section-head {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.upsc-page .btn-schedule,
+.upsc-page .btn-enroll {
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upsc-page .btn-schedule {
+  background: #f0f0f0;
+  color: #043053;
+  border: 2px solid #0a5a8f;
+}
+
+.upsc-page .btn-schedule:hover {
+  background: #0a5a8f;
+  color: white;
+}
+
+.upsc-page .btn-enroll {
+  background: linear-gradient(135deg, #0a5a8f, #1a7ab3);
+  color: white;
+}
+
+.upsc-page .btn-enroll:hover {
+  background: linear-gradient(135deg, #043053, #0a5a8f);
+}
+
+/* Why Our Program Section */
+.upsc-page .why-our-program {
+  padding: 80px 20px;
+  background: white;
+  position: relative;
+}
+
+.upsc-page .why-our-program h2 {
+  font-size: 2.5rem;
+  color: #043053;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.upsc-page .why-our-program h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #0a5a8f, #c0a77d);
+  border-radius: 2px;
+}
+
+.upsc-page .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.upsc-page .benefit-card {
+  background: linear-gradient(135deg, #f9f9f9, #ffffff);
+  padding: 35px 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.upsc-page .benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.upsc-page .benefit-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.upsc-page .benefit-card h3 {
+  font-size: 1.1rem;
+  color: #043053;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.upsc-page .benefit-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CTA Section */
+.upsc-page .upsc-cta {
+  background: linear-gradient(135deg, #043053 0%, #0a5a8f 50%, #1a7ab3 100%);
+  padding: 80px 40px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.upsc-page .upsc-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: rgba(192, 167, 125, 0.05);
+  border-radius: 50%;
+}
+
+.upsc-page .upsc-cta h2 {
+  font-size: 2.5rem;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.upsc-page .upsc-cta p {
+  font-size: 1.2rem;
+  margin: 0 0 40px 0;
+  color: #c0a77d;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+.upsc-page .cta-buttons {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.upsc-page .cta-btn {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.upsc-page .cta-btn.primary {
+  background: #c0a77d;
+  color: #043053;
+}
+
+.upsc-page .cta-btn.primary:hover {
+  background: #d4b895;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(192, 167, 125, 0.4);
+}
+
+.upsc-page .cta-btn.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.upsc-page .cta-btn.secondary:hover {
+  background: white;
+  color: #0a5a8f;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .upsc-page .upsc-hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .upsc-page .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .upsc-page .phases-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .upsc-page .eligibility-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .upsc-page .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .upsc-page .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .upsc-page .upsc-hero {
+    padding: 60px 20px;
+    min-height: 300px;
+  }
+
+  .upsc-page .upsc-hero h1 {
+    font-size: 2rem;
+  }
+
+  .upsc-page .upsc-hero p {
+    font-size: 1.1rem;
+  }
+
+  .upsc-page .upsc-overview,
+  .upsc-page .program-structure,
+  .upsc-page .upsc-programs,
+  .upsc-page .upsc-eligibility,
+  .upsc-page .exam-schedule,
+  .upsc-page .why-our-program {
+    padding: 50px 20px;
+  }
+
+  .upsc-page .upsc-overview h2,
+  .upsc-page .program-structure h2,
+  .upsc-page .upsc-programs h2,
+  .upsc-page .upsc-eligibility h2,
+  .upsc-page .exam-schedule h2,
+  .upsc-page .why-our-program h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .upsc-page .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .upsc-page .phases-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .upsc-page .phase-card {
+    padding: 20px 15px;
+  }
+
+  .upsc-page .programs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .upsc-page .eligibility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .upsc-page .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .upsc-page .upsc-cta {
+    padding: 50px 20px;
+  }
+
+  .upsc-page .upsc-cta h2 {
+    font-size: 1.8rem;
+  }
+
+  .upsc-page .upsc-cta p {
+    font-size: 1rem;
+  }
+
+  .upsc-page .cta-buttons {
+    gap: 15px;
+  }
+
+  .upsc-page .cta-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .upsc-page .upsc-hero {
+    padding: 40px 15px;
+    min-height: 250px;
+  }
+
+  .upsc-page .upsc-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .upsc-page .upsc-hero p {
+    font-size: 0.95rem;
+  }
+
+  .upsc-page .upsc-overview,
+  .upsc-page .program-structure,
+  .upsc-page .upsc-programs,
+  .upsc-page .upsc-eligibility,
+  .upsc-page .exam-schedule,
+  .upsc-page .why-our-program {
+    padding: 40px 15px;
+  }
+
+  .upsc-page .upsc-overview h2,
+  .upsc-page .program-structure h2,
+  .upsc-page .upsc-programs h2,
+  .upsc-page .upsc-eligibility h2,
+  .upsc-page .exam-schedule h2,
+  .upsc-page .why-our-program h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .upsc-page .overview-text {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+
+  .upsc-page .feature-card,
+  .upsc-page .eligibility-card,
+  .upsc-page .benefit-card {
+    padding: 20px 15px;
+  }
+
+  .upsc-page .feature-icon,
+  .upsc-page .eligibility-icon,
+  .upsc-page .benefit-icon {
+    font-size: 2rem;
+  }
+
+  .upsc-page .phases-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .upsc-page .phase-card {
+    padding: 18px 12px;
+  }
+
+  .upsc-page .phase-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .upsc-page .phase-card h3 {
+    font-size: 1rem;
+  }
+
+  .upsc-page .program-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .upsc-page .program-icon {
+    font-size: 2rem;
+  }
+
+  .upsc-page .schedule-item {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .upsc-page .schedule-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .upsc-page .upsc-cta {
+    padding: 40px 15px;
+  }
+
+  .upsc-page .upsc-cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .upsc-page .upsc-cta p {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+
+  .upsc-page .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .upsc-page .cta-btn {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+  }
+}

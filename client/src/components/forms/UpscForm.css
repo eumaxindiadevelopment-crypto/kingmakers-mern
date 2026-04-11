@@ -1,0 +1,133 @@
+.upsc-registration-form {
+    background: #043053;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 35px;
+    border-radius: 20px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.upsc-registration-form.success-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 3.5rem;
+    color: #c0a77d;
+    margin-bottom: 20px;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+.form-header p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.upsc-registration-form .form-group {
+    margin-bottom: 18px;
+}
+
+.upsc-registration-form label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.upsc-registration-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.upsc-registration-form input,
+.upsc-registration-form select {
+    width: 100%;
+    padding: 12px 16px;
+    background: #ffffff;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #222;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.upsc-registration-form input::placeholder {
+    color: #999;
+}
+
+.upsc-registration-form input:focus,
+.upsc-registration-form select:focus {
+    background-color: #fff;
+    border-color: #c0a77d;
+    box-shadow: 0 0 0 4px rgba(192, 167, 125, 0.2);
+}
+
+.upsc-registration-form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 15px) center;
+}
+
+.upsc-form-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #c0a77d 0%, #a38b5d 100%);
+    color: #043053;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.upsc-form-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(192, 167, 125, 0.4);
+    filter: brightness(1.1);
+}
+
+@media (max-width: 600px) {
+    .upsc-registration-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .upsc-registration-form {
+        padding: 25px 20px;
+    }
+
+    .form-header h3 {
+        font-size: 1.4rem;
+    }
+}

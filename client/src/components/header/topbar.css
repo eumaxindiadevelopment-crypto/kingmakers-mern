@@ -1,0 +1,47 @@
+.topbar {
+    background: var(--heading-color);
+    padding: 8px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.topbar-marquee {
+    display: flex;
+    width: 100%;
+}
+
+.topbar-marquee span {
+    display: inline-block;
+    width: 100%;
+    color: var(--button-bg);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+    padding-left: 100%;
+    /* Starts from the right end of the bar */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-150%);
+        /* Moves all the way past the left end */
+    }
+}
+
+.topbar-marquee:hover {
+    animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+    .topbar-marquee span {
+        font-size: 18px;
+        padding: 0 40px;
+    }
+}

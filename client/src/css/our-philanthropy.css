@@ -1,0 +1,893 @@
+/* ============================================
+   OUR PHILANTHROPY PAGE STYLES
+   Theme: #043053 (deep navy), #0a5a8f (blue),
+          #1a7ab3 (light blue), #c0a77d (gold)
+   ============================================ */
+
+.philanthropy-page {
+    width: 100%;
+    overflow: hidden;
+    font-family: inherit;
+}
+
+/* ── Hero Section ─────────────────────────── */
+.philanthropy-hero {
+    background: linear-gradient(135deg, #043053 0%, #0a5a8f 55%, #1a7ab3 100%);
+    padding: 110px 20px 90px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.philanthropy-hero::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -80px;
+    width: 520px;
+    height: 520px;
+    background: rgba(192, 167, 125, 0.06);
+    border-radius: 50%;
+    animation: phil-float 22s ease-in-out infinite;
+}
+
+.philanthropy-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -60px;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    animation: phil-float 28s ease-in-out infinite reverse;
+}
+
+@keyframes phil-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-28px);
+    }
+}
+
+@keyframes phil-fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.philanthropy-hero-content {
+    position: relative;
+    z-index: 1;
+    animation: phil-fadeInUp 0.8s ease-out;
+}
+
+.philanthropy-hero-badge {
+    display: inline-block;
+    background: rgba(192, 167, 125, 0.2);
+    border: 1px solid rgba(192, 167, 125, 0.4);
+    color: #c0a77d;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.philanthropy-hero-content h1 {
+    font-size: 3.6rem;
+    color: #ffffff;
+    margin: 0 0 14px;
+    font-weight: 700;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    line-height: 1.15;
+}
+
+.philanthropy-hero-content p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.82);
+    margin: 0;
+    font-weight: 400;
+    max-width: 620px;
+    margin-inline: auto;
+    line-height: 1.6;
+}
+
+.phil-hero-accent {
+    width: 90px;
+    height: 4px;
+    background: linear-gradient(90deg, #c0a77d, transparent);
+    margin: 22px auto 0;
+    border-radius: 2px;
+}
+
+/* ── Awareness Program Section ───────────── */
+.awareness-section {
+    padding: 80px 40px;
+    background: #f8f9fa;
+    position: relative;
+}
+
+.awareness-section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #0a5a8f, #c0a77d);
+}
+
+.awareness-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #c0a77d;
+    margin-bottom: 10px;
+}
+
+.awareness-inner h2 {
+    font-size: 2.3rem;
+    color: #043053;
+    font-weight: 700;
+    margin: 0 0 30px;
+    position: relative;
+    padding-bottom: 18px;
+}
+
+.awareness-inner h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0a5a8f, #c0a77d);
+    border-radius: 2px;
+}
+
+.awareness-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 40px 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #0a5a8f;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.awareness-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    right: 30px;
+    font-size: 12rem;
+    color: rgba(10, 90, 143, 0.05);
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.awareness-card p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #333;
+    margin: 0;
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* ── Unnakul Oru IAS Section ─────────────── */
+.unnakul-section {
+    padding: 90px 40px;
+    background: linear-gradient(135deg, #043053 0%, #0a5a8f 60%, #1a7ab3 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.unnakul-section::before {
+    content: '';
+    position: absolute;
+    right: -100px;
+    top: -100px;
+    width: 450px;
+    height: 450px;
+    background: rgba(192, 167, 125, 0.07);
+    border-radius: 50%;
+}
+
+.unnakul-section::after {
+    content: '';
+    position: absolute;
+    left: -80px;
+    bottom: -80px;
+    width: 350px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+}
+
+.unnakul-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.unnakul-text .section-eyebrow {
+    color: rgba(192, 167, 125, 0.85);
+}
+
+.unnakul-text h2 {
+    font-size: 2.3rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0 0 10px;
+    line-height: 1.2;
+}
+
+.unnakul-text h3 {
+    font-size: 1.15rem;
+    color: var(--button-bg);
+    font-weight: 500;
+    margin: 0 0 28px;
+    font-style: italic;
+}
+
+.unnakul-text p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0 0 18px;
+}
+
+.unnakul-highlight {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(192, 167, 125, 0.3);
+    border-left: 4px solid #c0a77d;
+    padding: 20px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--button-bg);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.6;
+    backdrop-filter: blur(5px);
+}
+
+/* ── Impact Stats ─────────────────────────── */
+.phil-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.phil-stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 35px 20px;
+    text-align: center;
+    border-radius: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phil-stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.phil-stat-icon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    display: block;
+    color: #c0a77d;
+    /* Match the stat number color */
+}
+
+.phil-stat-card .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #c0a77d;
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.phil-stat-card .stat-label {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ── Initiatives Section ─────────────────── */
+.initiatives-section {
+    padding: 90px 40px;
+    background: #ffffff;
+}
+
+.initiatives-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title-block {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title-block h2 {
+    font-size: 2.4rem;
+    color: #043053;
+    font-weight: 700;
+    margin: 8px 0 20px;
+    position: relative;
+    padding-bottom: 18px;
+}
+
+.section-title-block h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 4px;
+    background: linear-gradient(90deg, #0a5a8f, #c0a77d);
+    border-radius: 2px;
+}
+
+.section-title-block p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.initiatives-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.initiative-card {
+    background: #f8f9fa;
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    border-top: 4px solid #0a5a8f;
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.initiative-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: linear-gradient(135deg, rgba(10, 90, 143, 0.04), rgba(192, 167, 125, 0.04));
+    transition: height 0.35s ease;
+}
+
+.initiative-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(10, 90, 143, 0.15);
+    border-top-color: #c0a77d;
+}
+
+.initiative-card:hover::after {
+    height: 100%;
+}
+
+.initiative-icon-wrap {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #0a5a8f, #1a7ab3);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 22px;
+    font-size: 1.9rem;
+    box-shadow: 0 8px 20px rgba(10, 90, 143, 0.25);
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.initiative-card:hover .initiative-icon-wrap {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.initiative-card h3 {
+    font-size: 1.25rem;
+    color: #043053;
+    font-weight: 700;
+    margin: 0 0 14px;
+    position: relative;
+    z-index: 1;
+}
+
+.initiative-card p {
+    font-size: 0.98rem;
+    color: #555;
+    line-height: 1.75;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Testimonials Section ─────────────────── */
+.phil-testimonials {
+    padding: 90px 40px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #eef2f7 100%);
+}
+
+.phil-testimonials-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 35px 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border-bottom: 3px solid transparent;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    border-bottom-color: #c0a77d;
+}
+
+.quote-icon {
+    font-size: 3rem;
+    color: #0a5a8f;
+    opacity: 0.15;
+    line-height: 1;
+    margin-bottom: 12px;
+    display: block;
+    font-family: Georgia, serif;
+}
+
+.testimonial-card p {
+    font-size: 0.97rem;
+    line-height: 1.8;
+    color: #444;
+    margin: 0 0 22px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0a5a8f, #1a7ab3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.author-info strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #043053;
+    font-weight: 700;
+}
+
+.author-info span {
+    font-size: 0.82rem;
+    color: var(--button-bg);
+    font-weight: 500;
+}
+
+/* ── Stipend Programme Section ────────────────────────────── */
+.stipend-section {
+    padding: 100px 40px;
+    background: #ffffff;
+}
+
+.stipend-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stipend-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.stipend-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stipend-image-wrap {
+    position: relative;
+    padding-bottom: 75%;
+    /* 4:3 Aspect Ratio */
+    overflow: hidden;
+}
+
+.stipend-image-wrap img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.stipend-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(4, 48, 83, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.view-icon {
+    font-size: 2rem;
+    color: #fff;
+    transform: scale(0.5);
+    transition: transform 0.3s ease;
+}
+
+.stipend-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.stipend-card:hover .stipend-image-wrap img {
+    transform: scale(1.1);
+}
+
+.stipend-card:hover .stipend-overlay {
+    opacity: 1;
+}
+
+.stipend-card:hover .view-icon {
+    transform: scale(1);
+}
+
+/* ── Lightbox Styles ────────────────────────────────────────── */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.lightbox-container {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 4px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -50px;
+    right: -10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    line-height: 1;
+}
+
+.lightbox-close:hover {
+    color: #c0a77d;
+}
+
+/* ── CTA Section ─────────────────────────── */
+.phil-cta {
+    padding: 90px 40px;
+    background: linear-gradient(135deg, #043053 0%, #0a5a8f 55%, #1a7ab3 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.phil-cta::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 450px;
+    height: 450px;
+    background: rgba(192, 167, 125, 0.06);
+    border-radius: 50%;
+}
+
+.phil-cta-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.phil-cta h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+
+.phil-cta p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.82);
+    margin: 0 0 36px;
+    line-height: 1.7;
+}
+
+.phil-cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.phil-btn {
+    padding: 14px 36px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 0.3px;
+}
+
+.phil-btn.primary {
+    background: #c0a77d;
+    color: #043053;
+}
+
+.phil-btn.primary:hover {
+    background: #d4b895;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(192, 167, 125, 0.4);
+}
+
+.phil-btn.secondary {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.phil-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-3px);
+}
+
+/* ── Responsive ──────────────────────────── */
+@media (max-width: 1024px) {
+    .unnakul-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .phil-stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .initiatives-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stipend-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .awareness-section,
+    .unnakul-section,
+    .initiatives-section,
+    .phil-testimonials,
+    .phil-cta {
+        padding: 70px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .philanthropy-hero {
+        padding: 80px 20px 60px;
+        min-height: 340px;
+    }
+
+    .philanthropy-hero-content h1 {
+        font-size: 2.3rem;
+    }
+
+    .philanthropy-hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .awareness-card {
+        padding: 30px 25px;
+    }
+
+    .unnakul-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .phil-stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    .stipend-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .initiatives-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .section-title-block h2,
+    .unnakul-text h2,
+    .awareness-inner h2,
+    .phil-cta h2 {
+        font-size: 1.85rem;
+    }
+
+    .awareness-section,
+    .unnakul-section,
+    .initiatives-section,
+    .phil-testimonials,
+    .phil-cta {
+        padding: 55px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .philanthropy-hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .phil-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stipend-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .initiatives-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .phil-stat-card .stat-number {
+        font-size: 2.4rem;
+    }
+
+    .phil-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .phil-btn {
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
+    }
+
+    .awareness-section,
+    .unnakul-section,
+    .initiatives-section,
+    .phil-testimonials,
+    .phil-cta {
+        padding: 45px 15px;
+    }
+}

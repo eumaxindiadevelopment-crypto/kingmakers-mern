@@ -1,0 +1,51 @@
+.table-container {
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.science-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    color: #333;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+}
+
+.science-table th,
+.science-table td {
+    border: 1px solid #ccc;
+    /* Matches the grey borders in your image */
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.science-table th {
+    background-color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-column {
+    font-weight: 500;
+    width: 20%;
+}
+
+.topic-column {
+    font-weight: 500;
+    width: 30%;
+}
+
+.subtopic-column {
+    width: 50%;
+}
+
+.subtopic-item {
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+/* Subtle row hover for better readability */
+.science-table tbody tr:hover {
+    background-color: #fcfcfc;
+}

@@ -1,0 +1,1544 @@
+/* ============================================
+   ABOUT UPSC PAGE — STYLES
+   ============================================ */
+
+.about-upsc-page {
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Figtree', sans-serif;
+}
+
+/* ─── Hero ─────────────────────────────────── */
+.au-hero {
+    background: linear-gradient(135deg, #043053 0%, #0a5a8f 55%, #1a7ab3 100%);
+    padding: 110px 0 80px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.au-hero::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    right: -8%;
+    width: 500px;
+    height: 500px;
+    background: rgba(192, 167, 125, 0.07);
+    border-radius: 50%;
+    animation: auFloat 20s ease-in-out infinite;
+}
+
+.au-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 50%;
+    animation: auFloat 26s ease-in-out infinite reverse;
+}
+
+@keyframes auFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-28px);
+    }
+}
+
+.au-hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.au-hero-tag {
+    display: inline-block;
+    background: rgba(192, 167, 125, 0.2);
+    border: 1px solid rgba(192, 167, 125, 0.5);
+    color: #c0a77d;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.au-hero h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.au-hero p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+/* ─── Shared container ─────────────────────── */
+.container-au {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ─── Section head ────────────────────────── */
+.au-section-head {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.au-section-tag {
+    display: inline-block;
+    background: rgba(10, 90, 143, 0.1);
+    color: #0a5a8f;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    border: 1px solid rgba(10, 90, 143, 0.2);
+}
+
+.au-section-head h2 {
+    font-size: 2.3rem;
+    color: #043053;
+    font-weight: 800;
+    margin: 0 0 14px;
+    position: relative;
+    padding-bottom: 18px;
+}
+
+.au-section-head h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0a5a8f, #c0a77d);
+    border-radius: 2px;
+}
+
+.au-section-sub {
+    font-size: 0.95rem;
+    color: #666;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ─── Eligibility Section ─────────────────── */
+.au-eligibility {
+    padding: 90px 20px;
+    background: #f8faff;
+}
+
+.au-elig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.au-elig-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 35px 30px;
+    box-shadow: 0 8px 28px rgba(4, 48, 83, 0.09);
+    border-top: 4px solid #0a5a8f;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.au-elig-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(4, 48, 83, 0.14);
+    border-top-color: #c0a77d;
+}
+
+.au-elig-card-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.au-elig-icon {
+    font-size: 2.2rem;
+    background: rgba(10, 90, 143, 0.08);
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.au-elig-card h3 {
+    font-size: 1.2rem;
+    color: #043053;
+    font-weight: 800;
+    margin: 0;
+}
+
+.au-elig-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.au-elig-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.93rem;
+    color: #444;
+    line-height: 1.6;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f3f8;
+}
+
+.au-elig-list li:last-child {
+    border-bottom: none;
+}
+
+.au-elig-list li::before {
+    content: '✓';
+    color: #0a5a8f;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* ─── Exam Structure Section ─────────────── */
+.au-structure {
+    padding: 90px 20px;
+    background: #fff;
+}
+
+.au-stages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 60px;
+}
+
+.au-stage-card {
+    background: linear-gradient(135deg, #043053, #0a5a8f);
+    border-radius: 16px;
+    padding: 35px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.au-stage-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(4, 48, 83, 0.3);
+}
+
+.au-stage-card::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.au-stage-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #c0a77d;
+    margin-bottom: 12px;
+}
+
+.au-stage-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.au-stage-card h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.au-stage-card p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Prelims detail info box */
+.au-detail-box {
+    background: #f8faff;
+    border-radius: 14px;
+    padding: 35px;
+    border-left: 5px solid #0a5a8f;
+}
+
+.au-detail-box h3 {
+    font-size: 1.4rem;
+    color: #043053;
+    font-weight: 800;
+    margin: 0 0 8px;
+}
+
+.au-detail-box .au-detail-sub {
+    font-size: 0.88rem;
+    color: #0a5a8f;
+    font-weight: 600;
+    background: rgba(10, 90, 143, 0.08);
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+}
+
+.au-detail-box p {
+    font-size: 0.93rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.au-result-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.au-result-list li {
+    font-size: 0.92rem;
+    color: #444;
+    padding: 9px 0;
+    border-bottom: 1px solid #e8edf3;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.6;
+}
+
+.au-result-list li:last-child {
+    border-bottom: none;
+}
+
+.au-result-list li::before {
+    content: '▸';
+    color: #c0a77d;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* ─── Prelims Syllabus Section ───────────── */
+.au-prelims-syllabus {
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+}
+
+.au-paper-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.au-paper-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    border-top: 4px solid #0a5a8f;
+}
+
+.au-paper-card:nth-child(2) {
+    border-top-color: #c0a77d;
+}
+
+.au-paper-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.au-paper-badge {
+    background: linear-gradient(135deg, #043053, #0a5a8f);
+    color: #fff;
+    padding: 5px 14px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.au-paper-card h3 {
+    font-size: 1.1rem;
+    color: #043053;
+    font-weight: 700;
+    margin: 0;
+}
+
+.au-paper-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.au-paper-list li {
+    font-size: 0.9rem;
+    color: #555;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f3f8;
+    display: flex;
+    gap: 8px;
+    line-height: 1.55;
+}
+
+.au-paper-list li:last-child {
+    border-bottom: none;
+}
+
+.au-paper-list li::before {
+    content: '•';
+    color: #0a5a8f;
+    font-weight: 900;
+    flex-shrink: 0;
+}
+
+.au-paper-note {
+    margin-top: 25px;
+    background: rgba(10, 90, 143, 0.06);
+    border-radius: 10px;
+    padding: 16px 20px;
+}
+
+.au-paper-note p {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 0 0 6px;
+    line-height: 1.6;
+}
+
+.au-paper-note p:last-child {
+    margin: 0;
+}
+
+/* ─── Mains Syllabus Accordion ───────────── */
+.au-mains-syllabus {
+    padding: 90px 20px;
+    background: #fff;
+}
+
+.au-mains-papers {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.au-mains-paper {
+    background: #f8faff;
+    border-radius: 14px;
+    border: 1px solid #e0e9f4;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.au-mains-paper:hover {
+    box-shadow: 0 6px 22px rgba(4, 48, 83, 0.1);
+}
+
+.au-mains-paper-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 22px 28px;
+}
+
+.au-mains-paper-num {
+    background: linear-gradient(135deg, #043053, #0a5a8f);
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.au-mains-paper-info h4 {
+    font-size: 1.05rem;
+    color: #043053;
+    font-weight: 700;
+    margin: 0 0 5px;
+}
+
+.au-mains-paper-info p {
+    font-size: 0.88rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.55;
+}
+
+.au-mains-paper-body {
+    padding: 0 28px 22px;
+}
+
+.au-mains-topics {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 18px;
+}
+
+.au-mains-topics li {
+    font-size: 0.88rem;
+    color: #555;
+    padding: 5px 0;
+    line-height: 1.5;
+    display: flex;
+    gap: 7px;
+    break-inside: avoid;
+}
+
+.au-mains-topics li::before {
+    content: '›';
+    color: #c0a77d;
+    font-weight: 900;
+    flex-shrink: 0;
+}
+
+/* ─── Optional Subjects Section ─────────────── */
+.au-optional {
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+}
+
+.au-optional-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.au-optional-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #043053;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(4, 48, 83, 0.07);
+    transition: all 0.25s ease;
+    border: 1px solid #e8edf3;
+}
+
+.au-optional-item:hover {
+    background: linear-gradient(135deg, #043053, #0a5a8f);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(4, 48, 83, 0.2);
+}
+
+/* literature row spans full */
+.au-optional-literature {
+    grid-column: 1 / -1;
+    text-align: left;
+}
+
+/* ─── CTA Strip ────────────────────────────── */
+.au-cta {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #043053 0%, #0a5a8f 100%);
+    text-align: center;
+}
+
+.au-cta h2 {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.au-cta p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 30px;
+}
+
+.au-cta-btns {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.au-cta-btn {
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.au-cta-btn.primary {
+    background: #c0a77d;
+    color: #043053;
+    border: none;
+}
+
+.au-cta-btn.primary:hover {
+    background: #d4b895;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(192, 167, 125, 0.4);
+}
+
+.au-cta-btn.secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.au-cta-btn.secondary:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* ─── Responsive ───────────────────────────── */
+@media (max-width: 992px) {
+    .au-stages {
+        grid-template-columns: 1fr;
+    }
+
+    .au-elig-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .au-paper-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .au-optional-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .au-mains-topics {
+        columns: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .au-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .au-section-head h2 {
+        font-size: 1.8rem;
+    }
+
+    .au-stages {
+        grid-template-columns: 1fr;
+    }
+
+    .au-optional-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .au-mains-paper-head {
+        padding: 18px 20px;
+        flex-direction: column;
+    }
+
+    .au-mains-paper-body {
+        padding: 0 20px 18px;
+    }
+
+    .au-detail-box {
+        padding: 24px 20px;
+    }
+
+    .au-cta-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ═══════════════════════════════════════════
+   TABS NAVIGATION
+═══════════════════════════════════════════ */
+.au-tabs-wrap {
+    background: #fff;
+    border-bottom: 2px solid #e8edf3;
+    position: sticky;
+    top: 75px;
+    z-index: 100;
+    box-shadow: 0 4px 16px rgba(4, 48, 83, 0.07);
+}
+
+.au-tabs {
+    display: flex;
+    gap: 4px;
+    padding: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.au-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.au-tab-btn {
+    flex-shrink: 0;
+    padding: 18px 28px;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #666;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.25s ease;
+    white-space: nowrap;
+}
+
+.au-tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    border-radius: 2px 2px 0 0;
+    transition: background 0.25s ease;
+}
+
+.au-tab-btn:hover {
+    color: #0a5a8f;
+}
+
+.au-tab-btn.au-tab-active {
+    color: #043053;
+}
+
+.au-tab-btn.au-tab-active::after {
+    background: linear-gradient(90deg, #0a5a8f, #c0a77d);
+}
+
+.au-tab-content {
+    animation: auSlideIn 0.35s ease-out;
+}
+
+@keyframes auSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ═══════════════════════════════════════════
+   TAB 1 — ABOUT THE EXAM
+═══════════════════════════════════════════ */
+
+/* About intro two-column grid */
+.au-about-intro {
+    padding: 90px 20px;
+    background: #fff;
+}
+
+.au-about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.au-about-text h2 {
+    font-size: 2rem;
+    color: #043053;
+    font-weight: 800;
+    margin: 12px 0 20px;
+}
+
+.au-about-text p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.au-about-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Fact cards */
+.au-about-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.au-fact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: #f8faff;
+    border-radius: 12px;
+    padding: 16px 20px;
+    border-left: 4px solid #0a5a8f;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.au-fact-card:hover {
+    transform: translateX(6px);
+    box-shadow: 0 4px 18px rgba(4, 48, 83, 0.1);
+}
+
+.au-fact-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    line-height: 1;
+    color: var(--button-bg);
+}
+
+.au-fact-card strong {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #043053;
+    margin-bottom: 3px;
+}
+
+.au-fact-card p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Why prestigious */
+.au-why-prestigious {
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+}
+
+.au-prestige-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.au-prestige-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 26px;
+    box-shadow: 0 6px 22px rgba(4, 48, 83, 0.07);
+    border-top: 4px solid #0a5a8f;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
+    position: relative;
+}
+
+.au-prestige-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(4, 48, 83, 0.13);
+    border-top-color: #c0a77d;
+}
+
+.au-prestige-num {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgba(10, 90, 143, 0.1);
+    line-height: 1;
+    margin-bottom: 10px;
+    font-family: 'Figtree', sans-serif;
+}
+
+.au-prestige-card h3 {
+    font-size: 1.05rem;
+    color: #043053;
+    font-weight: 800;
+    margin: 0 0 10px;
+}
+
+.au-prestige-card p {
+    font-size: 0.88rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Eligibility inside tab reuse */
+.au-eligibility {
+    padding: 90px 20px;
+    background: #fff;
+}
+
+/* ═══════════════════════════════════════════
+   TAB 2 — EXAM STRUCTURE
+═══════════════════════════════════════════ */
+
+.au-structure-intro {
+    padding: 90px 20px;
+    background: #fff;
+}
+
+/* Stage flow row */
+.au-stage-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-top: 0;
+}
+
+.au-stage-flow-card {
+    flex: 1;
+    background: linear-gradient(135deg, #043053, #0a5a8f);
+    border-radius: 16px;
+    padding: 38px 28px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.au-stage-flow-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(4, 48, 83, 0.3);
+}
+
+.au-stage-flow-num {
+    width: 36px;
+    height: 36px;
+    background: #c0a77d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #043053;
+    margin: 0 auto 14px;
+}
+
+.au-stage-flow-icon {
+    font-size: 2.8rem;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.au-stage-flow-card h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin: 0 0 8px;
+    color: #fff;
+}
+
+.au-stage-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    color: #c0a77d;
+    border: 1px solid rgba(192, 167, 125, 0.4);
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 12px;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+}
+
+.au-stage-flow-card p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.au-stage-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #0a5a8f;
+    padding: 0 12px;
+    flex-shrink: 0;
+    font-weight: 700;
+}
+
+/* Structure deep-dive sections */
+.au-structure-section {
+    padding: 80px 20px;
+    background: #fff;
+}
+
+.au-bg-light {
+    background: linear-gradient(135deg, #f8faff 0%, #eef2f7 100%);
+}
+
+.au-structure-block {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.au-structure-label {
+    position: sticky;
+    top: 130px;
+}
+
+.au-str-num {
+    display: inline-block;
+    background: linear-gradient(135deg, #043053, #0a5a8f);
+    color: #c0a77d;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.au-structure-label h2 {
+    font-size: 1.8rem;
+    color: #043053;
+    font-weight: 800;
+    margin: 0 0 8px;
+    line-height: 1.2;
+}
+
+.au-str-sub {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 600;
+    margin: 0;
+}
+
+.au-structure-detail>p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+/* Two-paper row */
+.au-str-paper-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.au-str-paper {
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 6px 22px rgba(4, 48, 83, 0.08);
+    border-top: 3px solid #0a5a8f;
+}
+
+.au-str-paper:nth-child(2) {
+    border-top-color: #c0a77d;
+}
+
+.au-str-paper-head {
+    margin-bottom: 12px;
+}
+
+.au-str-paper-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #043053, #0a5a8f);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.au-tag-gold {
+    background: linear-gradient(135deg, #b8914a, #c0a77d) !important;
+}
+
+.au-badge-gold {
+    background: linear-gradient(135deg, #b8914a, #c0a77d) !important;
+}
+
+.au-str-paper-head h4 {
+    font-size: 1rem;
+    color: #043053;
+    font-weight: 700;
+    margin: 0 0 5px;
+}
+
+.au-str-marks {
+    font-size: 0.78rem;
+    color: #888;
+    font-weight: 600;
+}
+
+.au-str-paper p {
+    font-size: 0.88rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Info box */
+.au-str-info-box {
+    background: rgba(10, 90, 143, 0.06);
+    border-radius: 12px;
+    padding: 22px 24px;
+    border-left: 4px solid #0a5a8f;
+}
+
+.au-str-info-box h4 {
+    font-size: 0.95rem;
+    color: #043053;
+    font-weight: 700;
+    margin: 0 0 12px;
+}
+
+.au-str-info-box ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.au-str-info-box li {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+}
+
+.au-str-info-box li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #c0a77d;
+    font-weight: 900;
+}
+
+/* Mains paper table */
+.au-mains-table {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(4, 48, 83, 0.08);
+}
+
+.au-mains-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 90px 100px;
+    padding: 13px 20px;
+    background: #fff;
+    font-size: 0.9rem;
+    color: #555;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #f0f3f8;
+}
+
+.au-mains-header {
+    background: linear-gradient(135deg, #043053, #0a5a8f);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: none;
+}
+
+.au-mains-header span {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.au-qualifying-row {
+    background: #f8faff;
+    color: #888;
+}
+
+.au-mains-total {
+    background: linear-gradient(135deg, #f8faff, #eef2ff);
+    font-size: 0.92rem;
+    color: #043053;
+    border-bottom: none;
+}
+
+.au-type-badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.au-badge-qualifying {
+    background: rgba(10, 90, 143, 0.1);
+    color: #0a5a8f;
+}
+
+.au-badge-merit {
+    background: rgba(22, 163, 74, 0.1);
+    color: #16a34a;
+}
+
+/* Interview grid */
+.au-interview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.au-interview-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 22px 20px;
+    box-shadow: 0 4px 18px rgba(4, 48, 83, 0.07);
+    border-bottom: 3px solid #0a5a8f;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.au-interview-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 35px rgba(4, 48, 83, 0.13);
+    border-bottom-color: #c0a77d;
+}
+
+.au-iv-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 12px;
+    color: var(--button-bg);
+}
+
+.au-interview-card h4 {
+    font-size: 0.98rem;
+    color: #043053;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+.au-interview-card p {
+    font-size: 0.87rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   TAB 3 — SYLLABUS
+═══════════════════════════════════════════ */
+.au-syl-section {
+    padding: 80px 20px;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE ADDITIONS
+═══════════════════════════════════════════ */
+
+
+
+
+/* Eligibility Section */
+.upsc-eligibility {
+    padding: 80px 20px;
+    background: white;
+    position: relative;
+}
+
+.upsc-eligibility h2 {
+    font-size: 2.5rem;
+    color: #043053;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.upsc-eligibility h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #0a5a8f, #c0a77d);
+    border-radius: 2px;
+}
+
+.eligibility-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.eligibility-card {
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid #0a5a8f;
+}
+
+.eligibility-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-top-color: #c0a77d;
+}
+
+.eligibility-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.eligibility-card h3 {
+    font-size: 1.1rem;
+    color: #043053;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.eligibility-info {
+    text-align: left;
+}
+
+.info-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.info-item strong {
+    display: block;
+    color: #0a5a8f;
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.info-item p {
+    margin: 0;
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Exam Schedule Section */
+.exam-schedule {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    position: relative;
+}
+
+.exam-schedule h2 {
+    font-size: 2.5rem;
+    color: #043053;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.exam-schedule h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #0a5a8f, #c0a77d);
+    border-radius: 2px;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.schedule-item {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+    border-left: 5px solid #0a5a8f;
+}
+
+.schedule-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.schedule-number {
+    background: linear-gradient(135deg, #0a5a8f, #1a7ab3);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.schedule-content h4 {
+    margin: 0 0 8px 0;
+    color: #043053;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.schedule-content p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+
+@media (max-width: 1024px) {
+    .au-structure-block {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .au-structure-label {
+        position: static;
+    }
+
+    .au-stage-flow {
+        flex-direction: column;
+    }
+
+    .au-stage-flow-arrow {
+        transform: rotate(90deg);
+        padding: 6px 0;
+    }
+
+    .au-about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .au-prestige-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .au-interview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .au-tab-btn {
+        padding: 14px 18px;
+        font-size: 0.88rem;
+    }
+
+    .au-tabs-wrap {
+        top: 60px;
+    }
+
+    .au-str-paper-row {
+        grid-template-columns: 1fr;
+    }
+
+    .au-prestige-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .au-interview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .au-mains-row {
+        grid-template-columns: 80px 1fr;
+        font-size: 0.82rem;
+    }
+
+    .au-mains-row>span:nth-child(3),
+    .au-mains-row>span:nth-child(4) {
+        display: none;
+    }
+}

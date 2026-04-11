@@ -1,0 +1,555 @@
+/* ============================================================
+   THANK YOU PAGE
+   ============================================================ */
+
+.thank-you-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.thank-you-hero {
+  background: linear-gradient(135deg, #043053 0%, #0a5a8f 50%, #1a7ab3 100%);
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thank-you-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(192, 167, 125, 0.05);
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
+}
+
+.thank-you-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 50%;
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+.thank-you-hero-content {
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.thank-you-hero h1 {
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.thank-you-hero p {
+  font-size: 1.5rem;
+  color: #c0a77d;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.hero-accent {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #c0a77d, transparent);
+  margin: 20px auto 0;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Thank You Content */
+.thank-you-content {
+  flex: 1;
+  padding: 80px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f5ef 100%);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.thank-you-message {
+  background: white;
+  border-radius: 15px;
+  padding: 60px 50px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+/* Success Icon */
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #0a5a8f, #1a7ab3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  margin: 0 auto 30px;
+  animation: scaleIn 0.6s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.thank-you-message h2 {
+  font-size: 2.2rem;
+  color: #043053;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.main-message {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* Confirmation Details */
+.confirmation-details {
+  background: #f9f9f9;
+  border-left: 5px solid #c0a77d;
+  padding: 25px 30px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.confirmation-details p {
+  color: #666;
+  line-height: 1.8;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Next Steps */
+.next-steps {
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.next-steps h3 {
+  font-size: 1.6rem;
+  color: #043053;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.steps-list li {
+  display: flex;
+  gap: 20px;
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid #0a5a8f;
+  transition: all 0.3s ease;
+}
+
+.steps-list li:hover {
+  transform: translateX(10px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #0a5a8f, #1a7ab3);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h4 {
+  font-size: 1.1rem;
+  color: #043053;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.step-content p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Contact Info */
+.contact-info {
+  background: linear-gradient(135deg, #043053 0%, #0a5a8f 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: white;
+  font-weight: 700;
+}
+
+.contact-info p {
+  margin-bottom: 25px;
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.contact-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.contact-item a {
+  color: #c0a77d;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+}
+
+.cta-section h3 {
+  font-size: 1.5rem;
+  color: #043053;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.cta-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+}
+
+.cta-btn.primary {
+  background: linear-gradient(135deg, #0a5a8f, #1a7ab3);
+  color: white;
+}
+
+.cta-btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(10, 90, 143, 0.3);
+}
+
+.cta-btn.secondary {
+  background: #f0f0f0;
+  color: #043053;
+  border: 2px solid #0a5a8f;
+}
+
+.cta-btn.secondary:hover {
+  background: #0a5a8f;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .thank-you-hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .thank-you-hero p {
+    font-size: 1.3rem;
+  }
+
+  .thank-you-message {
+    padding: 40px 35px;
+  }
+
+  .contact-details {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .thank-you-hero {
+    padding: 60px 20px;
+    min-height: 300px;
+  }
+
+  .thank-you-hero h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .thank-you-hero p {
+    font-size: 1.1rem;
+  }
+
+  .thank-you-content {
+    padding: 60px 0;
+  }
+
+  .thank-you-message {
+    padding: 40px 30px;
+  }
+
+  .thank-you-message h2 {
+    font-size: 1.8rem;
+  }
+
+  .next-steps h3 {
+    font-size: 1.4rem;
+  }
+
+  .steps-list {
+    gap: 15px;
+  }
+
+  .steps-list li {
+    padding: 20px;
+  }
+
+  .step-number {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .contact-info {
+    padding: 30px 20px;
+  }
+
+  .contact-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .cta-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .cta-buttons {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .cta-btn {
+    padding: 12px 25px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .thank-you-hero {
+    padding: 40px 15px;
+    min-height: 250px;
+  }
+
+  .thank-you-hero h1 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+  }
+
+  .thank-you-hero p {
+    font-size: 0.95rem;
+  }
+
+  .thank-you-content {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .thank-you-message {
+    padding: 30px 20px;
+    border-radius: 12px;
+  }
+
+  .success-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .thank-you-message h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .main-message {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .confirmation-details {
+    padding: 20px 15px;
+    margin-bottom: 30px;
+  }
+
+  .next-steps {
+    margin-bottom: 30px;
+  }
+
+  .next-steps h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .steps-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .step-content h4 {
+    font-size: 1rem;
+  }
+
+  .step-content p {
+    font-size: 0.9rem;
+  }
+
+  .contact-info {
+    padding: 25px 15px;
+    margin-bottom: 30px;
+  }
+
+  .contact-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .contact-info p {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+  }
+
+  .contact-details {
+    gap: 15px;
+  }
+
+  .contact-label {
+    font-size: 0.9rem;
+  }
+
+  .contact-item a {
+    font-size: 1rem;
+  }
+
+  .cta-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .cta-buttons {
+    gap: 12px;
+  }
+
+  .cta-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,447 @@
+/* ============================
+   COURSES & FEES — PREMIUM
+   ============================ */
+
+.home-courses-section {
+    padding: var(--section-padding);
+    background: linear-gradient(180deg, #f8f5ef 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background shape */
+.home-courses-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(192, 167, 125, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ---- Header ---- */
+.home-courses-section .courses-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.home-courses-section .courses-badge {
+    display: inline-block;
+    padding: 5px 16px;
+    background: var(--gold-light);
+    color: var(--button-bg);
+    font-family: 'Figtree', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: 1px solid rgba(192, 167, 125, 0.4);
+    margin-bottom: 14px;
+}
+
+.home-courses-section .courses-header h2 {
+    font-size: 36px;
+    color: var(--heading-color);
+    margin-bottom: 12px;
+}
+
+.home-courses-section .courses-header p {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 17px;
+    color: var(--body-text);
+    line-height: 1.7;
+}
+
+/* ---- Tab Switcher ---- */
+.home-courses-section .home-courses-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 48px;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    padding: 6px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 16px rgba(4, 48, 83, 0.07);
+}
+
+.home-courses-section .courses-tab-btn {
+    padding: 12px 32px;
+    font-family: 'Figtree', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    background: transparent;
+    color: var(--body-text);
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.home-courses-section .courses-tab-btn--active {
+    background: var(--heading-color);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(4, 48, 83, 0.25);
+}
+
+.home-courses-section .courses-tab-btn:not(.courses-tab-btn--active):hover {
+    color: var(--heading-color);
+    background: var(--gold-light);
+}
+
+
+
+/* ---- Base Card ---- */
+.home-courses-section .course-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 28px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    box-shadow: 0 4px 20px rgba(4, 48, 83, 0.06);
+    overflow: hidden;
+}
+
+.home-courses-section .course-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 44px rgba(4, 48, 83, 0.12);
+    border-color: rgba(192, 167, 125, 0.5);
+    background: linear-gradient(155deg, var(--heading-color) 0%, #073d66 100%);
+}
+
+.home-courses-section .course-card:hover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    border-radius: 20px;
+}
+
+/* White text on hover for non-featured cards */
+.home-courses-section .course-card:not(.course-card--featured):hover .course-title,
+.home-courses-section .course-card:not(.course-card--featured):hover .course-features li,
+.home-courses-section .course-card:not(.course-card--featured):hover .course-fees-label {
+    color: #ffffff;
+}
+
+.home-courses-section .course-card:not(.course-card--featured):hover .course-fees {
+    color: var(--button-bg);
+}
+
+.home-courses-section .course-card:not(.course-card--featured):hover .course-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.home-courses-section .course-card:not(.course-card--featured):hover .course-duration {
+    background: rgba(192, 167, 125, 0.18);
+    color: var(--button-bg);
+}
+
+.home-courses-section .course-card:not(.course-card--featured):hover .course-divider {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.home-courses-section .course-card:not(.course-card--featured):hover .course-check {
+    background: rgba(192, 167, 125, 0.25);
+    color: var(--button-bg);
+}
+
+.home-courses-section .course-card:not(.course-card--featured):hover .course-fees-block {
+    background: rgba(192, 167, 125, 0.15);
+}
+
+.home-courses-section .course-card:not(.course-card--featured):hover .course-fees-gst {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.home-courses-section .course-card:not(.course-card--featured):hover .course-enroll-btn {
+    color: #ffffff;
+}
+
+/* ---- Featured Card ---- */
+.home-courses-section .course-card--featured {
+    background: linear-gradient(155deg, var(--heading-color) 0%, #073d66 100%);
+    border-color: transparent;
+    box-shadow: 0 10px 40px rgba(4, 48, 83, 0.28);
+}
+
+.home-courses-section .course-card--featured:hover {
+    border-color: rgba(192, 167, 125, 0.4);
+    box-shadow: 0 20px 56px rgba(4, 48, 83, 0.34);
+}
+
+/* Dot texture for featured */
+.home-courses-section .course-card--featured::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    border-radius: 20px;
+}
+
+/* ---- Popular badge ---- */
+.home-courses-section .course-popular-badge {
+    position: absolute;
+    top: 0;
+    right: 24px;
+    background: var(--button-bg);
+    color: #fff;
+    font-family: 'Figtree', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 14px 6px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(192, 167, 125, 0.4);
+}
+
+/* ---- Card Top ---- */
+.home-courses-section .course-card-top {
+    margin-bottom: 16px;
+    padding-top: 8px;
+}
+
+.home-courses-section .course-title {
+    font-family: 'Figtree', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.home-courses-section .course-card--featured .course-title {
+    color: #ffffff;
+}
+
+.home-courses-section .course-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--button-bg);
+    margin-top: -4px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.home-courses-section .course-card--featured .course-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.home-courses-section .course-batches-list {
+    margin-top: 10px;
+}
+
+.home-courses-section .home-batch-date {
+    display: inline-block;
+    width: fit-content;
+    background: #eff6ff;
+    color: #1e40af;
+    padding: 5px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid #dbeafe;
+    box-shadow: 0 2px 4px rgba(30, 64, 175, 0.05);
+    transition: all 0.3s ease;
+}
+
+.home-courses-section .course-card:hover .home-batch-date {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.home-courses-section .course-card--featured .home-batch-date {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ---- Divider ---- */
+.home-courses-section .course-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: 16px 0;
+}
+
+.home-courses-section .course-card--featured .course-divider {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* ---- Features ---- */
+.home-courses-section .course-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.home-courses-section .course-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--body-text);
+}
+
+.home-courses-section .course-card--featured .course-features li {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.home-courses-section .course-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--gold-light);
+    color: var(--button-bg);
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.home-courses-section .course-card--featured .course-check {
+    background: rgba(192, 167, 125, 0.25);
+    color: var(--button-bg);
+}
+
+/* ---- Fees ---- */
+.home-courses-section .course-fees-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 18px;
+    padding: 14px 16px;
+    background: var(--gold-light);
+    border-radius: 12px;
+}
+
+.home-courses-section .course-card--featured .course-fees-block {
+    background: rgba(192, 167, 125, 0.15);
+}
+
+.home-courses-section .course-fees-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--body-text);
+}
+
+.home-courses-section .course-card--featured .course-fees-label {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.home-courses-section .course-fees {
+    font-family: 'Figtree', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--heading-color);
+    line-height: 1.1;
+}
+
+.home-courses-section .course-card--featured .course-fees {
+    color: var(--button-bg);
+}
+
+.home-courses-section .course-fees-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.home-courses-section .course-fees-gst {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--body-text);
+    opacity: 0.8;
+}
+
+.home-courses-section .course-card--featured .course-fees-gst {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ---- Enroll Button ---- */
+.home-courses-section .course-enroll-btn {
+    width: 100%;
+    padding: 13px 20px;
+    font-family: 'Figtree', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    border: 2px solid var(--button-bg);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--heading-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.course-enroll-btn--light {
+    color: #fff !important;
+}
+
+.home-courses-section.course-enroll-btn:hover {
+    background: var(--button-bg);
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(192, 167, 125, 0.35);
+}
+
+.home-courses-section.course-enroll-btn--light {
+    background: var(--button-bg);
+    color: #ffffff;
+    border-color: var(--button-bg);
+}
+
+.home-courses-section.course-enroll-btn--light:hover {
+    background: #a8905e;
+    border-color: #a8905e;
+}
+
+/* ---- Footer note ---- */
+.home-courses-section .courses-note {
+    text-align: center;
+    margin-top: 36px;
+    font-size: 16px;
+    color: var(--body-text);
+}
+
+.home-courses-section .courses-note a {
+    color: var(--heading-color);
+    font-weight: 700;
+    border-bottom: 2px solid var(--button-bg);
+    padding-bottom: 1px;
+    transition: color 0.3s;
+}
+
+.home-courses-section.courses-note a:hover {
+    color: var(--button-bg);
+}

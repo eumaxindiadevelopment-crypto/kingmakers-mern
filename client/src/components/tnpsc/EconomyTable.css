@@ -1,0 +1,51 @@
+.table-wrapper {
+    overflow-x: auto;
+    margin: 40px 0;
+}
+
+.economy-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-size: 16px;
+}
+
+.economy-table th {
+    background: #f4f6f9;
+    font-weight: 600;
+    text-align: left;
+    padding: 14px;
+    border: 1px solid #ddd;
+}
+
+.economy-table td {
+    padding: 14px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.section-cell {
+    font-weight: 600;
+    background: #fafafa;
+    width: 220px;
+}
+
+.topic-cell {
+    font-weight: 500;
+    width: 220px;
+}
+
+.subtopic-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.subtopic-list li {
+    margin-bottom: 6px;
+}
+
+/* hover effect */
+
+.economy-table tbody tr:hover {
+    background: #f9fbff;
+}

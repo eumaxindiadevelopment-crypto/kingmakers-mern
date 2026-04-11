@@ -1,0 +1,386 @@
+/* ============================
+   OUR PRIDE OUR MENTORS
+   ============================ */
+
+.pride-section {
+    overflow: hidden;
+}
+
+/* ---- Dark header band ---- */
+.pride-header-band {
+    background: linear-gradient(135deg, var(--heading-color) 0%, #073d66 100%);
+    padding: 70px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dot texture */
+.pride-header-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(192, 167, 125, 0.18) 1px, transparent 1px);
+    background-size: 26px 26px;
+    pointer-events: none;
+}
+
+/* Large faint quote mark decoration */
+.pride-header-band::after {
+    content: '"';
+    position: absolute;
+    bottom: -30px;
+    right: 5%;
+    font-family: 'Figtree', sans-serif;
+    font-size: 260px;
+    font-weight: 900;
+    color: rgba(192, 167, 125, 0.07);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.pride-badge {
+    display: inline-block;
+    padding: 5px 16px;
+    background: rgba(192, 167, 125, 0.18);
+    color: var(--button-bg);
+    font-family: 'Figtree', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: 1px solid rgba(192, 167, 125, 0.35);
+    margin-bottom: 18px;
+}
+
+.pride-header-band h2 {
+    color: #ffffff;
+    font-size: 38px;
+    margin-bottom: 14px;
+    line-height: 1.2;
+    position: relative;
+}
+
+.pride-header-band p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 17px;
+    max-width: 520px;
+    margin: 0 auto 36px;
+    line-height: 1.75;
+    position: relative;
+}
+
+/* Stats strip */
+.pride-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50px;
+    padding: 16px 36px;
+    backdrop-filter: blur(4px);
+    position: relative;
+}
+
+.pride-stat {
+    text-align: center;
+    padding: 0 24px;
+}
+
+.pride-stat-num {
+    display: block;
+    font-family: 'Figtree', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--button-bg);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.pride-stat-label {
+    display: block;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.pride-stat-div {
+    width: 1px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+}
+
+/* ---- Carousel panel ---- */
+.pride-carousel-section {
+    background: #f8f5ef;
+    padding: 0 0 72px;
+}
+
+.pride-carousel-section .container {
+    transform: translateY(-52px);
+}
+
+/* ---- Carousel layout ---- */
+.pride-carousel-outer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
+
+/* ---- Viewport ---- */
+.pride-carousel-viewport {
+    overflow: hidden;
+    flex: 1;
+    border-radius: 20px;
+}
+
+/* ---- Track ---- */
+.pride-carousel-track {
+    display: flex;
+    gap: 0;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* ---- Slide (Handles gaps) ---- */
+.pride-slide {
+    padding: 0 12px;
+    display: flex;
+}
+
+/* ---- Card ---- */
+.pride-card {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(4, 48, 83, 0.1);
+    border: 1px solid rgba(192, 167, 125, 0.15);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.pride-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 52px rgba(4, 48, 83, 0.15);
+    border-color: rgba(192, 167, 125, 0.45);
+}
+
+/* ---- Service badge ---- */
+.pride-service-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-family: 'Figtree', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    z-index: 2;
+    background: var(--button-bg); /* Unified premium gold color */
+    color: #ffffff;
+}
+
+/* ---- Photo ---- */
+.pride-card-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--gold-light);
+}
+
+.pride-photo {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.pride-card:hover .pride-photo {
+    transform: scale(1.05);
+}
+
+/* ---- Card info ---- */
+.pride-card-info {
+    padding: 14px 18px 20px;
+    border-top: 3px solid var(--gold-light);
+    transition: border-color 0.3s;
+    text-align: center;
+}
+
+.pride-card:hover .pride-card-info {
+    border-color: var(--button-bg);
+}
+
+.pride-card-info h4 {
+    font-family: 'Figtree', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 3px;
+}
+
+.pride-card-service {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--button-bg);
+    display: block;
+}
+
+/* ---- Arrows ---- */
+.pride-arrow {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    background: #ffffff;
+    color: var(--heading-color);
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(4, 48, 83, 0.12);
+    transition: all 0.3s ease;
+    padding: 0;
+    padding-bottom: 2px;
+}
+
+.pride-arrow:hover:not(:disabled) {
+    background: var(--heading-color);
+    border-color: var(--heading-color);
+    color: #ffffff;
+    transform: scale(1.08);
+}
+
+.pride-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* ---- Dots ---- */
+.pride-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 28px;
+}
+
+.pride-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(4, 48, 83, 0.2);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s ease, width 0.3s ease;
+}
+
+.pride-dot--active {
+    background: var(--button-bg);
+    width: 26px;
+    border-radius: 4px;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 1024px) {
+    .pride-header-band h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pride-header-band {
+        padding: 50px 0 80px;
+    }
+
+    .pride-header-band h2 {
+        font-size: 26px;
+    }
+
+    .pride-stats {
+        flex-wrap: wrap;
+        gap: 16px;
+        border-radius: 16px;
+        padding: 16px 20px;
+    }
+
+    .pride-stat-div {
+        display: none;
+    }
+
+    .pride-stat {
+        padding: 0 12px;
+    }
+
+    .pride-carousel-section .container {
+        transform: translateY(-36px);
+    }
+
+    .pride-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pride-header-band h2 {
+        font-size: 22px;
+    }
+
+    .pride-carousel-outer {
+        gap: 0;
+    }
+
+    .pride-arrow {
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(4, 48, 83, 0.2);
+        top: 35%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .pride-arrow--prev {
+        left: 5px;
+    }
+
+    .pride-arrow--next {
+        right: 5px;
+    }
+
+    .pride-slide {
+        padding: 0 15px;
+    }
+
+    .pride-card-info h4 {
+        font-size: 16px;
+    }
+
+    .pride-card-service {
+        font-size: 12px;
+    }
+}

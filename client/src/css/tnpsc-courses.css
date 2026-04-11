@@ -1,0 +1,1473 @@
+/* ============================================
+   TNPSC COURSES PAGE STYLES
+   ============================================ */
+
+.tnpsc-page {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.tnpsc-page .tnpsc-hero {
+  background: linear-gradient(135deg, #043053 0%, #0a5a8f 55%, #1a7ab3 100%);
+  padding: 120px 0 100px;
+  position: relative;
+  overflow: hidden;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+}
+
+.tnpsc-page .hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.tnpsc-page .tnpsc-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: rgba(192, 167, 125, 0.07);
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
+}
+
+.tnpsc-page .tnpsc-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.tnpsc-page .tnpsc-hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease-out;
+  max-width: 800px;
+}
+
+.tnpsc-page .tnpsc-hero-form {
+  flex: 0 0 420px;
+  z-index: 2;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tnpsc-page .hero-badge {
+  display: inline-block;
+  background: rgba(192, 167, 125, 0.2);
+  border: 1px solid rgba(192, 167, 125, 0.5);
+  color: #c0a77d;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.tnpsc-page .tnpsc-text {
+  padding-right: 40px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.tnpsc-page .tnpsc-text h2 {
+  font-size: 3.2rem;
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tnpsc-page .tnpsc-text p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.tnpsc-page .reg-form-container {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Quick Registration Section - Removed as it's now in Hero */
+
+/* Quick Registration Section */
+.tnpsc-quick-reg {
+  background: #ffffff;
+  padding: 60px 0;
+  margin-top: -60px;
+  position: relative;
+  z-index: 5;
+}
+
+.tnpsc-quick-reg .reg-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(4, 48, 83, 0.12);
+  border: 1px solid rgba(192, 167, 125, 0.15);
+}
+
+.tnpsc-quick-reg .reg-text {
+  flex: 1;
+}
+
+.tnpsc-quick-reg .reg-text h2 {
+  font-size: 2.2rem;
+  color: #043053;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.tnpsc-quick-reg .reg-text p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.tnpsc-quick-reg .reg-features {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tnpsc-quick-reg .reg-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0a5a8f;
+}
+
+.tnpsc-quick-reg .feat-icon {
+  font-size: 1.4rem;
+}
+
+.tnpsc-quick-reg .reg-form-container {
+  flex: 0 0 450px;
+}
+
+@media (max-width: 992px) {
+  .tnpsc-page .tnpsc-hero {
+    padding: 80px 0;
+    min-height: auto;
+  }
+
+  .tnpsc-page .tnpsc-text {
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .tnpsc-page .tnpsc-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .tnpsc-page .tnpsc-text p {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================
+   SHARED SECTION HEAD
+   ============================================ */
+.container-tnpsc {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.tnpsc-page .section-head {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tnpsc-page .section-tag {
+  display: inline-block;
+  background: rgba(10, 90, 143, 0.1);
+  color: #0a5a8f;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  border: 1px solid rgba(10, 90, 143, 0.2);
+}
+
+.tnpsc-page .section-head h2 {
+  font-size: 2.3rem;
+  color: #043053;
+  font-weight: 800;
+  margin: 0 0 14px 0;
+  position: relative;
+  padding-bottom: 18px;
+}
+
+.tnpsc-intro .section-head h2 {
+  color: #043053;
+}
+
+.tnpsc-intro .section-head .section-subtitle {
+  color: #000;
+}
+
+.tnpsc-page .section-head h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0a5a8f, #c0a77d);
+  border-radius: 2px;
+}
+
+.tnpsc-page .section-subtitle {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ============================================
+   WHY CHOOSE US SECTION
+   ============================================ */
+.tnpsc-page .tnpsc-intro {
+  padding: 100px 20px;
+  background: #f8faff;
+  /* background: linear-gradient(135deg, #043053 0%, #0a5a8f 55%, #1a7ab3 100%); */
+  background-image: radial-gradient(#0a5a8f08 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+  border-top: 1px solid rgba(10, 90, 143, 0.05);
+  border-bottom: 1px solid rgba(10, 90, 143, 0.05);
+  position: relative;
+}
+
+.tnpsc-page .intro-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.tnpsc-page .intro-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease;
+  border-top: 4px solid #0a5a8f;
+  position: relative;
+  overflow: hidden;
+}
+
+.tnpsc-page .intro-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, transparent, rgba(10, 90, 143, 0.04));
+  border-radius: 50% 0 0 0;
+}
+
+.tnpsc-page .intro-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  border-top-color: #c0a77d;
+}
+
+.tnpsc-page .intro-icon-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+.tnpsc-page .intro-icon {
+  font-size: 2.8rem;
+  display: block;
+}
+
+.tnpsc-page .intro-number {
+  position: absolute;
+  top: -6px;
+  right: -12px;
+  background: #0a5a8f;
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tnpsc-page .intro-card h3 {
+  font-size: 1.1rem;
+  color: #043053;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.tnpsc-page .intro-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ============================================
+   COURSES SECTION
+   ============================================ */
+.tnpsc-page .courses-section {
+  padding: 90px 20px;
+  background: #ffffff;
+}
+
+.tnpsc-page .courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tnpsc-page .course-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.09);
+  transition: all 0.3s ease;
+  border-left: 5px solid #0a5a8f;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.tnpsc-page .course-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.15);
+  border-left-color: #c0a77d;
+}
+
+.tnpsc-page .course-header {
+  background: linear-gradient(135deg, #0a5a8f 0%, #1a7ab3 100%);
+  padding: 22px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tnpsc-page .course-icon {
+  font-size: 2.2rem;
+}
+
+.tnpsc-page .course-batch {
+  background: #c0a77d;
+  color: white;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.tnpsc-page .course-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tnpsc-page .course-body h3 {
+  font-size: 1.2rem;
+  color: #043053;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.tnpsc-page .course-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 15px 0;
+  line-height: 1.6;
+}
+
+.tnpsc-page .course-details {
+  margin-bottom: 15px;
+  /* border-bottom: 1px solid #eee; */
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.course-header h3 {
+  color: #fff;
+}
+
+.tnpsc-page .detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+}
+
+.tnpsc-page .detail-label {
+  color: #888;
+  font-weight: 500;
+}
+
+.tnpsc-page .detail-value {
+  color: #0a5a8f;
+  font-weight: 600;
+}
+
+.tnpsc-page .price {
+  font-size: 1.2rem;
+  color: #c0a77d;
+  font-weight: 700;
+}
+
+.tnpsc-page .price small {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #888;
+}
+
+.tnpsc-page .highlights {
+  flex-grow: 1;
+  margin-bottom: 16px;
+}
+
+.tnpsc-page .highlights-title {
+  font-size: 0.85rem;
+  color: #333;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.tnpsc-page .highlights ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tnpsc-page .highlights li {
+  font-size: 0.82rem;
+  color: #0a5a8f;
+  background: rgba(10, 90, 143, 0.08);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.tnpsc-page .course-actions {
+  display: flex;
+  gap: 10px;
+  padding-top: 5px;
+  border-top: 1px solid #eee;
+  padding-top: 14px;
+}
+
+.tnpsc-page .btn-schedule,
+.tnpsc-page .btn-enroll {
+  flex: 1;
+  padding: 11px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tnpsc-page .btn-schedule {
+  background: transparent;
+  color: #0a5a8f;
+  border: 2px solid #0a5a8f;
+}
+
+.tnpsc-page .btn-schedule:hover {
+  background: #0a5a8f;
+  color: white;
+}
+
+.tnpsc-page .btn-enroll {
+  background: linear-gradient(135deg, #0a5a8f, #1a7ab3);
+  color: white;
+}
+
+.tnpsc-page .btn-enroll:hover {
+  background: linear-gradient(135deg, #043053, #0a5a8f);
+  transform: scale(1.02);
+}
+
+/* ============================================
+   UPCOMING BATCHES SECTION
+   ============================================ */
+.tnpsc-page .batches-section {
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+}
+
+.tnpsc-page .batches-table-wrap {
+  overflow-x: auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.09);
+}
+
+.tnpsc-page .batches-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  min-width: 700px;
+}
+
+.tnpsc-page .batches-table thead tr {
+  background: linear-gradient(135deg, #043053, #0a5a8f);
+  color: white;
+}
+
+.tnpsc-page .batches-table th {
+  padding: 16px 18px;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tnpsc-page .batches-table td {
+  padding: 16px 18px;
+  font-size: 0.9rem;
+  color: #444;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+
+.tnpsc-page .batches-table tbody tr:hover {
+  background: rgba(10, 90, 143, 0.04);
+}
+
+.tnpsc-page .batches-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tnpsc-page .batch-course {
+  font-weight: 600;
+  color: #043053;
+}
+
+.tnpsc-page .batch-date-badge {
+  background: rgba(10, 90, 143, 0.1);
+  color: #0a5a8f;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tnpsc-page .seats-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.tnpsc-page .seats-limited {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+}
+
+.tnpsc-page .seats-open {
+  background: rgba(22, 163, 74, 0.1);
+  color: #16a34a;
+}
+
+.tnpsc-page .btn-register {
+  background: linear-gradient(135deg, #c0a77d, #d4b895);
+  color: #043053;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tnpsc-page .btn-register:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(192, 167, 125, 0.4);
+}
+
+/* ============================================
+   ELIGIBILITY SECTION
+   ============================================ */
+.tnpsc-page .eligibility-section {
+  padding: 90px 20px;
+  background: #ffffff;
+}
+
+.tnpsc-page .eligibility-table-wrap {
+  overflow-x: auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.09);
+}
+
+.tnpsc-page .eligibility-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  min-width: 850px;
+}
+
+.tnpsc-page .eligibility-table thead tr {
+  background: linear-gradient(135deg, #043053, #0a5a8f);
+  color: white;
+}
+
+.tnpsc-page .eligibility-table th {
+  padding: 16px 18px;
+  text-align: left;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tnpsc-page .eligibility-table td {
+  padding: 16px 18px;
+  font-size: 18px;
+  color: #444;
+  border-bottom: 1px solid #d1cccc;
+  border-right: 1px solid #d1cccc;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.tnpsc-page .eligibility-table tbody tr:nth-child(even) {
+  background: #fafbfd;
+}
+
+.tnpsc-page .eligibility-table tbody tr:hover {
+  background: rgba(10, 90, 143, 0.04);
+}
+
+.tnpsc-page .eligibility-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tnpsc-page .exam-name {
+  font-weight: 700;
+  color: #043053;
+}
+
+/* ============================================
+   SYLLABUS SECTION
+   ============================================ */
+.tnpsc-page .syllabus-section {
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+}
+
+.tnpsc-page .syllabus-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.tnpsc-page .tab-btn {
+  padding: 11px 30px;
+  border: 2px solid #0a5a8f;
+  background: transparent;
+  color: #0a5a8f;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tnpsc-page .tab-btn:hover {
+  background: #0a5a8f;
+  color: white;
+}
+
+.tnpsc-page .tab-btn.tab-active {
+  background: linear-gradient(135deg, #043053, #0a5a8f);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(10, 90, 143, 0.3);
+}
+
+.tnpsc-page .tab-content {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.tnpsc-page .syllabus-box-wrap {
+  background: white;
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+}
+
+.tnpsc-page .syllabus-box-title {
+  font-size: 1.2rem;
+  color: #043053;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.tnpsc-page .syllabus-box-meta {
+  font-size: 0.85rem;
+  color: #0a5a8f;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  background: rgba(10, 90, 143, 0.08);
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+.tnpsc-page .syllabus-scroll-box {
+  max-height: 380px;
+  overflow-y: auto;
+  border: 1px solid #e8edf3;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.tnpsc-page .syllabus-scroll-box::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tnpsc-page .syllabus-scroll-box::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 5px;
+}
+
+.tnpsc-page .syllabus-scroll-box::-webkit-scrollbar-thumb {
+  background: #0a5a8f;
+  border-radius: 5px;
+}
+
+.tnpsc-page .syllabus-part {
+  margin-bottom: 20px;
+}
+
+.tnpsc-page .syllabus-part h4 {
+  font-size: 0.9rem;
+  color: #043053;
+  font-weight: 700;
+  background: linear-gradient(135deg, #043053, #0a5a8f);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin: 0 0 12px 0;
+}
+
+.tnpsc-page .syllabus-topics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tnpsc-page .syllabus-topic-item {
+  background: #fafbfd;
+  border: 1px solid #e8edf3;
+  border-left: 4px solid #c0a77d;
+  border-radius: 8px;
+  padding: 12px 15px;
+  transition: all 0.2s ease;
+}
+
+.tnpsc-page .syllabus-topic-item:hover {
+  border-left-color: #0a5a8f;
+  background: rgba(10, 90, 143, 0.03);
+}
+
+.tnpsc-page .topic-name {
+  font-size: 18px;
+  color: #043053;
+  font-weight: 700;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tnpsc-page .topic-q-badge {
+  background: rgba(192, 167, 125, 0.2);
+  color: #7a6040;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.tnpsc-page .topic-detail {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.tnpsc-page .interview-note {
+  background: linear-gradient(135deg, #043053, #0a5a8f);
+  color: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  margin-top: 25px;
+}
+
+.tnpsc-page .interview-label {
+  display: inline-block;
+  background: #c0a77d;
+  color: #043053;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.tnpsc-page .interview-note p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.7;
+}
+
+.tnpsc-page .group2-note {
+  background: rgba(10, 90, 143, 0.07);
+  border-left: 4px solid #0a5a8f;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+.tnpsc-page .faq-section {
+  padding: 90px 20px;
+  background: #ffffff;
+}
+
+.tnpsc-page .faq-list {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tnpsc-page .faq-item {
+  background: white;
+  border: 1px solid #e8edf3;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.tnpsc-page .faq-item.faq-open {
+  border-color: #0a5a8f;
+  box-shadow: 0 4px 20px rgba(10, 90, 143, 0.12);
+}
+
+.tnpsc-page .faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 24px;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #043053 !important;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: background 0.2s ease;
+}
+
+.tnpsc-page .faq-item.faq-open .faq-question {
+  background: linear-gradient(135deg, #043053, #0a5a8f);
+  color: white !important;
+}
+
+.tnpsc-page .faq-icon {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: rgba(10, 90, 143, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.tnpsc-page .faq-item.faq-open .faq-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.tnpsc-page .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.tnpsc-page .faq-item.faq-open .faq-answer {
+  max-height: 300px;
+}
+
+.tnpsc-page .faq-answer p {
+  padding: 18px 24px;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.8;
+  border-top: 1px solid #eef2f7;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.tnpsc-page .tnpsc-cta {
+  background: linear-gradient(135deg, #043053 0%, #0a5a8f 50%, #1a7ab3 100%);
+  padding: 90px 40px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.tnpsc-page .tnpsc-cta::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: rgba(192, 167, 125, 0.08);
+  border-radius: 50%;
+}
+
+.tnpsc-page .tnpsc-cta::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+}
+
+.tnpsc-page .cta-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.tnpsc-page .tnpsc-cta h2 {
+  font-size: 2.3rem;
+  margin: 0 0 12px 0;
+  font-weight: 800;
+  color: white;
+}
+
+.tnpsc-page .tnpsc-cta p {
+  font-size: 1.1rem;
+  margin: 0 0 35px 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+}
+
+.tnpsc-page .cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tnpsc-page .cta-btn {
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.tnpsc-page .cta-btn.primary {
+  background: #c0a77d;
+  color: #043053;
+}
+
+.tnpsc-page .cta-btn.primary:hover {
+  background: #d4b895;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(192, 167, 125, 0.4);
+}
+
+.tnpsc-page .cta-btn.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.tnpsc-page .cta-btn.secondary:hover {
+  background: white;
+  color: #0a5a8f;
+  border-color: white;
+  transform: translateY(-3px);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1024px) {
+  .tnpsc-page .tnpsc-hero {
+    padding: 100px 20px 80px;
+  }
+
+  .tnpsc-page .hero-wrapper {
+    gap: 30px;
+  }
+
+  .tnpsc-page .tnpsc-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .tnpsc-page .tnpsc-hero-form {
+    flex: 0 0 380px;
+  }
+
+  .tnpsc-page .intro-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .tnpsc-page .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tnpsc-page .section-head h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tnpsc-page .tnpsc-hero {
+    padding: 100px 20px 60px;
+    min-height: auto;
+  }
+
+  .tnpsc-page .hero-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .tnpsc-page .tnpsc-hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .tnpsc-page .tnpsc-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .tnpsc-page .hero-stats {
+    gap: 25px;
+  }
+
+  .tnpsc-page .stat-num {
+    font-size: 1.5rem;
+  }
+
+  .tnpsc-page .intro-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .tnpsc-page .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tnpsc-page .section-head h2 {
+    font-size: 1.7rem;
+  }
+
+  .tnpsc-page .tnpsc-intro,
+  .tnpsc-page .courses-section,
+  .tnpsc-page .batches-section,
+  .tnpsc-page .eligibility-section,
+  .tnpsc-page .syllabus-section,
+  .tnpsc-page .faq-section,
+  .tnpsc-page .tnpsc-cta {
+    padding: 60px 20px;
+  }
+
+  .tnpsc-page .tnpsc-cta h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tnpsc-page .tnpsc-hero {
+    padding: 55px 15px 40px;
+    min-height: 350px;
+  }
+
+  .tnpsc-page .tnpsc-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .tnpsc-page .hero-badge {
+    font-size: 0.75rem;
+  }
+
+  .tnpsc-page .hero-stats {
+    gap: 18px;
+  }
+
+  .tnpsc-page .stat-num {
+    font-size: 1.3rem;
+  }
+
+  .tnpsc-page .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .tnpsc-page .section-head h2 {
+    font-size: 1.5rem;
+  }
+
+  .tnpsc-page .syllabus-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tnpsc-page .tab-btn {
+    text-align: center;
+  }
+
+  .tnpsc-page .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tnpsc-page .cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tnpsc-page .faq-question {
+    font-size: 0.88rem;
+    padding: 16px 18px;
+  }
+
+  .tnpsc-page .tnpsc-cta {
+    padding: 50px 15px;
+  }
+
+  .tnpsc-page .tnpsc-cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .tnpsc-page .course-actions {
+    flex-direction: column;
+  }
+}
+
+/* ============================================
+   SYLLABUS SUB-TABLE (Indian Economy etc.)
+   ============================================ */
+
+.tnpsc-page .topic-subtable-wrap {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tnpsc-page .subtable-group {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e0e9f4;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(4, 48, 83, 0.06);
+}
+
+.tnpsc-page .subtable-section-label {
+  background: linear-gradient(135deg, #043053, #0a5a8f);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  padding: 9px 16px;
+  text-transform: uppercase;
+}
+
+.tnpsc-page .subtable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tnpsc-page .subtable thead tr {
+  background: rgba(10, 90, 143, 0.07);
+}
+
+.tnpsc-page .subtable th {
+  padding: 9px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #043053;
+  text-align: left;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #dce8f3;
+}
+
+.tnpsc-page .subtable th:first-child {
+  width: 32%;
+}
+
+.tnpsc-page .subtable td {
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: #444;
+  vertical-align: top;
+  border-bottom: 1px solid #f0f4f8;
+  line-height: 1.5;
+}
+
+.tnpsc-page .subtable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tnpsc-page .subtable tbody tr:nth-child(even) {
+  background: #fafcff;
+}
+
+.tnpsc-page .subtable tbody tr:hover {
+  background: rgba(10, 90, 143, 0.04);
+}
+
+.tnpsc-page .subtable-topic {
+  font-weight: 700 !important;
+  color: #043053 !important;
+}
+
+.tnpsc-page .subtable-subtopics {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tnpsc-page .subtable-subtopics li {
+  background: rgba(192, 167, 125, 0.15);
+  color: #5a3e1e;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(192, 167, 125, 0.3);
+}
+
+@media (max-width: 600px) {
+  .tnpsc-page .subtable th:first-child {
+    width: 40%;
+  }
+
+  .tnpsc-page .subtable th,
+  .tnpsc-page .subtable td {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .tnpsc-page .subtable-subtopics {
+    flex-direction: column;
+    gap: 3px;
+  }
+}
+
+/* ============================================
+   ECO CARD GRID (Indian Economy Premium Design)
+   ============================================ */
+
+.tnpsc-page .eco-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.tnpsc-page .eco-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(4, 48, 83, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+
+.tnpsc-page .eco-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(4, 48, 83, 0.16);
+}
+
+.tnpsc-page .eco-card-header {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tnpsc-page .eco-card-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tnpsc-page .eco-card-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff !important;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+}
+
+.tnpsc-page .eco-card-body {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tnpsc-page .eco-topic-row {
+  padding: 8px 10px;
+  background: #f7fafd;
+  border-radius: 8px;
+  border-left: 3px solid #c0a77d;
+  transition: background 0.2s;
+}
+
+.tnpsc-page .eco-topic-row:hover {
+  background: #eef4fb;
+  border-left-color: #0a5a8f;
+}
+
+.tnpsc-page .eco-topic-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #043053 !important;
+  margin-bottom: 6px;
+}
+
+.tnpsc-page .eco-subtopic-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tnpsc-page .eco-pill {
+  background: rgba(10, 90, 143, 0.08);
+  color: #0a5a8f !important;
+  border: 1px solid rgba(10, 90, 143, 0.18);
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .tnpsc-page .eco-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .tnpsc-page .eco-card-grid {
+    grid-template-columns: 1fr;
+  }
+}

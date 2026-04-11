@@ -1,0 +1,15 @@
+{
+    "name": "kingmakers-ias-academy",
+    "version": "1.0.0",
+    "description": "Premium IAS Academy Website with MERN Stack",
+    "main": "index.js",
+    "scripts": {
+        "client": "npm run dev --prefix client",
+        "server": "npm run dev --prefix server",
+        "dev:all": "concurrently \"npm run server\" \"npm run client\"",
+        "install:all": "npm install && npm install --prefix client && npm install --prefix server"
+    },
+    "dependencies": {
+        "concurrently": "^8.2.1"
+    }
+}
