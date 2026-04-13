@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useSearchParams } from 'react-router-dom';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import API from '../../apiConfig';
 
 const EMPTY_FORM = {
   category: 'UPSC',

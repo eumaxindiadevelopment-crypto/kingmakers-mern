@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './PopupNewsModal.css';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import API from '../../apiConfig';
 
 const PopupNewsModal = ({ isOpen, onClose }) => {
   const [upscNews, setUpscNews] = useState([]);

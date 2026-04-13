@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import API from '../../apiConfig';
 
 const emptyForm = { name: '', rank: '', year: new Date().getFullYear(), exam: 'UPSC', photo: '', description: '', isVisible: true };
 

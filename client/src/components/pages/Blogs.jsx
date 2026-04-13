@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import EnquiryForm from '../forms/EnquiryForm';
 import './blog.css';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import API from '../../apiConfig';
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);

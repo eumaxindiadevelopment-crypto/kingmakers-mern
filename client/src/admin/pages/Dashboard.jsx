@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import API from '../../apiConfig';
 
 const StatCard = ({ icon, label, count, sub, color, to }) => (
   <Link to={to || '#'} className={`dash-stat-card dash-stat-${color}`} style={{ textDecoration: 'none' }}>

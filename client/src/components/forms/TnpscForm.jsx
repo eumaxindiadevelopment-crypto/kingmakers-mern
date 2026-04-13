@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './TnpscForm.css';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import API from '../../apiConfig';
 
 const TnpscForm = () => {
   const [formData, setFormData] = useState({

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './EnquiryForm.css';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import API from '../../apiConfig';
 
 const EnquiryForm = () => {
   const [formData, setFormData] = useState({

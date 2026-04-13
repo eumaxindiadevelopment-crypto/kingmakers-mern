@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './hero.css';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import API from '../../apiConfig';
 
 // Fallback images when DB has no sliders
 // const FALLBACK = [

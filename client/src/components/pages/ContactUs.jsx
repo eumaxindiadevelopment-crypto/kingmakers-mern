@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../css/contact.css';
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import API from '../../apiConfig';
 
 const branches = [
   { name: 'Anna Nagar (HO)', address: 'Sri Sai Tower, 2nd & 3rd Floor, AI-101, 4th Avenue, Shanthi Colony, Anna Nagar, Chennai - 600040', phone: '+91 94442 27273' },

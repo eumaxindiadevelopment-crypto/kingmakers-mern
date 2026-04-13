@@ -2,7 +2,7 @@ import { useState, useEffect, Fragment } from 'react';
 import '../../css/upsc-courses.css';
 import UpscForm from '../forms/UpscForm';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import API from '../../apiConfig';
 
 const UPSC = () => {
   const [dbCourses, setDbCourses] = useState([]);
