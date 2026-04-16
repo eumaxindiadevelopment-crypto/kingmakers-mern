@@ -7,9 +7,9 @@ const connectDB = async () => {
         console.log('⏳ Connecting to MySQL...');
         pool = mysql.createPool({
             host: process.env.MYSQL_HOST || 'localhost',
-            user: process.env.MYSQL_USER || 'root',
-            password: process.env.MYSQL_PASS || '',
-            database: process.env.MYSQL_DB || 'kingmakersiasacademy',
+            user: process.env.MYSQL_USER || 'u502361149_kings',
+            password: process.env.MYSQL_PASS || 'rN4e1LXl+U1',
+            database: process.env.MYSQL_DB || 'u502361149_kingmakersiass',
             waitForConnections: true,
             connectionLimit: 10,
             queueLimit: 0,
