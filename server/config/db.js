@@ -22,7 +22,7 @@ const connectDB = async () => {
         console.log(`✅ MySQL Connected: ${process.env.MYSQL_HOST || 'localhost'}/${process.env.MYSQL_DB || 'kingmakersiasacademy'}`);
         conn.release();
     } catch (error) {
-        console.error(`❌ MySQL Connection Error: ${error.message}`);
+        console.error(`❌ MySQL Connection Error [${error.code}]: ${error.message}`);
     }
 };
 
