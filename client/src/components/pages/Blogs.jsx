@@ -30,8 +30,8 @@ const Blogs = () => {
       <section className="about-hero">
         <div className="about-hero-content">
           <h1>Our Latest Blogs</h1>
-          <p>Mentoring Future Bureaucrats</p>
-          <div className="hero-accent"></div>
+          {/* <p>Mentoring Future Bureaucrats</p>
+          <div className="hero-accent"></div> */}
         </div>
       </section>
 

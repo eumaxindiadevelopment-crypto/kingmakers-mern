@@ -80,31 +80,95 @@ const HeaderMiddle = () => {
                         </div>
                         <div className="branch-label">Delhi</div>
                     </div>
+                     <div className="branch-divider">|</div>
+                    <div className="branch-item">
+                        <div className="branch-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 85" fill="none" stroke="currentColor" strokeWidth="1.2">
+                                <title>Trichy Building</title>
+                                {/* Trichy Building Silhouette */}
+                                <path d="M30 75 V30 H70 V75" /> {/* Main Structure */}
+                                <path d="M35 40 H45 M55 40 H65" /> {/* Upper Windows */}
+                                <path d="M35 55 H45 M55 55 H65" /> {/* Lower Windows */}
+                                <path d="M45 75 V60 H55 V75" /> {/* Door */}
+                                <path d="M25 30 H75" /> {/* Roof line */}
+                                <path d="M15 77 H85" />
+                            </svg>
+                        </div>
+                        <div className="branch-label">Trichy</div>
+                    </div>
+
+                     <div className="branch-divider">|</div>
+                    <div className="branch-item">
+                        <div className="branch-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 85" fill="none" stroke="currentColor" strokeWidth="1.2">
+                                <title>Clock Tower, Coimbatore</title>
+                                {/* Coimbatore Clock Tower Silhouette */}
+                                <rect x="42" y="20" width="16" height="55" /> {/* Main Tower */}
+                                <circle cx="50" cy="30" r="4" strokeWidth="0.8" /> {/* Clock Face */}
+                                <path d="M42 20 L50 10 L58 20 Z" /> {/* Pyramid Roof */}
+                                <path d="M42 25 H58" />
+                                <rect x="38" y="70" width="24" height="5" /> {/* Base */}
+                                <path d="M15 77 H85" />
+                            </svg>
+                        </div>
+                        <div className="branch-label">Coimbatore</div>
+                    </div>
+
+                     <div className="branch-divider">|</div>
+                    <div className="branch-item">
+                        <div className="branch-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 85" fill="none" stroke="currentColor" strokeWidth="1.2">
+                                {/* Madurai Meenakshi Gopuram Style */}
+                                <path d="M30 75 H70 V65 H30 Z" />
+                                <path d="M35 65 H65 V55 H35 Z" />
+                                <path d="M40 55 H60 V45 H40 Z" />
+                                <path d="M45 45 H55 V35 H45 Z" />
+                                <path d="M48 35 L50 25 L52 35 Z" />
+                                <path d="M15 77 H85" />
+                            </svg>
+                        </div>
+                        <div className="branch-label">Madurai</div>
+                    </div>
+
+
+                     <div className="branch-divider">|</div>
+                    <div className="branch-item">
+                        <div className="branch-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 85" fill="none" stroke="currentColor" strokeWidth="1.2">
+                                <title>Aayi Mandapam, Pondicherry</title>
+                                {/* Aayi Mandapam Greco-Roman Monument Silhouette */}
+                                <rect x="30" y="70" width="40" height="5" /> {/* Base */}
+                                <rect x="32" y="30" width="4" height="40" /> {/* Pillar 1 */}
+                                <rect x="42" y="30" width="4" height="40" /> {/* Pillar 2 */}
+                                <rect x="54" y="30" width="4" height="40" /> {/* Pillar 3 */}
+                                <rect x="64" y="30" width="4" height="40" /> {/* Pillar 4 */}
+                                <rect x="30" y="25" width="40" height="5" /> {/* Lintel */}
+                                <path d="M30 25 L50 10 L70 25 Z" /> {/* Pediment/Triangle Roof */}
+                                <path d="M42 70 Q50 50 58 70" /> {/* Archway detail */}
+                                <path d="M15 77 H85" />
+                            </svg>
+                        </div>
+                        <div className="branch-label">Puducherry</div>
+                    </div>
+
+                      {/* <div className="branch-divider">|</div>
+                    <div className="branch-item">
+                        <div className="branch-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 85" fill="none" stroke="currentColor" strokeWidth="1.2">
+                             
+                                <path d="M25 75 H75 L70 60 H30 L25 75 Z" />
+                                <path d="M30 60 L65 30 L35 30 L30 60 Z" />
+                                <path d="M35 30 L50 10 L65 30" />
+                                <circle cx="50" cy="10" r="3" />
+                                <path d="M10 77 H90" />
+                            </svg>
+                        </div>
+                        <div className="branch-label">Thanjavur</div>
+                    </div> */}
+
                 </div>
 
                 {/* Contact & Social Section */}
-                <div className="header-info">
-                    <div className="info-wrapper">
-                        <div className="info-contact">
-                            
-                            <div className="contact-item">
-                                <i className="fa-solid fa-phone"></i>
-                                <a href="tel:+919444227273">+91 94442 27273</a>
-                            </div>
-                            <div className="contact-item">
-                                <i className="fa-solid fa-envelope"></i>
-                                <a href="mailto:info@kingmakersiasacademy.com">info@kingmakersiasacademy.com</a>
-                            </div>
-                        </div>
-                        <div className="info-social">
-                            <a href="https://www.facebook.com/KingmakersIasAcademy/" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-                            <a href="https://t.me/kingmakersiasacademy" aria-label="Telegram"><i className="fab fa-telegram-plane"></i></a>
-                            <a href="https://www.youtube.com/user/KingmakersIAS" aria-label="YouTube"><i className="fab fa-youtube"></i></a>
-                            <a href="https://www.instagram.com/kingmakers_ias_academy/" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
-                            <a href="https://x.com/kingmakersias?s=11" aria-label="X (Twitter)"><i className="fab fa-x-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     );

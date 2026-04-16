@@ -333,7 +333,7 @@ const TNPSC = () => {
         <section className="batches-section" key={course._id} style={{ padding: '2rem 0 4rem' }}>
           <div className="container-tnpsc">
             <div className="course-batch-heading" style={{ textAlign: 'left', marginBottom: '2.5rem' }}>
-              <h3 style={{ fontSize: '26px', fontWeight: '800', color: '#043053', marginBottom: '10px' }}>{course.title}</h3>
+              <h3 style={{ fontSize: '26px', fontWeight: '800', marginBottom: '10px' }}>{course.title}</h3>
               {/* <p style={{ color: '#0a5a8f', fontWeight: '600', fontSize: '1.1rem' }}>TNPSC Examination Success Batch Schedule</p> */}
             </div>
             

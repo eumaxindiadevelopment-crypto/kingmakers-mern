@@ -1,0 +1,288 @@
+/* ============================
+   PRESIDENTIAL CAROUSEL
+   ============================ */
+
+.presidential-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background texture */
+.presidential-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(var(--button-bg) 0.5px, transparent 0.5px);
+    background-size: 30px 30px;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+.presidential-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.presidential-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    background: rgba(192, 167, 125, 0.1);
+    color: var(--button-bg);
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    margin-bottom: 15px;
+}
+
+.presidential-header h2 {
+    font-size: 42px;
+    color: var(--primary);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.presidential-line {
+    width: 80px;
+    height: 4px;
+    background: var(--button-bg);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* ---- Carousel Layout ---- */
+.presidential-carousel-outer {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+.presidential-viewport {
+    overflow: hidden;
+}
+
+.presidential-track {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.presidential-slide {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.presidential-item {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 60px;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ---- Photo Col ---- */
+.presidential-photo-wrap {
+    position: relative;
+    padding: 15px;
+}
+
+.presidential-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.presidential-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 80%;
+    border: 3px solid var(--button-bg);
+    border-radius: 20px;
+    z-index: 1;
+    opacity: 0.15;
+}
+
+/* ---- Content Col ---- */
+.presidential-content-col {
+    position: relative;
+    padding-top: 20px;
+}
+
+.presidential-quote-icon {
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    font-size: 160px;
+    font-family: serif;
+    color: rgba(192, 167, 125, 0.12);
+    line-height: 1;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.presidential-quotes {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+}
+
+.presidential-para {
+    font-size: 19px;
+    line-height: 1.7;
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-family: var(--font-body);
+}
+
+.presidential-attribution {
+    position: relative;
+    z-index: 1;
+}
+
+.presidential-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0 0 6px;
+    letter-spacing: 0.5px;
+}
+
+.presidential-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--button-bg);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* ---- Navigation ---- */
+.presidential-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    color: var(--primary);
+}
+
+.presidential-nav:hover {
+    background: var(--button-bg);
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.presidential-nav.prev {
+    left: -70px;
+}
+
+.presidential-nav.next {
+    right: -70px;
+}
+
+.presidential-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.presidential-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.presidential-dot.active {
+    background: var(--button-bg);
+    width: 24px;
+    border-radius: 4px;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 1250px) {
+    .presidential-nav.prev {
+        left: 10px;
+    }
+
+    .presidential-nav.next {
+        right: 10px;
+    }
+
+    .presidential-carousel-outer {
+        padding: 0 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .presidential-item {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .presidential-photo-col {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .presidential-quote-icon {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -20px;
+        font-size: 120px;
+    }
+
+    .presidential-header h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .presidential-section {
+        padding: 60px 0;
+    }
+
+    .presidential-para {
+        font-size: 17px;
+    }
+
+    .presidential-nav {
+        display: none;
+    }
+
+    .presidential-carousel-outer {
+        padding: 0;
+    }
+}

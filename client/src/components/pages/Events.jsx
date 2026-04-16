@@ -49,8 +49,8 @@ const Events = () => {
       <section className="events-hero">
         <div className="events-hero-content-new">
           <h1>Events & Workshops</h1>
-          <p>Inspiring Stories & Knowledge Sharing Sessions</p>
-          <div className="hero-underline"></div>
+          {/* <p>Inspiring Stories & Knowledge Sharing Sessions</p>
+          <div className="hero-underline"></div> */}
         </div>
       </section>
 

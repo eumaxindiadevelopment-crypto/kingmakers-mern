@@ -45,7 +45,7 @@
 .header-branches {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .branch-item {
@@ -60,7 +60,7 @@
     width: 45px;
     height: 45px;
     color: #003366;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .branch-icon svg {
@@ -69,7 +69,7 @@
 }
 
 .branch-label {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     color: #003366;
 }

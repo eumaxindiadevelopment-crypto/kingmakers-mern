@@ -9,12 +9,12 @@
    ---------------------------------------------------------- */
 :root {
     /* Brand colours */
-    --primary: #043053;
+    --primary: #022873;
     /* deep navy  */
     --primary-light: #0a4a7a;
     --gold: #c0a77d;
     /* brand gold */
-    --gold-hover: #a8905e;
+    --gold-hover: #91856b;
     --gold-light: #f5f0e8;
 
     /* Neutrals */
@@ -41,6 +41,9 @@
     --radius-lg: 12px;
     --radius-xl: 20px;
     --radius-full: 9999px;
+
+    /* background */
+    --bggradient-color: linear-gradient(90deg, #022873 0%, #0b3fa6 50%, #022873 100%);
 
     /* Transitions */
     --transition: all 0.3s ease;
@@ -166,7 +169,7 @@
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #c9a96e 0%, #b8924a 60%, #a07a38 100%);
+    background: linear-gradient(135deg, #d79e04 0%, #d79e04 60%, #d79e04 100%);
     color: var(--white);
     border-radius: var(--radius-full);
     letter-spacing: 0.6px;

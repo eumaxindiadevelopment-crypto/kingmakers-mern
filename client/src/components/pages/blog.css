@@ -8,7 +8,7 @@
 
 /* --- Hero Section (King Layout) --- */
 .blog-hero-king {
-    background: linear-gradient(135deg, #043053 0%, #0a5a8f 50%, #1a7ab3 100%);
+    background: linear-gradient(90deg, #022873 0%, #0b3fa6 50%, #022873 100%);
     padding: 100px 0 60px;
     position: relative;
     overflow: hidden;
@@ -17,7 +17,7 @@
 
 /* --- About Us Style Hero --- */
 .about-hero {
-    background: linear-gradient(135deg, #043053 0%, #0a5a8f 50%, #1a7ab3 100%);
+    background: linear-gradient(90deg, #022873 0%, #0b3fa6 50%, #022873 100%);
     padding: 100px 20px;
     text-align: center;
     position: relative;
@@ -256,7 +256,7 @@ h2.blog-title {
 .blog-content-king h2,
 .blog-content-king h3 {
     font-family: 'Figtree', sans-serif;
-    color: #1B365D;
+    color: var(--heading-color);
     font-weight: 700;
     /* margin: 3rem 0 1.5rem; */
     line-height: 1.2;

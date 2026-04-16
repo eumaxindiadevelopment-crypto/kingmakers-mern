@@ -804,7 +804,7 @@ const AboutUPSC = () => {
       )}
 
       {/* ── CTA ── */}
-      <section className="au-cta">
+      {/* <section className="au-cta">
         <div className="container-au">
           <h2>Ready to Begin Your IAS Journey?</h2>
           <p>Join KingMakers IAS Academy — where aspirants become civil servants.</p>
@@ -813,7 +813,7 @@ const AboutUPSC = () => {
             <Link to="/contact-us/" className="au-cta-btn secondary"><i className="fa fa-phone"></i> Contact Us</Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
     </div>
   );

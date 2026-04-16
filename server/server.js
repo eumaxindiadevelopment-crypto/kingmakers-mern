@@ -16,7 +16,8 @@ const app = express();
 app.use(cors({
     origin: [
         'http://localhost:5173',
-        'https://kingmakers-mern.vercel.app'
+        // Add your production domain here when deploying to VPS
+        // e.g., 'https://yourdomain.com'
     ],
     credentials: true
 }));

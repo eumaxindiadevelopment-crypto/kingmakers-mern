@@ -9,7 +9,7 @@
 
 /* Hero Section */
 .upsc-hero {
-  background: linear-gradient(135deg, #043053 0%, #0a5a8f 50%, #1a7ab3 100%);
+  background: linear-gradient(90deg, #022873 0%, #0b3fa6 50%, #022873 100%);
   padding: 120px 0 100px;
   position: relative;
   overflow: hidden;
@@ -319,7 +319,7 @@
 
 .upsc-page .upsc-overview h2 {
   font-size: 2.5rem;
-  color: #043053;
+  color: var(--heading-color);
   text-align: center;
   margin-bottom: 30px;
   font-weight: 700;
@@ -381,7 +381,7 @@
 
 .upsc-page .feature-card h3 {
   font-size: 1.2rem;
-  color: #043053;
+  color: var(--heading-color);
   margin-bottom: 12px;
   font-weight: 700;
 }
@@ -402,7 +402,7 @@
 
 .upsc-page .program-structure h2 {
   font-size: 2.5rem;
-  color: #043053;
+  color: var(--heading-color);
   text-align: center;
   margin-bottom: 50px;
   font-weight: 700;
@@ -463,7 +463,7 @@
 
 .upsc-page .phase-card h3 {
   font-size: 1.1rem;
-  color: #043053;
+  color: var(--heading-color);
   margin: 0 0 10px 0;
   font-weight: 700;
 }

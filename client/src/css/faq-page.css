@@ -6,7 +6,7 @@
 
 /* Hero Section */
 .faq-hero {
-  background: linear-gradient(135deg, #043053 0%, #0a5a8f 50%, #1a7ab3 100%);
+  background: linear-gradient(90deg, #022873 0%, #0b3fa6 50%, #022873 100%);
   padding: 100px 20px;
   text-align: center;
   position: relative;
@@ -71,8 +71,15 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-30px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
 }
 
 @keyframes fadeInUp {
@@ -80,6 +87,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -164,7 +172,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 25px 28px;
-  background: linear-gradient(135deg, #043053 0%, #0a5a8f 100%);
+  background: var(--bggradient-color);
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -217,6 +225,7 @@
     opacity: 0;
     max-height: 0;
   }
+
   to {
     opacity: 1;
     max-height: 1000px;
@@ -262,7 +271,7 @@
   text-align: left;
   font-size: 1rem;
   font-weight: 600;
-  color: #043053;
+  color: var(--heading-color);
   line-height: 1.5;
   flex: 1;
 }
@@ -291,6 +300,7 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

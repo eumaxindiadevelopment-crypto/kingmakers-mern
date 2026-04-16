@@ -54,9 +54,9 @@ const initiatives = [
 ];
 
 const stats = [
-  { icon: "fa-solid fa-map-location-dot", number: "30+", label: "Districts Covered" },
-  { icon: "fa-solid fa-calendar-check", number: "200+", label: "Events Conducted" },
-  { icon: "fa-solid fa-graduation-cap", number: "10k+", label: "IAS Aspirants Reached" },
+  { icon: "fa-solid fa-map-location-dot", number: "38+", label: "Districts Covered" },
+  { icon: "fa-solid fa-calendar-check", number: "300+", label: "Events Conducted" },
+  { icon: "fa-solid fa-graduation-cap", number: "5,00,000+", label: "IAS Aspirants Reached" },
 ];
 
 const stipendImages = [

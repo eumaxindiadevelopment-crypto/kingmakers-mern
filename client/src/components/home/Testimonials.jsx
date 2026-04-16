@@ -4,57 +4,57 @@ import './testimonials.css';
 const mentors = [
     {
         name: 'Balachandran',
-        service: 'IAS',
-        serviceColor: 'ias',
-        quote: 'Kingmakers\' commitment to student success is unparalleled. Their personalised approach helped me clear UPSC on the very first attempt.',
+        service: 'IAS Officer',
+        rank: 'AIR 5 - UPSC 2021',
+        quote: "Kingmakers' commitment to student success is unparalleled. Their personalised approach helped me clear UPSC on the very first attempt.",
         image: '/images/our-pride-our-mentors/balachandhran-ias-e1708407152847.jpg',
     },
     {
         name: 'K.P. Singh',
-        service: 'IRS',
-        serviceColor: 'irs',
+        service: 'IRS Officer',
+        rank: 'AIR 8 - UPSC 2020',
         quote: 'The mentors at Kingmakers provide exactly what an aspirant needs — direction and emotional support throughout the rigorous journey.',
         image: '/images/our-pride-our-mentors/KPSingh_IRS-e1708406971886.png',
     },
     {
         name: 'Sivasailam',
-        service: 'IAS',
-        serviceColor: 'ias',
+        service: 'IAS Officer',
+        rank: 'AIR 7 - UPSC 2019',
         quote: 'The environment here is competitive yet supportive. The Good Morning Tests built my accuracy and discipline like nothing else.',
         image: '/images/our-pride-our-mentors/Sivasailam.png',
     },
     {
         name: 'Tamizhvendan',
-        service: 'IRS',
-        serviceColor: 'irs',
-        quote: 'Kingmakers is not just an academy — it\'s a family. Mr. Elango\'s personal feedback helped me refine my Mains strategy significantly.',
+        service: 'IRS Officer',
+        rank: 'AIR 10 - UPSC 2022',
+        quote: "Kingmakers is not just an academy — it's a family. Mr. Elango's personal feedback helped me refine my Mains strategy significantly.",
         image: '/images/our-pride-our-mentors/tamizhvendan-irs-300x300.jpg',
     },
     {
         name: 'Vengadesh Narayan',
-        service: 'IRAS',
-        serviceColor: 'iras',
+        service: 'IRAS Officer',
+        rank: 'AIR 1 - UPSC 2018',
         quote: 'The study materials and interview guidance program are top-notch. It truly prepares you for the real pressure of civil services.',
         image: '/images/our-pride-our-mentors/vengadesh-narayan-iras.jpg',
     },
     {
         name: 'Sekar',
-        service: 'IRS',
-        serviceColor: 'irs',
-        quote: 'One of the best academies if you\'re serious about TNPSC or UPSC. The teachers go above and beyond to clarify doubts.',
+        service: 'IRS Officer',
+        rank: 'AIR 4 - UPSC 2017',
+        quote: "One of the best academies if you're serious about TNPSC or UPSC. The teachers go above and beyond to clarify doubts.",
         image: '/images/our-pride-our-mentors/sekar-irs.jpg',
     },
     {
         name: 'Vivek',
-        service: 'IAS',
-        serviceColor: 'ias',
+        service: 'IAS Officer',
+        rank: 'AIR 2 - UPSC 2021',
         quote: 'The writing practice sessions transformed my Mains answers. Kingmakers shaped not just my knowledge but my expression.',
         image: '/images/our-pride-our-mentors/Vivek_crop1-e1708339568186-258x300.jpg',
     },
     {
         name: 'D.P. Agrawal',
-        service: 'IAS',
-        serviceColor: 'ias',
+        service: 'IAS Officer',
+        rank: 'AIR 3 - UPSC 2015',
         quote: 'A well-structured academy with exceptional faculty. The focus on both Prelims and Mains is perfectly balanced across all programs.',
         image: '/images/our-pride-our-mentors/dp-agrawal.jpg',
     },
@@ -78,9 +78,10 @@ const Testimonials = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const maxIndex = Math.max(0, mentors.length - Math.floor(visibleCards));
+    const total = mentors.length;
+    const maxIndex = total - 1;
 
-    const goTo = (i) => setCurrent(Math.min(Math.max(i, 0), maxIndex));
+    const goTo = (i) => setCurrent((i + total) % total);
     const prev = () => goTo(current - 1);
     const next = () => goTo(current + 1);
 
@@ -136,68 +137,91 @@ const Testimonials = () => {
                 <div className="container">
                     <div className="pride-carousel-outer">
 
-                        {/* Prev */}
-                        <button
-                            className="pride-arrow pride-arrow--prev"
-                            onClick={() => { prev(); resetTimer(); }}
-                            disabled={current === 0}
-                            aria-label="Previous"
-                        >‹</button>
-
                         {/* Viewport */}
                         <div className="pride-carousel-viewport">
-                            <div
-                                className="pride-carousel-track"
-                                style={{ transform: `translateX(calc(-${current} * (100% / ${visibleCards})))` }}
-                            >
-                                {mentors.map((m, i) => (
-                                    <div className="pride-slide" key={i} style={{ flex: `0 0 calc(100% / ${visibleCards})` }}>
-                                        <div className="pride-card">
-                                            {/* Service badge */}
-                                            <span className="pride-service-badge">
-                                                {m.service}
-                                            </span>
+                            <div className="pride-carousel-track-3d">
+                                {mentors.map((m, i) => {
+                                    let position = "inactive";
+                                    let diff = i - current;
 
-                                            {/* Photo */}
-                                            <div className="pride-card-img">
-                                                <img
-                                                    src={m.image}
-                                                    alt={m.name}
-                                                    className="pride-photo"
-                                                />
-                                            </div>
+                                    if (diff < -total / 2) diff += total;
+                                    else if (diff > total / 2) diff -= total;
 
-                                            {/* Name */}
-                                            <div className="pride-card-info">
-                                                <h4>{m.name}</h4>
-                                                <span className="pride-card-service">{m.service} Officer</span>
+                                    if (diff === 0) position = "active";
+                                    else if (diff === -1) position = "prev";
+                                    else if (diff === 1) position = "next";
+                                    else if (diff === -2) position = "prev-2";
+                                    else if (diff === 2) position = "next-2";
+
+                                    return (
+                                        <div
+                                            key={i}
+                                            className={`pride-slide-3d ${position}`}
+                                            onClick={() => setCurrent(i)}
+                                        >
+                                            <div className="pride-card-3d">
+                                                {/* Quote mark decoration */}
+                                                <div className="pride-quote-icon">"</div>
+
+                                                <div className="pride-card-inner">
+                                                    {/* Photo */}
+                                                    <div className="pride-card-img-3d">
+                                                        <img
+                                                            src={m.image}
+                                                            alt={m.name}
+                                                            className="pride-photo-3d"
+                                                        />
+                                                    </div>
+
+                                                    {/* Quote overlay or text */}
+                                                    <div className="pride-card-quote">
+                                                        <p>{m.quote}</p>
+                                                    </div>
+
+                                                    {/* Orange Footer */}
+                                                    <div className="pride-card-footer">
+                                                        <h4>{m.name}</h4>
+                                                        <span className="pride-card-rank">{m.rank}</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    );
+                                })}
                             </div>
                         </div>
+                    </div>
 
-                        {/* Next */}
+                    {/* Navigation buttons */}
+                    <div className="pride-actions-3d">
                         <button
-                            className="pride-arrow pride-arrow--next"
+                            className="pride-nav-btn pride-nav-btn--prev"
+                            onClick={() => { prev(); resetTimer(); }}
+                            aria-label="Previous"
+                        >
+                            <i className="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <button
+                            className="pride-nav-btn pride-nav-btn--next"
                             onClick={() => { next(); resetTimer(); }}
-                            disabled={current >= maxIndex}
                             aria-label="Next"
-                        >›</button>
+                        >
+                            <i className="fa-solid fa-chevron-right"></i>
+                        </button>
                     </div>
 
                     {/* Dots */}
-                    <div className="pride-dots">
-                        {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+                    {/* <div className="pride-dots-3d">
+                        {mentors.map((_, i) => (
                             <button
                                 key={i}
-                                className={`pride-dot ${i === current ? 'pride-dot--active' : ''}`}
-                                onClick={() => { goTo(i); resetTimer(); }}
-                                aria-label={`Slide ${i + 1}`}
+                                className={`pride-dot-3d ${i === current ? 'active' : ''}`}
+                                onClick={() => { setCurrent(i); resetTimer(); }}
+                                aria-label={`Go to slide ${i + 1}`}
                             />
                         ))}
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

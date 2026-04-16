@@ -12,7 +12,7 @@
 
 /* ── Hero Section ─────────────────────────── */
 .philanthropy-hero {
-    background: linear-gradient(135deg, #043053 0%, #0a5a8f 55%, #1a7ab3 100%);
+    background: var(--bggradient-color);
     padding: 110px 20px 90px;
     text-align: center;
     position: relative;
@@ -152,7 +152,7 @@
 
 .awareness-inner h2 {
     font-size: 2.3rem;
-    color: #043053;
+    color: var(--heading-color);
     font-weight: 700;
     margin: 0 0 30px;
     position: relative;
@@ -205,7 +205,7 @@
 /* ── Unnakul Oru IAS Section ─────────────── */
 .unnakul-section {
     padding: 90px 40px;
-    background: linear-gradient(135deg, #043053 0%, #0a5a8f 60%, #1a7ab3 100%);
+    background: var(--bggradient-color);
     position: relative;
     overflow: hidden;
 }
@@ -348,7 +348,7 @@
 
 .section-title-block h2 {
     font-size: 2.4rem;
-    color: #043053;
+    color: var(--heading-color);
     font-weight: 700;
     margin: 8px 0 20px;
     position: relative;

@@ -38,8 +38,8 @@ const Achievers = () => {
             <section className="achievers-hero">
                 <div className="achievers-hero-content">
                     <h1>Our Hall of Fame</h1>
-                    <p>Celebrating Our Success Stories</p>
-                    <div className="hero-accent"></div>
+                    {/* <p>Celebrating Our Success Stories</p>
+                    <div className="hero-accent"></div> */}
                 </div>
             </section>
 

@@ -1,386 +1,334 @@
 /* ============================
-   OUR PRIDE OUR MENTORS
+   OUR PRIDE OUR MENTORS (3D REDESIGN)
    ============================ */
 
 .pride-section {
+    padding: 100px 0;
+    background: var(--bggradient-color);
     overflow: hidden;
 }
 
-/* ---- Dark header band ---- */
 .pride-header-band {
-    background: linear-gradient(135deg, var(--heading-color) 0%, #073d66 100%);
-    padding: 70px 0 100px;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Dot texture */
-.pride-header-band::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(rgba(192, 167, 125, 0.18) 1px, transparent 1px);
-    background-size: 26px 26px;
-    pointer-events: none;
-}
-
-/* Large faint quote mark decoration */
-.pride-header-band::after {
-    content: '"';
-    position: absolute;
-    bottom: -30px;
-    right: 5%;
-    font-family: 'Figtree', sans-serif;
-    font-size: 260px;
-    font-weight: 900;
-    color: rgba(192, 167, 125, 0.07);
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
-}
-
-.pride-badge {
-    display: inline-block;
-    padding: 5px 16px;
-    background: rgba(192, 167, 125, 0.18);
-    color: var(--button-bg);
-    font-family: 'Figtree', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    border-radius: 20px;
-    border: 1px solid rgba(192, 167, 125, 0.35);
-    margin-bottom: 18px;
+    margin-bottom: 80px;
 }
 
 .pride-header-band h2 {
-    color: #ffffff;
-    font-size: 38px;
-    margin-bottom: 14px;
-    line-height: 1.2;
-    position: relative;
-}
-
-.pride-header-band p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 17px;
-    max-width: 520px;
-    margin: 0 auto 36px;
-    line-height: 1.75;
-    position: relative;
-}
-
-/* Stats strip */
-.pride-stats {
-    display: inline-flex;
-    align-items: center;
-    gap: 0;
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 50px;
-    padding: 16px 36px;
-    backdrop-filter: blur(4px);
-    position: relative;
-}
-
-.pride-stat {
-    text-align: center;
-    padding: 0 24px;
-}
-
-.pride-stat-num {
-    display: block;
-    font-family: 'Figtree', sans-serif;
-    font-size: 20px;
+    font-size: 48px;
+    color: #fff;
     font-weight: 800;
-    color: var(--button-bg);
-    line-height: 1;
-    margin-bottom: 4px;
-}
-
-.pride-stat-label {
-    display: block;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.6);
-    font-weight: 500;
+    margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 2px;
 }
 
-.pride-stat-div {
-    width: 1px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.15);
-    flex-shrink: 0;
-}
-
-/* ---- Carousel panel ---- */
-.pride-carousel-section {
-    background: #f8f5ef;
-    padding: 0 0 72px;
-}
-
-.pride-carousel-section .container {
-    transform: translateY(-52px);
-}
-
-/* ---- Carousel layout ---- */
+/* ---- 3D Carousel Layout ---- */
 .pride-carousel-outer {
-    display: flex;
-    align-items: center;
-    gap: 16px;
     position: relative;
-}
-
-/* ---- Viewport ---- */
-.pride-carousel-viewport {
-    overflow: hidden;
-    flex: 1;
-    border-radius: 20px;
-}
-
-/* ---- Track ---- */
-.pride-carousel-track {
-    display: flex;
-    gap: 0;
-    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
-}
-
-/* ---- Slide (Handles gaps) ---- */
-.pride-slide {
-    padding: 0 12px;
-    display: flex;
-}
-
-/* ---- Card ---- */
-.pride-card {
+    padding: 40px 0 100px;
     width: 100%;
+    margin: 0 auto;
+}
+
+.pride-carousel-viewport {
+    perspective: 2000px;
+    overflow: visible;
+}
+
+.pride-carousel-track-3d {
+    position: relative;
+    height: 520px;
+    width: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---- 3D Slides ---- */
+.pride-slide-3d {
+    position: absolute;
+    width: 350px;
+    height: 460px;
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    user-select: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Active Slide (Center) */
+.pride-slide-3d.active {
+    transform: translate3d(0, 0, 100px) scale(1.1);
+    z-index: 100;
+    opacity: 1;
+    visibility: visible;
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.3));
+}
+
+/* Next/Prev Slides - Spaced Further for Full Width */
+.pride-slide-3d.prev {
+    transform: translate3d(-380px, 0, -200px) scale(0.9);
+    z-index: 50;
+    opacity: 0.9;
+    visibility: visible;
+}
+
+.pride-slide-3d.next {
+    transform: translate3d(380px, 0, -200px) scale(0.9);
+    z-index: 50;
+    opacity: 0.9;
+    visibility: visible;
+}
+
+/* Far Side Slides */
+.pride-slide-3d.prev-2 {
+    transform: translate3d(-700px, 0, -500px) scale(0.7);
+    z-index: 10;
+    opacity: 0.5;
+    visibility: visible;
+}
+
+.pride-slide-3d.next-2 {
+    transform: translate3d(700px, 0, -500px) scale(0.7);
+    z-index: 10;
+    opacity: 0.5;
+    visibility: visible;
+}
+
+/* ---- Card Styling ---- */
+.pride-card-3d {
+    width: 100%;
+    height: 100%;
     background: #ffffff;
-    border-radius: 20px;
+    border-radius: 25px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(4, 48, 83, 0.1);
-    border: 1px solid rgba(192, 167, 125, 0.15);
+    position: relative;
     display: flex;
     flex-direction: column;
-    position: relative;
-    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
-.pride-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 52px rgba(4, 48, 83, 0.15);
-    border-color: rgba(192, 167, 125, 0.45);
+.pride-card-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-/* ---- Service badge ---- */
-.pride-service-badge {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    font-family: 'Figtree', sans-serif;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    padding: 4px 12px;
-    border-radius: 20px;
-    z-index: 2;
-    background: var(--button-bg); /* Unified premium gold color */
-    color: #ffffff;
-}
-
-/* ---- Photo ---- */
-.pride-card-img {
+.pride-card-img-3d {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: 260px;
     overflow: hidden;
-    background: var(--gold-light);
+    background: #f0f0f0;
 }
 
-.pride-photo {
-    width: 100% !important;
-    height: 100% !important;
+.pride-photo-3d {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: top;
-    display: block;
     transition: transform 0.5s ease;
 }
 
-.pride-card:hover .pride-photo {
+.pride-active .pride-photo-3d {
     transform: scale(1.05);
 }
 
-/* ---- Card info ---- */
-.pride-card-info {
-    padding: 14px 18px 20px;
-    border-top: 3px solid var(--gold-light);
-    transition: border-color 0.3s;
+/* Quote Icon Decoration */
+.pride-quote-icon {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    font-size: 100px;
+    font-family: serif;
+    color: rgba(0, 0, 0, 0.05);
+    line-height: 1;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.pride-card-quote {
+    padding: 20px 30px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
-.pride-card:hover .pride-card-info {
-    border-color: var(--button-bg);
+.pride-card-quote p {
+    font-size: 15px;
+    color: #444;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-.pride-card-info h4 {
-    font-family: 'Figtree', sans-serif;
-    font-size: 18px;
+/* Brand Footer */
+.pride-card-footer {
+    background: var(--button-bg);
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+}
+
+.pride-card-footer h4 {
+    font-size: 20px;
     font-weight: 700;
-    color: var(--heading-color);
-    margin-bottom: 3px;
+    margin: 0 0 5px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
 }
 
-.pride-card-service {
+.pride-card-rank {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
+    opacity: 0.95;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: var(--button-bg);
-    display: block;
+    letter-spacing: 1px;
 }
 
-/* ---- Arrows ---- */
-.pride-arrow {
-    flex-shrink: 0;
-    width: 46px;
-    height: 46px;
+/* ---- Actions & Navigation ---- */
+.pride-actions-3d {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: -20px;
+    position: relative;
+    z-index: 200;
+}
+
+.pride-nav-btn {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.7);
-    background: #ffffff;
-    color: var(--heading-color);
-    font-size: 26px;
+    background: var(--button-bg);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 16px rgba(4, 48, 83, 0.12);
-    transition: all 0.3s ease;
-    padding: 0;
-    padding-bottom: 2px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.pride-arrow:hover:not(:disabled) {
-    background: var(--heading-color);
-    border-color: var(--heading-color);
-    color: #ffffff;
-    transform: scale(1.08);
-}
-
-.pride-arrow:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-/* ---- Dots ---- */
-.pride-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 28px;
-}
-
-.pride-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(4, 48, 83, 0.2);
-    cursor: pointer;
-    padding: 0;
-    transition: background 0.3s ease, width 0.3s ease;
-}
-
-.pride-dot--active {
-    background: var(--button-bg);
-    width: 26px;
-    border-radius: 4px;
+.pride-nav-btn:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    border-color: #fff;
 }
 
 /* ============================
    RESPONSIVE
    ============================ */
 
+@media (max-width: 1400px) {
+    .pride-slide-3d.prev {
+        transform: translate3d(-320px, 0, -200px) scale(0.9);
+    }
+
+    .pride-slide-3d.next {
+        transform: translate3d(320px, 0, -200px) scale(0.9);
+    }
+
+    .pride-slide-3d.prev-2 {
+        transform: translate3d(-600px, 0, -500px) scale(0.7);
+    }
+
+    .pride-slide-3d.next-2 {
+        transform: translate3d(600px, 0, -500px) scale(0.7);
+    }
+}
+
 @media (max-width: 1024px) {
+    .pride-slide-3d {
+        width: 300px;
+        height: 400px;
+    }
+
+    .pride-slide-3d.prev {
+        transform: translate3d(-240px, 0, -250px) scale(0.85);
+    }
+
+    .pride-slide-3d.next {
+        transform: translate3d(240px, 0, -250px) scale(0.85);
+    }
+
+    .pride-slide-3d.prev-2 {
+        transform: translate3d(-450px, 0, -500px) scale(0.7);
+    }
+
+    .pride-slide-3d.next-2 {
+        transform: translate3d(450px, 0, -500px) scale(0.7);
+    }
+
     .pride-header-band h2 {
-        font-size: 30px;
+        font-size: 38px;
     }
 }
 
 @media (max-width: 768px) {
-    .pride-header-band {
-        padding: 50px 0 80px;
-    }
-
     .pride-header-band h2 {
-        font-size: 26px;
+        font-size: 32px;
     }
 
-    .pride-stats {
-        flex-wrap: wrap;
-        gap: 16px;
-        border-radius: 16px;
-        padding: 16px 20px;
+    .pride-slide-3d {
+        width: 260px;
+        height: 360px;
     }
 
-    .pride-stat-div {
+    .pride-slide-3d.prev {
+        transform: translate3d(-160px, 0, -200px) scale(0.8);
+    }
+
+    .pride-slide-3d.next {
+        transform: translate3d(160px, 0, -200px) scale(0.8);
+    }
+
+    .pride-slide-3d.prev-2,
+    .pride-slide-3d.next-2 {
         display: none;
     }
 
-    .pride-stat {
-        padding: 0 12px;
-    }
-
-    .pride-carousel-section .container {
-        transform: translateY(-36px);
-    }
-
-    .pride-arrow {
-        width: 38px;
-        height: 38px;
-        font-size: 22px;
+    .pride-carousel-track-3d {
+        height: 440px;
     }
 }
 
 @media (max-width: 480px) {
     .pride-header-band h2 {
-        font-size: 22px;
+        font-size: 28px;
     }
 
-    .pride-carousel-outer {
-        gap: 0;
+    .pride-slide-3d {
+        width: 230px;
+        height: 330px;
     }
 
-    .pride-arrow {
-        position: absolute;
-        width: 36px;
-        height: 36px;
+    .pride-slide-3d.prev {
+        transform: translate3d(-90px, 0, -150px) scale(0.75);
+    }
+
+    .pride-slide-3d.next {
+        transform: translate3d(90px, 0, -150px) scale(0.75);
+    }
+
+    .pride-nav-btn {
+        width: 50px;
+        height: 50px;
         font-size: 18px;
-        z-index: 20;
-        background: rgba(255, 255, 255, 0.9);
-        border: 1px solid rgba(4, 48, 83, 0.2);
-        top: 35%;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .pride-arrow--prev {
-        left: 5px;
-    }
-
-    .pride-arrow--next {
-        right: 5px;
-    }
-
-    .pride-slide {
-        padding: 0 15px;
-    }
-
-    .pride-card-info h4 {
-        font-size: 16px;
-    }
-
-    .pride-card-service {
-        font-size: 12px;
     }
 }

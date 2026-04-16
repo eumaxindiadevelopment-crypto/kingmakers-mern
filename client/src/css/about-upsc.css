@@ -10,7 +10,7 @@
 
 /* ─── Hero ─────────────────────────────────── */
 .au-hero {
-    background: linear-gradient(135deg, #043053 0%, #0a5a8f 55%, #1a7ab3 100%);
+    background: linear-gradient(90deg, #022873 0%, #0b3fa6 50%, #022873 100%);
     padding: 110px 0 80px;
     position: relative;
     overflow: hidden;
@@ -121,7 +121,7 @@
 
 .au-section-head h2 {
     font-size: 2.3rem;
-    color: #043053;
+    color: var(--heading-color);
     font-weight: 800;
     margin: 0 0 14px;
     position: relative;
@@ -804,7 +804,7 @@
 
 .au-about-text h2 {
     font-size: 2rem;
-    color: #043053;
+    color: var(--heading-color);
     font-weight: 800;
     margin: 12px 0 20px;
 }
@@ -854,7 +854,7 @@
     display: block;
     font-size: 0.95rem;
     font-weight: 800;
-    color: #043053;
+    color: var(--heading-color);
     margin-bottom: 3px;
 }
 

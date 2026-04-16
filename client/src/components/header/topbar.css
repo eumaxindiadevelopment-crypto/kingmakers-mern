@@ -1,47 +1,81 @@
 .topbar {
     background: var(--heading-color);
-    padding: 8px 0;
-    overflow: hidden;
-    position: relative;
+    padding: 6px 0;
+    color: #fff;
+    font-family: 'Figtree', sans-serif;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.topbar-marquee {
+.topbar-content {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
-.topbar-marquee span {
-    display: inline-block;
-    width: 100%;
+.topbar-left, .topbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-contact {
+    display: flex;
+    gap: 20px;
+}
+
+.topbar-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.topbar-item i {
     color: var(--button-bg);
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    animation: marquee 15s linear infinite;
-    padding-left: 100%;
-    /* Starts from the right end of the bar */
+    font-size: 14px;
 }
 
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-150%);
-        /* Moves all the way past the left end */
-    }
+.topbar-item:hover {
+    color: var(--button-bg);
 }
 
-.topbar-marquee:hover {
-    animation-play-state: paused;
+.topbar-social {
+    display: flex;
+    gap: 15px;
+}
+
+.topbar-social a {
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.topbar-social a:hover {
+    background: var(--button-bg);
+    color: #000;
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-    .topbar-marquee span {
-        font-size: 18px;
-        padding: 0 40px;
+    .topbar-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .topbar-contact {
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
     }
 }

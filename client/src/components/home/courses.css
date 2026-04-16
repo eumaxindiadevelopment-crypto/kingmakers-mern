@@ -102,7 +102,7 @@
 
 /* ---- Base Card ---- */
 .home-courses-section .course-card {
-    background: #ffffff;
+    background: linear-gradient(155deg, var(--heading-color) 0%, #073d66 100%);
     border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: 28px 24px 24px;
@@ -223,8 +223,8 @@
     font-family: 'Figtree', sans-serif;
     font-size: 19px;
     font-weight: 700;
-    color: var(--heading-color);
-    margin-bottom: 8px;
+    color: #fff;
+    margin-bottom: 30px;
     line-height: 1.3;
 }
 
@@ -257,7 +257,7 @@
     color: #1e40af;
     padding: 5px 16px;
     border-radius: 50px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
     border: 1px solid #dbeafe;
     box-shadow: 0 2px 4px rgba(30, 64, 175, 0.05);
@@ -398,7 +398,7 @@
     border: 2px solid var(--button-bg);
     border-radius: 10px;
     background: transparent;
-    color: var(--heading-color);
+    color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
     letter-spacing: 0.3px;

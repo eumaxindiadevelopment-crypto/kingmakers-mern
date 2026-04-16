@@ -201,7 +201,7 @@
 .location-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(4, 48, 83, 0.95) 0%, rgb(4 48 83 / 0%) 50%, transparent 100%);
+    background: linear-gradient(to top, #001a65 0%, rgb(4 48 83 / 0%) 50%, transparent 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -224,7 +224,7 @@
 
 .location-status-tag {
     display: inline-block;
-    background: rgb(175 137 67);
+    background: #d79e04;
     color: #ffffff;
     font-size: 10px;
     font-weight: 700;

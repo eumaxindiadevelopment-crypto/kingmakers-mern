@@ -5,7 +5,7 @@
 .founder-section {
     padding: var(--section-padding);
     /* background: linear-gradient(150deg, var(--heading-color) 0%, #084a7a 60%, #0a5a92 100%); */
-    background: linear-gradient(180deg, #001A65 0%, #001969 50%, #01165A 100%);
+    background: linear-gradient(90deg, #022873 0%, #0b3fa6 50%, #022873 100%);
     position: relative;
     overflow: hidden;
 }

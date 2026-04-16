@@ -1,0 +1,12 @@
+[
+  {
+    "_id": "69d35784d345d6217850fb5b",
+    "name": "Admin",
+    "email": "admin@kingmakers.com",
+    "password": "$2a$10$QXit71koUq70KwW8MrDFteYbP7mewGV31AG7ynbcEsr7fFU5CdiZi",
+    "role": "admin",
+    "createdAt": "2026-04-06T06:49:40.612Z",
+    "updatedAt": "2026-04-06T06:49:40.612Z",
+    "__v": 0
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "_id": "69d8da6b3ffa62b6bb049d1d",
+    "category": "UPSC",
+    "title": "Admissions Open | UPSC 2026-27 Prelims cum Mains",
+    "link": "https://kingmakersiasacademy.com/upsc-course/",
+    "order": 1,
+    "status": "Published",
+    "createdAt": "2026-04-10T11:09:31.099Z",
+    "updatedAt": "2026-04-10T11:09:31.099Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d8da923ffa62b6bb049d20",
+    "category": "UPSC",
+    "title": "Free UPSC / TNPSC Demo Class | 12th April 2026| Register",
+    "link": "https://kingmakersiasacademy.com/free-upsc-tnpsc-exam-awareness-programme/",
+    "order": 2,
+    "status": "Published",
+    "createdAt": "2026-04-10T11:10:10.485Z",
+    "updatedAt": "2026-04-10T11:10:10.485Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d8daee3ffa62b6bb049d29",
+    "category": "UPSC",
+    "title": "Join “Unakkul Ore IAS” – UPSC / TNPSC Career Awareness Session by KingMakers IAS Academy & Hindu Tamil @ Trichy | 12th Apr. Register here.",
+    "link": "https://kingmakersiasacademy.com/unakkul-ore-ias/",
+    "order": 0,
+    "status": "Published",
+    "createdAt": "2026-04-10T11:11:42.523Z",
+    "updatedAt": "2026-04-10T11:11:42.523Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d8db083ffa62b6bb049d2c",
+    "category": "UPSC",
+    "title": "Join “Unakkul Ore IAS” – UPSC / TNPSC Career Awareness Session by KingMakers IAS Academy & Hindu Tamil @ Pondy | 19th Apr. Register here.",
+    "link": "https://kingmakersiasacademy.com/unakkul-ore-ias/",
+    "order": 3,
+    "status": "Published",
+    "createdAt": "2026-04-10T11:12:08.317Z",
+    "updatedAt": "2026-04-10T11:12:08.317Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d8db213ffa62b6bb049d2f",
+    "category": "TNPSC",
+    "title": "Admissions Open for TNPSC Gr I /II /IIA Prelims cum Mains",
+    "link": "https://kingmakersiasacademy.com/tnpsc-course/",
+    "order": 0,
+    "status": "Published",
+    "createdAt": "2026-04-10T11:12:33.293Z",
+    "updatedAt": "2026-04-10T11:12:33.293Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d8db3d3ffa62b6bb049d33",
+    "category": "TNPSC",
+    "title": "TNPSC Group 1 Panel Mock 2026 | April 11, 12, 13 | Register",
+    "link": "https://kingmakersiasacademy.com/tnpsc-group-i-prelims-test-series/",
+    "order": 0,
+    "status": "Published",
+    "createdAt": "2026-04-10T11:13:01.819Z",
+    "updatedAt": "2026-04-10T11:13:01.819Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d8db693ffa62b6bb049d36",
+    "category": "TNPSC",
+    "title": "TNPSC Group 1 Panel Mock 2026 | April 11, 12, 13 | Register",
+    "link": "https://docs.google.com/forms/d/e/1FAIpQLSfHkGOZDlJqk6uEhb6QRnQbKo3oBWEsPQKUR_q3gq8LzGpqHQ/viewform",
+    "order": 0,
+    "status": "Published",
+    "createdAt": "2026-04-10T11:13:45.498Z",
+    "updatedAt": "2026-04-10T11:13:45.498Z",
+    "__v": 0
+  }
+]

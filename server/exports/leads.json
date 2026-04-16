@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "69d79e18e45c644dbdcec632",
+    "name": "sathish",
+    "phone": "7502574702",
+    "email": "eumaxindiadevelopment@gmail.com",
+    "course": "UPSC Integrated (2 Years)",
+    "city": "Salem",
+    "message": "Qualification: PG Pursuing",
+    "source": "upsc",
+    "status": "Contacted",
+    "isRead": true,
+    "createdAt": "2026-04-09T12:39:52.301Z",
+    "updatedAt": "2026-04-09T13:02:56.870Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d7a0a6e45c644dbdcec775",
+    "name": "kumaran",
+    "phone": "7502574702",
+    "email": "kumaran@gmail",
+    "course": "TNPSC Gr-I Prelims cum Mains",
+    "city": "Coimbatore",
+    "message": "Qualification: +2 Completed",
+    "source": "tnpsc",
+    "status": "New",
+    "isRead": false,
+    "createdAt": "2026-04-09T12:50:46.203Z",
+    "updatedAt": "2026-04-09T12:50:46.203Z",
+    "__v": 0
+  }
+]

@@ -78,8 +78,8 @@ const ContactUs = () => {
       <section className="contact-hero">
         <div className="contact-hero-content">
           <h1>Get in Touch With Us</h1>
-          <p>We're here to help you achieve your goals. Reach out to any of our centers or fill the form below.</p>
-          <div className="hero-accent"></div>
+          {/* <p>We're here to help you achieve your goals. Reach out to any of our centers or fill the form below.</p>
+          <div className="hero-accent"></div> */}
         </div>
       </section>
 
@@ -256,11 +256,11 @@ const ContactUs = () => {
                 {/* <div className="branch-icon"><i className={`fa ${branch.icon}`}></i></div> */}
                 <h3>{branch.name}</h3>
                 <p className="branch-address">{branch.address}</p>
-                <div className="branch-actions">
+                {/* <div className="branch-actions">
                   <a href={`tel:${branch.phone}`} className="branch-phone">
                     <i className="fa fa-phone"></i> Call
                   </a>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>

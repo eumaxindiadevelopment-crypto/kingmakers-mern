@@ -161,8 +161,8 @@ const FAQ = () => {
       <section className="faq-hero">
         <div className="faq-hero-content">
           <h1>Frequently Asked Questions</h1>
-          <p>Get answers to common questions about UPSC, TNPSC, and Kingmakers Academy</p>
-          <div className="hero-accent"></div>
+          {/* <p>Get answers to common questions about UPSC, TNPSC, and Kingmakers Academy</p>
+          <div className="hero-accent"></div> */}
         </div>
       </section>
 

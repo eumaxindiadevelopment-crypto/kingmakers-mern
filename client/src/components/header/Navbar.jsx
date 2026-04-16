@@ -35,14 +35,14 @@ const Navbar = () => {
     return (
         <nav className={`navbar ${isSticky ? 'sticky' : ''}`}>
             <div className="container">
-                {/* <div className="navbar-logo">
+                <div className="navbar-logo">
                     <Link to="/" onClick={closeMenu}>
                         <img
                             src="/images/logo/Kingmakers-IAS-Academy-logo.webp"
                             alt="Kingmakers IAS Academy"
                         />
                     </Link>
-                </div> */}
+                </div>
 
                 <button className={`navbar-hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu} aria-label="Toggle Navigation">
                     <span></span>

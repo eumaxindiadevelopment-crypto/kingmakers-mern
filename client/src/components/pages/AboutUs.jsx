@@ -8,7 +8,7 @@ const AboutUs = () => {
       name: 'Boominathan M.',
       designation: 'Director',
       credentials: 'Master\'s in Economics, Pursuing Doctorate',
-      description: 'A successful entrepreneur with a decade of experience in coaching, mentoring many civil service aspirants for pursuing their dreams. Master degree in the field of Economics and pursuing Doctorate from the University of Madras. Working on the vision to enable at least 1 Lakh of graduating men and women of Tamilnadu to sincerely appear for Civil Services Examination. Star achiever for producing 1000 plus Civil Service Officers and more than 3000 other Government servants.',
+      description: 'What makes KingMakers IAS Academy the best in IAS coaching is our successful track record of nurturing dreams of 1000+ aspirants like you into the reality of becoming IAS within a span of 13 years. We are proud to be one of our kind having shown a deep commitment to the best interests of every aspirant associated with us in their journey towards becoming a civil servant. The distinctive feature of our academy lies in the mode of training offered to the candidates.',
       image: '/images/directors/Boominathan.webp'
     },
     {
@@ -16,7 +16,7 @@ const AboutUs = () => {
       name: 'Prof., Dr., S. Sathyashree Boominathan',
       designation: 'Director',
       credentials: 'Psychologist & Life Coach',
-      description: 'We focus on fostering a deep understanding of the subjects, developing critical thinking skills, and building confidence in our students. Dear students, as you embark on this journey to become IAS officers, I want you to know that you are not just preparing for an exam – you are shaping the future of our nation. At KingMakers IAS Academy, we are committed to providing you with the best possible guidance, support, and resources to help you achieve your goals. I encourage you to stay focused, work hard, and believe in yourselves. Together, let us strive for excellence and make a positive impact in the world.',
+      description: 'Our strong team of mentors including 13 retired civil ser- vants (6 IAS, 6 IRS and 1 IRAS) is committed to offer 360° training, mentoring and external motivation to every aspirant entering the portals of the KingMakers IAS Academy with the vision of cracking India most competitive & prestigious Civil Services Examination. The sole mission that joins us together is the love for our nation and the inherent responsibility in contributing to its growth by fostering the future civil servants of the nation.',
       image: '/images/directors/ProfileN.webp'
     },
     {
@@ -42,8 +42,8 @@ const AboutUs = () => {
       <section className="about-hero">
         <div className="about-hero-content">
           <h1>About Us</h1>
-          <p>Mentoring Future Bureaucrats</p>
-          <div className="hero-accent"></div>
+          {/* <p>Mentoring Future Bureaucrats</p>
+          <div className="hero-accent"></div> */}
         </div>
       </section>
 
@@ -84,7 +84,7 @@ const AboutUs = () => {
                 <span className="feature-text">Years of Excellence</span>
               </div>
               <div className="feature-box">
-                <span className="feature-number">7</span>
+                <span className="feature-number">10</span>
                 <span className="feature-text">Centers Nationwide</span>
               </div>
               <div className="feature-box">
@@ -92,7 +92,7 @@ const AboutUs = () => {
                 <span className="feature-text">IAS Officer Mentors</span>
               </div>
               <div className="feature-box">
-                <span className="feature-number">100%</span>
+                <span className="feature-number">15k+</span>
                 <span className="feature-text">Success Focused</span>
               </div>
             </div>

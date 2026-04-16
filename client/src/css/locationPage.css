@@ -6,7 +6,7 @@
 
 /* Hero Section */
 .location-hero {
-    background: linear-gradient(135deg, #043053 0%, #0a5a8f 50%, #1a7ab3 100%);
+    background: var(--bggradient-color);
     padding: 120px 0 100px;
     text-align: left;
     position: relative;
@@ -452,7 +452,7 @@
    5-PHASE STRATEGY SECTION
    ============================================ */
 .location-phases-section {
-    background: linear-gradient(135deg, #043053 0%, #0a5a8f 50%, #1a7ab3 100%);
+    background: var(--bggradient-color);
     padding: 100px 20px;
     position: relative;
     overflow: hidden;
@@ -617,7 +617,7 @@
    ============================================ */
 .location-facilities-section {
     padding: 100px 20px;
-    background: linear-gradient(135deg, #043053 0%, #0a5a8f 50%, #1a7ab3 100%);
+    background: var(--bggradient-color);
     position: relative;
     overflow: hidden;
 }

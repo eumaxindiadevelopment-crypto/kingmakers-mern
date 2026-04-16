@@ -1,0 +1,12 @@
+[
+  {
+    "_id": "69d37fd2543945053ac2555b",
+    "name": "blogs",
+    "slug": "blogs",
+    "description": "dummy content",
+    "parent": null,
+    "createdAt": "2026-04-06T09:41:38.201Z",
+    "updatedAt": "2026-04-06T09:41:38.201Z",
+    "__v": 0
+  }
+]

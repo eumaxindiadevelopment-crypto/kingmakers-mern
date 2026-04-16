@@ -1,0 +1,83 @@
+[
+  {
+    "_id": "69d8c88b6a0a744051274978",
+    "title": "Stipend Programme",
+    "slug": "stipend-programme",
+    "description": "<div class=\"section-title-block\">\n<p>Supporting dedicated aspirants with monthly stipends to ensure they can focus entirely on their civil service preparation.</p>\n</div>",
+    "date": "2026-04-10T00:00:00.000Z",
+    "location": "",
+    "image": "http://localhost:5000/uploads/2026/04/1775814753150-stipend-22.webp",
+    "isActive": true,
+    "createdAt": "2026-04-10T09:53:15.233Z",
+    "updatedAt": "2026-04-10T10:44:10.140Z",
+    "__v": 0,
+    "gallery": [
+      "http://localhost:5000/uploads/2026/04/1775814753150-stipend-22.webp",
+      "http://localhost:5000/uploads/2026/04/1775814753137-stipend-21.webp",
+      "http://localhost:5000/uploads/2026/04/1775814753123-stipend-20.webp"
+    ],
+    "status": "Published"
+  },
+  {
+    "_id": "69d8c9ac85cf19dfbaefe840",
+    "title": "jallikattu",
+    "slug": "jallikattu",
+    "description": "<p>a traditional, 2,000-year-old bull-taming sport held in Tamil Nadu during the Pongal harvest festival (January)</p>",
+    "date": "2026-04-10T00:00:00.000Z",
+    "location": "",
+    "image": "http://localhost:5000/uploads/2026/04/1775814753137-stipend-21.webp",
+    "gallery": [
+      "http://localhost:5000/uploads/2026/04/1775814753104-stipend-19.webp",
+      "http://localhost:5000/uploads/2026/04/1775814753019-stipend-14.webp",
+      "http://localhost:5000/uploads/2026/04/1775814753047-stipend-15.webp",
+      "http://localhost:5000/uploads/2026/04/1775814753123-stipend-20.webp"
+    ],
+    "status": "Published",
+    "isActive": true,
+    "createdAt": "2026-04-10T09:58:04.835Z",
+    "updatedAt": "2026-04-10T09:58:04.835Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d8ca0f85cf19dfbaefe850",
+    "title": "The 2026 Jallikattu season",
+    "slug": "the-2026-jallikattu-season",
+    "description": "<p><span data-subtree=\"aimfl,mfl\" data-processed=\"true\">The 2026 Jallikattu season&nbsp;</span><mark class=\"HxTRcb\" data-sfc-root=\"c\" data-sfc-cb=\"\" data-processed=\"true\">kicked off in Tamil Nadu on January 3, 2026</mark>, in Thatchankurichi village, Pudukkottai district. The prestigious Pongal-season events occurred at Avaniyapuram on Jan 15</p>",
+    "date": "2026-04-11T00:00:00.000Z",
+    "location": "",
+    "image": "http://localhost:5000/uploads/2026/04/1775814752933-stipend-10.webp",
+    "gallery": [
+      "http://localhost:5000/uploads/2026/04/1775814753104-stipend-19.webp",
+      "http://localhost:5000/uploads/2026/04/1775814753104-stipend-19.webp",
+      "http://localhost:5000/uploads/2026/04/1775814753123-stipend-20.webp",
+      "http://localhost:5000/uploads/2026/04/1775814753137-stipend-21.webp"
+    ],
+    "status": "Published",
+    "isActive": true,
+    "createdAt": "2026-04-10T09:59:43.656Z",
+    "updatedAt": "2026-04-10T09:59:43.656Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d8cad585cf19dfbaefe87a",
+    "title": "Event management",
+    "slug": "event-management",
+    "description": "<p>involves planning, organizing, and executing various personal or corporate functions, including weddings, conferences, product launches, and entertainment events</p>",
+    "date": "2026-04-10T00:00:00.000Z",
+    "location": "",
+    "image": "http://localhost:5000/uploads/2026/04/1775814752726-stipend-24.webp",
+    "gallery": [
+      "http://localhost:5000/uploads/2026/04/1775814752897-stipend-8.webp",
+      "http://localhost:5000/uploads/2026/04/1775814752878-stipend-7.webp",
+      "http://localhost:5000/uploads/2026/04/1775814752859-stipend-6.webp",
+      "http://localhost:5000/uploads/2026/04/1775814752838-stipend-5.webp",
+      "http://localhost:5000/uploads/2026/04/1775814752817-stipend-4.webp",
+      "http://localhost:5000/uploads/2026/04/1775814752799-stipend-3.webp"
+    ],
+    "status": "Published",
+    "isActive": true,
+    "createdAt": "2026-04-10T10:03:01.825Z",
+    "updatedAt": "2026-04-10T10:03:01.825Z",
+    "__v": 0
+  }
+]

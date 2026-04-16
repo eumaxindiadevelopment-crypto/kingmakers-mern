@@ -62,7 +62,7 @@ const LocationsSection = () => {
                                 >
                                     <div className="location-overlay">
                                         <h3 className="location-status-tag">{loc.name || loc.city}</h3>
-                                        <div className="view-branch-btn">View Branch Details</div>
+                                        {/* <div className="view-branch-btn">View Branch Details</div> */}
                                     </div>
                                 </Link>
                             ))}

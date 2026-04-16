@@ -11,13 +11,17 @@
    HERO SECTION
    ============================================ */
 .tnpsc-page .tnpsc-hero {
-  background: linear-gradient(135deg, #043053 0%, #0a5a8f 55%, #1a7ab3 100%);
+  background: linear-gradient(90deg, #022873 0%, #0b3fa6 50%, #022873 100%);
   padding: 120px 0 100px;
   position: relative;
   overflow: hidden;
   min-height: 650px;
   display: flex;
   align-items: center;
+}
+
+.course-batch-heading h3 {
+  color: var(--heading-color);
 }
 
 .tnpsc-page .hero-wrapper {
@@ -240,7 +244,7 @@
 
 .tnpsc-page .section-head h2 {
   font-size: 2.3rem;
-  color: #043053;
+  color: var(--heading-color);
   font-weight: 800;
   margin: 0 0 14px 0;
   position: relative;
@@ -248,7 +252,7 @@
 }
 
 .tnpsc-intro .section-head h2 {
-  color: #043053;
+  color: var(--heading-color);
 }
 
 .tnpsc-intro .section-head .section-subtitle {
@@ -873,7 +877,7 @@
 }
 
 .tnpsc-page .interview-note {
-  background: linear-gradient(135deg, #043053, #0a5a8f);
+  background: var(--bggradient-color);
   color: white;
   padding: 25px 30px;
   border-radius: 12px;

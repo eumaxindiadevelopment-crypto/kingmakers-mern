@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "69d88f5e6742a03000e9b177",
+    "title": "Slider1",
+    "imageUrl": "http://localhost:5000/uploads/2026/04/1775800132759-slider-1.jpeg",
+    "link": "",
+    "order": 0,
+    "status": "published",
+    "altText": "",
+    "createdAt": "2026-04-10T05:49:18.220Z",
+    "updatedAt": "2026-04-10T05:49:18.220Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d88f716742a03000e9b184",
+    "title": "Slider 2",
+    "imageUrl": "http://localhost:5000/uploads/2026/04/1775800173653-slider-2.jpg",
+    "link": "",
+    "order": 0,
+    "status": "published",
+    "altText": "",
+    "createdAt": "2026-04-10T05:49:37.234Z",
+    "updatedAt": "2026-04-10T05:49:37.234Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d88f8e6742a03000e9b191",
+    "title": "slider3",
+    "imageUrl": "http://localhost:5000/uploads/2026/04/1775800195351-slider-3.jpg",
+    "link": "",
+    "order": 0,
+    "status": "published",
+    "altText": "",
+    "createdAt": "2026-04-10T05:50:06.675Z",
+    "updatedAt": "2026-04-10T05:50:06.675Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d88fa96742a03000e9b19e",
+    "title": "slider4",
+    "imageUrl": "http://localhost:5000/uploads/2026/04/1775800222583-slider-4.jpeg",
+    "link": "",
+    "order": 0,
+    "status": "published",
+    "altText": "",
+    "createdAt": "2026-04-10T05:50:33.779Z",
+    "updatedAt": "2026-04-10T05:50:33.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d88fb96742a03000e9b1ab",
+    "title": "slider5",
+    "imageUrl": "http://localhost:5000/uploads/2026/04/1775800240075-slider-5.jpg",
+    "link": "",
+    "order": 0,
+    "status": "published",
+    "altText": "",
+    "createdAt": "2026-04-10T05:50:49.042Z",
+    "updatedAt": "2026-04-10T05:59:48.350Z",
+    "__v": 0
+  }
+]

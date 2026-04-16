@@ -11,6 +11,7 @@ import VideoReviews from '../home/VideoReviews';
 import LocationsSection from '../home/LocationsSection';
 import FAQ from '../home/FAQ';
 import BlogSection from '../home/BlogSection';
+import PresidentTestimonials from '../home/PresidentTestimonials';
 
 const Home = () => {
   return (
@@ -18,14 +19,15 @@ const Home = () => {
       <HeroSlider />
       <AboutUsSection />
       <Founder />
+      <PresidentTestimonials />
       {/* <StatsCounter /> */}
       <WhyKingmakers />
       <Achievers />
       <Commitment />
       <CoursesTabs />
-      <Testimonials />
       <VideoReviews />
       <LocationsSection />
+      <Testimonials />
       <FAQ />
       {/* <BlogSection /> */}
     </>

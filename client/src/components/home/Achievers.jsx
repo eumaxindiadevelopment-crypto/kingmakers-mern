@@ -118,32 +118,30 @@ const Achievers = () => {
                             style={{ transform: `translateX(calc(-${current} * (100% / ${visibleCards})))` }}
                         >
                             {achieversData.map((person, index) => (
-                                <div className="achiever-card" key={index} style={{ flex: `0 0 calc(100% / ${visibleCards})` }}>
-                                    {/* Photo area */}
-                                    <div className="achiever-img-wrap">
-                                        <div className="achiever-img-border">
-                                            <img
-                                                src={person.image}
-                                                alt={person.name}
-                                                className="achiever-photo"
-                                            />
+                                <div className="achiever-card-container" key={index} style={{ flex: `0 0 calc(100% / ${visibleCards})`, padding: '0 5px' }}>
+                                    <div className="achiever-card">
+                                        {/* Photo area */}
+                                        <div className="achiever-img-wrap">
+                                            <div className="achiever-img-border">
+                                                <img
+                                                    src={person.image}
+                                                    alt={person.name}
+                                                    className="achiever-photo"
+                                                />
+                                            </div>
+                                            
+                                            {/* Award Badge Image */}
+                                            <div className="achiever-award-badge">
+                                                <img src="/images/award-badge.webp" alt="Award Badge" />
+                                            </div>
                                         </div>
-                                        
-                                        {/* Rank info */}
-                                        
 
-                                        {/* Award Badge Image */}
-                                        <div className="achiever-award-badge">
-                                            <img src="/images/award-badge.webp" alt="Award Badge" />
+                                        {/* Info */}
+                                        <div className="achiever-info">
+                                             <h4>{person.name}</h4>
+                                            <span className="achiever-position">{person.position}</span>
+                                            <div className="achiever-rank-badge">{person.rank}</div>
                                         </div>
-                                    </div>
-
-                                    {/* Info */}
-                                    <div className="achiever-info">
-                                         <h4>{person.name}</h4>
-                                        <span className="achiever-position">{person.position}</span>
-                                        <div className="achiever-rank-badge">{person.rank}</div>
-                                       
                                     </div>
                                 </div>
                             ))}

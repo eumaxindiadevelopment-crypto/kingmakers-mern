@@ -27,7 +27,7 @@ const AboutUs = () => {
                             />
                             {/* Floating experience badge */}
                             <div className="about-exp-badge">
-                                <span className="about-exp-num">15+</span>
+                                <span className="about-exp-num">13+</span>
                                 <span className="about-exp-label">Years of<br />Excellence</span>
                             </div>
                         </div>
@@ -63,17 +63,17 @@ const AboutUs = () => {
                             </div>
                             <div className="about-stat-divider"></div>
                             <div className="about-stat">
-                                <span className="about-stat-num">15+</span>
+                                <span className="about-stat-num">13+</span>
                                 <span className="about-stat-label">Years</span>
                             </div>
                             <div className="about-stat-divider"></div>
                             <div className="about-stat">
-                                <span className="about-stat-num">10k+</span>
+                                <span className="about-stat-num">15k+</span>
                                 <span className="about-stat-label">Students</span>
                             </div>
                             <div className="about-stat-divider"></div>
                             <div className="about-stat">
-                                <span className="about-stat-num">9</span>
+                                <span className="about-stat-num">10</span>
                                 <span className="about-stat-label">Centres</span>
                             </div>
                         </div>
