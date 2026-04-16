@@ -11,6 +11,7 @@ import VideoReviews from '../home/VideoReviews';
 import LocationsSection from '../home/LocationsSection';
 import FAQ from '../home/FAQ';
 import BlogSection from '../home/BlogSection';
+import EventSection from '../home/EventSection';
 import PresidentTestimonials from '../home/PresidentTestimonials';
 
 const Home = () => {
@@ -27,6 +28,7 @@ const Home = () => {
       <CoursesTabs />
       <VideoReviews />
       <LocationsSection />
+      {/* <EventSection /> */}
       <Testimonials />
       <FAQ />
       {/* <BlogSection /> */}

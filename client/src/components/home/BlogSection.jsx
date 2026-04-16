@@ -1,56 +1,51 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import API from '../../apiConfig';
 import './blog.css';
 
-const blogData = [
-    {
-        title: 'How to Crack UPSC in First Attempt',
-        desc: 'Success tips from toppers on how to optimize your first attempt with the right strategy, mindset, and resources.',
-        image: '/images/blogs/How-To-Crack-Upsc-Exam-In-First-Attempt.webp',
-        category: 'UPSC Strategy',
-        readTime: '6 min read',
-        featured: true,
-    },
-    {
-        title: 'Current Affairs for UPSC Preparation',
-        desc: 'How to efficiently cover current affairs from newspapers and magazines for the civil service exam.',
-        image: '/images/blogs/Current-Affairs-for-UPSC.webp',
-        category: 'Current Affairs',
-        readTime: '4 min read',
-    },
-    {
-        title: 'Everything about TNPSC Group 4 Exams',
-        desc: 'Deep dive into the syllabus, preparation strategy, and eligibility criteria for TNPSC Group 4.',
-        image: '/images/blogs/everything-aout-tnpsc-group-4-exams.webp',
-        category: 'TNPSC',
-        readTime: '5 min read',
-    },
-];
-
 const BlogSection = () => {
-    const [featured, ...rest] = blogData;
+    const [blogs, setBlogs] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchBlogs = async () => {
+            try {
+                const res = await fetch(`${API}/api/blogs`);
+                const data = await res.json();
+                // Get latest 3 published blogs
+                const latest = data.filter(b => b.isPublished).slice(0, 3);
+                setBlogs(latest);
+            } catch (error) {
+                console.error('Error fetching blogs:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchBlogs();
+    }, []);
+
+    if (loading || blogs.length === 0) return null;
+
+    const [featured, ...rest] = blogs;
 
     return (
         <section className="blog-section" id="blog">
             <div className="container">
-
-                {/* Header row */}
-                <div className="blog-header-row">
+                <div className="blog-header-row" data-aos="fade-up">
                     <div className="blog-header-text">
                         <span className="blog-badge">INSIGHTS & TIPS</span>
                         <h2>Latest from Our Blog</h2>
                         <p>Stay ahead with exam notifications, preparation strategies, and current affairs analysis.</p>
                     </div>
-                    <a href="#" className="blog-view-all">View All Posts →</a>
+                    <Link to="/blogs" className="blog-view-all">View All Posts →</Link>
                 </div>
 
-                {/* Magazine grid */}
                 <div className="blog-magazine">
-
                     {/* Featured large card */}
-                    <div className="blog-card blog-card--featured">
+                    <div className="blog-card blog-card--featured" data-aos="fade-right">
                         <div className="blog-img">
                             <img
-                                src={featured.image}
+                                src={featured.image || 'https://via.placeholder.com/800x600?text=Kingmakers+IAS'}
                                 alt={featured.title}
                                 className="blog-photo"
                             />
@@ -58,39 +53,38 @@ const BlogSection = () => {
                         </div>
                         <div className="blog-featured-info">
                             <div className="blog-meta">
-                                <span className="blog-category">{featured.category}</span>
-                                <span className="blog-readtime">⏱ {featured.readTime}</span>
+                                <span className="blog-category">LATEST UPDATE</span>
+                                <span className="blog-readtime">⏱ {new Date(featured.createdAt).toLocaleDateString('en-US', { day: 'numeric', month: 'short' })}</span>
                             </div>
                             <h3>{featured.title}</h3>
-                            <p>{featured.desc}</p>
-                            <a href="#" className="blog-read-link">Read Article →</a>
+                            <p>{featured.excerpt || (featured.content ? featured.content.replace(/<[^>]+>/g, '').substring(0, 120) + '...' : '')}</p>
+                            <Link to={`/blogs/${featured.slug}`} className="blog-read-link">Read Article →</Link>
                         </div>
                     </div>
 
                     {/* Right stacked cards */}
                     <div className="blog-stack">
                         {rest.map((blog, i) => (
-                            <div className="blog-card blog-card--small" key={i}>
+                            <div className="blog-card blog-card--small" key={blog._id} data-aos="fade-left" data-aos-delay={i * 100}>
                                 <div className="blog-img">
                                     <img
-                                        src={blog.image}
+                                        src={blog.image || 'https://via.placeholder.com/400x300?text=Kingmakers+IAS'}
                                         alt={blog.title}
                                         className="blog-photo"
                                     />
                                 </div>
                                 <div className="blog-info">
                                     <div className="blog-meta">
-                                        <span className="blog-category">{blog.category}</span>
-                                        <span className="blog-readtime">⏱ {blog.readTime}</span>
+                                        <span className="blog-category">ARTICLE</span>
+                                        <span className="blog-readtime">⏱ {new Date(blog.createdAt).toLocaleDateString('en-US', { day: 'numeric', month: 'short' })}</span>
                                     </div>
                                     <h3>{blog.title}</h3>
-                                    <p>{blog.desc}</p>
-                                    <a href="#" className="blog-read-link">Read More →</a>
+                                    <p>{blog.excerpt || (blog.content ? blog.content.replace(/<[^>]+>/g, '').substring(0, 60) + '...' : '')}</p>
+                                    <Link to={`/blogs/${blog.slug}`} className="blog-read-link">Read More →</Link>
                                 </div>
                             </div>
                         ))}
                     </div>
-
                 </div>
             </div>
         </section>
