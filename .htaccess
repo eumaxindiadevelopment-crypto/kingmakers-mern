@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Handle API requests (Proxy to backend port 5000)
+  # NOTE: If you are on Hostinger Shared Hosting, you might need 
+  # to use their Node.js selector instead of a manual proxy.
+  RewriteRule ^api/(.*)$ http://localhost:5000/api/$1 [P,L]
+
+  # Background images and uploads
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^uploads/(.*)$ http://localhost:5000/uploads/$1 [P,L]
+
+  # SPA Routing: Redirect all other requests to index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
