@@ -6,5 +6,9 @@ export default defineConfig({
   plugins: [react()],
   server: {
     historyApiFallback: true, // ✅ serves index.html for all routes
+  },
+  build: {
+    outDir: '../dist',
+    emptyOutDir: true
   }
 });
