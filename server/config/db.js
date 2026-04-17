@@ -1,34 +1,15 @@
-const mysql = require('mysql2/promise');
-
-let pool;
+const mongoose = require('mongoose');
 
 const connectDB = async () => {
     try {
-        console.log('⏳ Connecting to MySQL...');
-        pool = mysql.createPool({
-            host: process.env.MYSQL_HOST || 'localhost',
-            user: process.env.MYSQL_USER || 'u502361149_kings',
-            password: process.env.MYSQL_PASS || 'rN4e1LXl+U1',
-            database: process.env.MYSQL_DB || 'u502361149_kingmakersiass',
-            waitForConnections: true,
-            connectionLimit: 10,
-            queueLimit: 0,
-            timezone: '+00:00',
-            charset: 'utf8mb4',
-        });
-
-        // Verify the connection is alive
-        const conn = await pool.getConnection();
-        console.log(`✅ MySQL Connected: ${process.env.MYSQL_HOST || 'localhost'}/${process.env.MYSQL_DB || 'kingmakersiasacademy'}`);
-        conn.release();
+        console.log('⏳ Attempting to connect to MongoDB...');
+        const conn = await mongoose.connect(process.env.MONGO_URI);
+        console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
     } catch (error) {
-        console.error(`❌ MySQL Connection Error [${error.code}]: ${error.message}`);
+        console.error(`❌ MongoDB Connection Error: ${error.message}`);
+        console.error('⚠️  Make sure MONGO_URI is correctly set in Render environment variables.');
+        // Don't exit — let server stay alive
     }
 };
 
-const getPool = () => {
-    if (!pool) throw new Error('MySQL pool not initialised. Call connectDB() first.');
-    return pool;
-};
-
-module.exports = { connectDB, getPool };
+module.exports = connectDB;

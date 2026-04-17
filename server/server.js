@@ -2,12 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
-const { connectDB } = require('./config/db');
+const connectDB = require('./config/db');
 
 // Load env vars from server/.env (works regardless of cwd)
 dotenv.config({ path: path.join(__dirname, '.env') });
 
-// Connect to MySQL
+// Connect to MongoDB
 connectDB();
 
 const app = express();
@@ -42,7 +42,7 @@ app.use('/api/popup-news', require('./routes/popupNewsRoutes'));
 
 // Health check
 app.get('/api/health', (req, res) => {
-    res.json({ message: 'Kingmakers API is running ✅ (MySQL)', timestamp: new Date() });
+    res.json({ message: 'Kingmakers API is running ✅ (MongoDB)', timestamp: new Date() });
 });
 
 // 404 handler

@@ -1,30 +1,23 @@
-const { getPool } = require('../config/db');
+const PopupNews = require('../models/PopupNews');
 
-const deserializeNews = (row) => row ? { ...row, _id: row.id } : row;
-
-// Get all popup news (optional ?category=UPSC|TNPSC)
+// Get all popup news
 exports.getAllPopupNews = async (req, res) => {
     try {
-        const pool = getPool();
         const { category } = req.query;
-        let sql = 'SELECT * FROM popupnews';
-        const params = [];
-        if (category) { sql += ' WHERE category = ?'; params.push(category); }
-        sql += ' ORDER BY `order` ASC, createdAt DESC';
-        const [rows] = await pool.execute(sql, params);
-        res.json(rows.map(deserializeNews));
+        const filter = category ? { category } : {};
+        const news = await PopupNews.find(filter).sort({ order: 1, createdAt: -1 });
+        res.json(news);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 };
 
-// Get single popup news by id
+// Get single popup news
 exports.getPopupNewsById = async (req, res) => {
     try {
-        const pool = getPool();
-        const [rows] = await pool.execute('SELECT * FROM popupnews WHERE id = ? LIMIT 1', [req.params.id]);
-        if (!rows[0]) return res.status(404).json({ message: 'News not found' });
-        res.json(deserializeNews(rows[0]));
+        const news = await PopupNews.findById(req.params.id);
+        if (!news) return res.status(404).json({ message: 'News not found' });
+        res.json(news);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -32,16 +25,17 @@ exports.getPopupNewsById = async (req, res) => {
 
 // Create popup news
 exports.createPopupNews = async (req, res) => {
+    const news = new PopupNews({
+        category: req.body.category,
+        title: req.body.title,
+        link: req.body.link,
+        order: req.body.order,
+        status: req.body.status
+    });
+
     try {
-        const pool = getPool();
-        const { category, title, link, imageUrl, altText, order = 0, status = 'Published' } = req.body;
-        const id = require('crypto').randomUUID().replace(/-/g, '').substring(0, 24);
-        await pool.execute(
-            'INSERT INTO popupnews (id, category, title, link, imageUrl, altText, `order`, status, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())',
-            [id, category, title, link, imageUrl, altText, order, status]
-        );
-        const [rows] = await pool.execute('SELECT * FROM popupnews WHERE id = ?', [id]);
-        res.status(201).json(deserializeNews(rows[0]));
+        const newNews = await news.save();
+        res.status(201).json(newNews);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
@@ -50,22 +44,17 @@ exports.createPopupNews = async (req, res) => {
 // Update popup news
 exports.updatePopupNews = async (req, res) => {
     try {
-        const pool = getPool();
-        const { category, title, link, imageUrl, altText, order, status } = req.body;
-        await pool.execute(
-            `UPDATE popupnews SET
-                category = COALESCE(?, category), title = COALESCE(?, title),
-                link = COALESCE(?, link), imageUrl = COALESCE(?, imageUrl),
-                altText = COALESCE(?, altText), \`order\` = COALESCE(?, \`order\`),
-                status = COALESCE(?, status), updatedAt = NOW()
-             WHERE id = ?`,
-            [category ?? null, title ?? null, link ?? null, imageUrl ?? null, altText ?? null,
-            order !== undefined ? order : null,
-            status ?? null, req.params.id]
-        );
-        const [rows] = await pool.execute('SELECT * FROM popupnews WHERE id = ?', [req.params.id]);
-        if (!rows[0]) return res.status(404).json({ message: 'News not found' });
-        res.json(deserializeNews(rows[0]));
+        const news = await PopupNews.findById(req.params.id);
+        if (!news) return res.status(404).json({ message: 'News not found' });
+
+        if (req.body.category) news.category = req.body.category;
+        if (req.body.title) news.title = req.body.title;
+        if (req.body.link) news.link = req.body.link;
+        if (req.body.order !== undefined) news.order = req.body.order;
+        if (req.body.status) news.status = req.body.status;
+
+        const updatedNews = await news.save();
+        res.json(updatedNews);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
@@ -74,9 +63,10 @@ exports.updatePopupNews = async (req, res) => {
 // Delete popup news
 exports.deletePopupNews = async (req, res) => {
     try {
-        const pool = getPool();
-        const [result] = await pool.execute('DELETE FROM popupnews WHERE id = ?', [req.params.id]);
-        if (result.affectedRows === 0) return res.status(404).json({ message: 'News not found' });
+        const news = await PopupNews.findById(req.params.id);
+        if (!news) return res.status(404).json({ message: 'News not found' });
+
+        await news.deleteOne();
         res.json({ message: 'News deleted' });
     } catch (err) {
         res.status(500).json({ message: err.message });

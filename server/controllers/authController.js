@@ -1,18 +1,11 @@
-const { getPool } = require('../config/db');
-const bcrypt = require('bcryptjs');
+const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
-const generateToken = (id) =>
-    jwt.sign({ id }, process.env.JWT_SECRET, {
+// Generate JWT
+const generateToken = (id) => {
+    return jwt.sign({ id }, process.env.JWT_SECRET, {
         expiresIn: process.env.JWT_EXPIRE || '7d'
     });
-
-// Helper: safely parse JSON columns (tags, faqs, etc.)
-const parseJSON = (val) => {
-    if (typeof val === 'string') {
-        try { return JSON.parse(val); } catch { return val; }
-    }
-    return val;
 };
 
 // @desc    Login admin user
@@ -20,28 +13,20 @@ const parseJSON = (val) => {
 // @access  Public
 const login = async (req, res) => {
     const { email, password } = req.body;
-    if (!email || !password)
+    if (!email || !password) {
         return res.status(400).json({ message: 'Please provide email and password' });
+    }
     try {
-        const pool = getPool();
-        const [rows] = await pool.execute(
-            'SELECT * FROM users WHERE email = ? LIMIT 1', [email.toLowerCase()]
-        );
-        const user = rows[0];
-        if (!user) return res.status(401).json({ message: 'Invalid credentials' });
-
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) return res.status(401).json({ message: 'Invalid credentials' });
-
+        const user = await User.findOne({ email });
+        if (!user || !(await user.matchPassword(password))) {
+            return res.status(401).json({ message: 'Invalid credentials' });
+        }
         res.json({
-            _id: user.id,
-            id: user.id,
+            _id: user._id,
             name: user.name,
             email: user.email,
             role: user.role,
-            token: generateToken(user.id),
-            createdAt: user.createdAt,
-            updatedAt: user.updatedAt
+            token: generateToken(user._id)
         });
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -55,32 +40,20 @@ const getMe = async (req, res) => {
     res.json(req.user);
 };
 
-// @desc    Register first admin (seed use)
+// @desc    Register first admin (use only once to seed)
 // @route   POST /api/auth/register
-// @access  Public
+// @access  Public (restrict after first use)
 const register = async (req, res) => {
     const { name, email, password } = req.body;
     try {
-        const pool = getPool();
-        const [existing] = await pool.execute('SELECT id FROM users WHERE email = ? LIMIT 1', [email.toLowerCase()]);
-        if (existing.length > 0) return res.status(400).json({ message: 'Admin already exists' });
-
-        const hashed = await bcrypt.hash(password, 10);
-        const [result] = await pool.execute(
-            'INSERT INTO users (id, name, email, password, role, createdAt, updatedAt) VALUES (UUID(), ?, ?, ?, ?, NOW(), NOW())',
-            [name, email.toLowerCase(), hashed, 'admin']
-        );
-        // Fetch the new user
-        const [newRows] = await pool.execute('SELECT * FROM users WHERE email = ? LIMIT 1', [email.toLowerCase()]);
-        const user = newRows[0];
+        const existing = await User.findOne({ email });
+        if (existing) return res.status(400).json({ message: 'Admin already exists' });
+        const user = await User.create({ name, email, password });
         res.status(201).json({
-            _id: user.id,
-            id: user.id,
+            _id: user._id,
             name: user.name,
             email: user.email,
-            token: generateToken(user.id),
-            createdAt: user.createdAt,
-            updatedAt: user.updatedAt
+            token: generateToken(user._id)
         });
     } catch (error) {
         res.status(500).json({ message: error.message });
