@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './courses.css';
 
 import API from '../../apiConfig';
@@ -114,13 +115,13 @@ const CoursesTabs = () => {
                                 </div>
 
                                 {/* CTA */}
-                                <a 
-                                    href={course.buttonLink || '#contact'} 
+                                <Link 
+                                    to={course.buttonLink || (activeTab === 'UPSC' ? '/upsc-course/' : '/tnpsc-course/')} 
                                     className={`course-enroll-btn ${course.badge === 'Most Popular' ? 'course-enroll-btn--light' : ''}`}
                                     style={{ textDecoration: 'none', textAlign: 'center' }}
                                 >
                                     {course.buttonText || 'Enroll Now'} →
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -130,7 +131,7 @@ const CoursesTabs = () => {
                 <div className="row">
                     <div className="col-12">
                         <p className="courses-note">
-                            📞 Need help choosing? <a href="#contact">Talk to our counsellor</a> — free, no obligation.
+                            📞 Need help choosing? <Link to="/contact-us/">Talk to our counsellor</Link> — free, no obligation.
                         </p>
                     </div>
                 </div>

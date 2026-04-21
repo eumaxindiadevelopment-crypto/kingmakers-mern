@@ -107,8 +107,8 @@
 
 .au-section-tag {
     display: inline-block;
-    background: rgba(10, 90, 143, 0.1);
-    color: #0a5a8f;
+    background: #fff;
+    color: var(--heading-color);
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.78rem;
@@ -128,7 +128,11 @@
     padding-bottom: 18px;
 }
 
-.au-section-head h2::after {
+.why-prestigious h2 {
+    color: var(--button-bg);
+}
+
+/* .au-section-head h2::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -138,7 +142,7 @@
     height: 4px;
     background: linear-gradient(90deg, #0a5a8f, #c0a77d);
     border-radius: 2px;
-}
+} */
 
 .au-section-sub {
     font-size: 0.95rem;
@@ -165,14 +169,14 @@
     border-radius: 16px;
     padding: 35px 30px;
     box-shadow: 0 8px 28px rgba(4, 48, 83, 0.09);
-    border-top: 4px solid #0a5a8f;
+    border-top: 4px solid var(--button-bg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .au-elig-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 18px 45px rgba(4, 48, 83, 0.14);
-    border-top-color: #c0a77d;
+    border-top-color: var(--heading-color);
 }
 
 .au-elig-card-head {
@@ -196,7 +200,7 @@
 
 .au-elig-card h3 {
     font-size: 1.2rem;
-    color: #043053;
+    color: var(--heading-color);
     font-weight: 800;
     margin: 0;
 }
@@ -486,8 +490,8 @@
 }
 
 .au-mains-paper-num {
-    background: linear-gradient(135deg, #043053, #0a5a8f);
-    color: #fff;
+    background: var(--bggradient-color);
+    color: var(--button-bg);
     width: 48px;
     height: 48px;
     border-radius: 10px;
@@ -503,7 +507,7 @@
 
 .au-mains-paper-info h4 {
     font-size: 1.05rem;
-    color: #043053;
+    color: var(--heading-color);
     font-weight: 700;
     margin: 0 0 5px;
 }
@@ -868,7 +872,7 @@
 /* Why prestigious */
 .au-why-prestigious {
     padding: 90px 20px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+    background: var(--bggradient-color);
 }
 
 .au-prestige-grid {
@@ -904,7 +908,7 @@
 
 .au-prestige-card h3 {
     font-size: 1.05rem;
-    color: #043053;
+    color: var(--heading-color);
     font-weight: 800;
     margin: 0 0 10px;
 }
@@ -941,7 +945,7 @@
 
 .au-stage-flow-card {
     flex: 1;
-    background: linear-gradient(135deg, #043053, #0a5a8f);
+    background: var(--bggradient-color);
     border-radius: 16px;
     padding: 38px 28px;
     text-align: center;
@@ -958,7 +962,7 @@
 .au-stage-flow-num {
     width: 36px;
     height: 36px;
-    background: #c0a77d;
+    background: var(--button-bg);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1037,8 +1041,8 @@
 
 .au-str-num {
     display: inline-block;
-    background: linear-gradient(135deg, #043053, #0a5a8f);
-    color: #c0a77d;
+    background: var(--bggradient-color);
+    color: var(--button-bg);
     padding: 5px 14px;
     border-radius: 20px;
     font-size: 0.75rem;
@@ -1050,7 +1054,7 @@
 
 .au-structure-label h2 {
     font-size: 1.8rem;
-    color: #043053;
+    color: var(--heading-color);
     font-weight: 800;
     margin: 0 0 8px;
     line-height: 1.2;
@@ -1197,7 +1201,7 @@
 }
 
 .au-mains-header {
-    background: linear-gradient(135deg, #043053, #0a5a8f);
+    background: var(--bggradient-color);
     color: #fff;
     font-size: 0.75rem;
     font-weight: 700;
@@ -1300,13 +1304,13 @@
 /* Eligibility Section */
 .upsc-eligibility {
     padding: 80px 20px;
-    background: white;
+    background: var(--bggradient-color);
     position: relative;
 }
 
 .upsc-eligibility h2 {
     font-size: 2.5rem;
-    color: #043053;
+    color: #fff;
     text-align: center;
     margin-bottom: 50px;
     font-weight: 700;
@@ -1314,7 +1318,7 @@
     padding-bottom: 20px;
 }
 
-.upsc-eligibility h2::after {
+/* .upsc-eligibility h2::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -1324,7 +1328,7 @@
     height: 4px;
     background: linear-gradient(90deg, #0a5a8f, #c0a77d);
     border-radius: 2px;
-}
+} */
 
 .eligibility-grid {
     display: grid;
@@ -1341,7 +1345,7 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: all 0.3s ease;
-    border-top: 4px solid #0a5a8f;
+    border-top: 4px solid var(--button-bg);
 }
 
 .eligibility-card:hover {
@@ -1382,7 +1386,7 @@
 
 .info-item strong {
     display: block;
-    color: #0a5a8f;
+    color: var(--heading-color);
     font-weight: 700;
     margin-bottom: 6px;
     font-size: 0.9rem;
@@ -1404,7 +1408,7 @@
 
 .exam-schedule h2 {
     font-size: 2.5rem;
-    color: #043053;
+    color: var(--heading-color);
     text-align: center;
     margin-bottom: 50px;
     font-weight: 700;
@@ -1412,7 +1416,7 @@
     padding-bottom: 20px;
 }
 
-.exam-schedule h2::after {
+/* .exam-schedule h2::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -1422,7 +1426,7 @@
     height: 4px;
     background: linear-gradient(90deg, #0a5a8f, #c0a77d);
     border-radius: 2px;
-}
+} */
 
 .schedule-grid {
     display: grid;
@@ -1449,8 +1453,8 @@
 }
 
 .schedule-number {
-    background: linear-gradient(135deg, #0a5a8f, #1a7ab3);
-    color: white;
+    background: var(--button-bg);
+    color: var(--heading-color);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -1464,7 +1468,7 @@
 
 .schedule-content h4 {
     margin: 0 0 8px 0;
-    color: #043053;
+    color: var(--heading-color);
     font-weight: 700;
     font-size: 1rem;
 }

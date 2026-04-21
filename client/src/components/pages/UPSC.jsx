@@ -141,14 +141,14 @@ const UPSC = () => {
                 <h2>The New Beginning to Success</h2>
                 <p>KingMakers UPSC program is the most comprehensive and holistic course designed for students who wish to make a career in Civil Services Examination. Our scientific and proven approach towards framing of course schedule, testing modules and periodic individual assessment covers each aspect of IAS exam preparation that is needed for an aspirant to clear the exam in 1st attempt.</p>
                 <div className="reg-features">
-                   <div className="reg-feature">
+                   {/* <div className="reg-feature">
                       <span className="feat-icon"><i className="fa fa-bolt"></i></span>
                       <span>Intensive & Integrated Programs</span>
                    </div>
                    <div className="reg-feature">
                       <span className="feat-icon"><i className="fa fa-user-tie"></i></span>
                       <span>Learn from Serving Officers</span>
-                   </div>
+                   </div> */}
                 </div>
               </div>
             </div>
@@ -248,7 +248,7 @@ const UPSC = () => {
       <section className="batches-header-section" style={{ padding: '4rem 0 1rem' }}>
         <div className="container-upsc">
           <div className="section-head" style={{ marginBottom: '1rem', textAlign: 'center' }}>
-            <span className="section-tag" style={{ margin: '0 auto 1rem' }}>Batches</span>
+            {/* <span className="section-tag" style={{ margin: '0 auto 1rem' }}>Batches</span> */}
             <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Upcoming Batches in Our Best UPSC Academy in Chennai</h2>
             <p className="section-subtitle" style={{ maxWidth: '800px', margin: '0 auto' }}>Find the perfect batch for your UPSC preparation from our diverse course offerings.</p>
           </div>
@@ -260,7 +260,7 @@ const UPSC = () => {
         <section className="batches-section" key={course._id} style={{ padding: '2rem 0 4rem' }}>
           <div className="container-upsc">
             <div className="course-batch-heading" style={{ textAlign: 'left', marginBottom: '2.5rem' }}>
-              <h3 style={{ fontSize: '26px', fontWeight: '800', color: '#043053', marginBottom: '10px' }}>{course.title}</h3>
+              <h3 style={{ fontSize: '26px', fontWeight: '800', marginBottom: '10px' }}>{course.title}</h3>
               {/* <p style={{ color: '#0a5a8f', fontWeight: '600', fontSize: '1.1rem' }}>Comprehensive Program Batch Schedule</p> */}
             </div>
             

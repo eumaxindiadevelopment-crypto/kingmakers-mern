@@ -28,8 +28,8 @@
 
 .news-modal-header {
     padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, #043053 0%, #0a4a7a 100%);
-    color: #fff;
+    background: var(--bggradient-color);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,6 +40,7 @@
     font-size: 1.5rem;
     display: flex;
     align-items: center;
+    color: var(--button-bg);
     gap: 0.75rem;
     font-weight: 700;
 }

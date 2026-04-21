@@ -344,7 +344,7 @@
 
 .location-section-head h2 {
     font-size: 2.3rem;
-    color: #043053;
+    color: var(--heading-color);
     font-weight: 800;
     margin: 0 0 14px 0;
     position: relative;
@@ -415,6 +415,12 @@
 .location-intro-icon {
     font-size: 3rem;
     display: block;
+    color: var(--button-bg);
+}
+
+.location-page .batches-table thead tr {
+    background: var(--bggradient-color);
+    color: white;
 }
 
 .location-intro-number {
@@ -435,7 +441,7 @@
 
 .location-intro-card h3 {
     font-size: 1.25rem;
-    color: #043053;
+    color: var(--heading-color);
     margin-bottom: 15px;
     font-weight: 700;
     line-height: 1.4;
@@ -491,7 +497,7 @@
 
 .phase-badge {
     display: inline-block;
-    background: #c0a77d;
+    background: var(--button-bg);
     color: white;
     font-size: 0.85rem;
     font-weight: 700;
@@ -520,12 +526,12 @@
 
 /* CTA Card Specifics */
 .phase-cta-card {
-    background: linear-gradient(135deg, rgba(192, 167, 125, 0.95), rgba(192, 167, 125, 0.8));
+    background: var(--button-bg);
     border-color: rgba(255, 255, 255, 0.4);
 }
 
 .phase-cta-card:hover {
-    background: linear-gradient(135deg, rgba(192, 167, 125, 1), rgba(192, 167, 125, 0.9));
+    background: var(--button-bg);
     border-color: rgba(255, 255, 255, 0.6);
 }
 
@@ -596,7 +602,7 @@
     justify-content: center;
     width: 25px;
     height: 25px;
-    background: linear-gradient(135deg, #0a5a8f, #1a7ab3);
+    background: var(--bggradient-color);
     color: white;
     border-radius: 50%;
     font-size: 0.85rem;
@@ -623,7 +629,7 @@
 }
 
 .location-facilities-section .location-section-head h2::after {
-    background: #c0a77d;
+    background: var(--button-bg);
 }
 
 .facilities-carousel-container {
@@ -666,7 +672,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #c0a77d;
+    background: var(--button-bg);
     color: white;
     border: none;
     font-size: 1.2rem;
@@ -680,7 +686,7 @@
 }
 
 .carousel-nav-btn:hover {
-    background: #043053;
+    background: var(--button-bg);
     transform: scale(1.1);
 }
 
@@ -701,7 +707,7 @@
 }
 
 .location-page .dot.active {
-    background: #c0a77d;
+    background: var(--button-bg);
     width: 30px;
     border-radius: 10px;
 }
@@ -736,7 +742,7 @@
 
 /* Custom Batches Section Styles */
 .location-page .batches-section {
-    background: linear-gradient(135deg, #043053 0%, #0a5a8f 50%, #1a7ab3 100%);
+    background: white;
     padding: 80px 0;
     color: white;
 }
@@ -748,14 +754,14 @@
 }
 
 .location-page .batches-section h2 {
-    color: white !important;
+    color: var(--heading-color);
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
 .location-page .batches-section .section-subtitle {
-    color: rgba(255, 255, 255, 0.9) !important;
+    color: var(--heading-color);
     font-size: 1.1rem;
 }
 
@@ -772,11 +778,9 @@
 }
 
 .location-page .batches-table-wrap {
-    background: white;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    overflow-x: auto;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.09);
 }
 
 .location-page .batches-table {
@@ -786,11 +790,20 @@
 }
 
 .location-page .batches-table th {
-    background: #f8f9fa;
-    color: #043053;
+    /* background: #f8f9fa; */
+    /* color: #043053; */
     padding: 15px 20px;
     text-align: left;
     font-weight: 600;
+}
+
+
+.location-page .batches-table td {
+    padding: 16px 18px;
+    font-size: 0.9rem;
+    color: #444;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
 }
 
 .location-page .batches-table td {
@@ -948,9 +961,13 @@
 }
 
 .location-page .btn-enroll {
-    background: linear-gradient(135deg, #0a5a8f, #1a7ab3);
+    background: var(--heading-color);
     color: white;
     border: none;
+}
+
+.location-page .btn-enroll:hover {
+    background: var(--button-bg);
 }
 
 /* ============================================
@@ -958,21 +975,21 @@
    ============================================ */
 .location-cta-banner {
     padding: 80px 20px;
-    background: #f8f9fa;
+    background: var(--bggradient-color);
     position: relative;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .cta-banner-card {
-    background: linear-gradient(135deg, #043053 0%, #0a5a8f 100%);
+    /* background: var(--bggradient-color); */
     border-radius: 24px;
     padding: 60px 40px;
     text-align: center;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(4, 48, 83, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* box-shadow: 0 20px 50px rgba(4, 48, 83, 0.15); */
+    /* border: 1px solid rgba(255, 255, 255, 0.1); */
 }
 
 .cta-banner-card::before {
@@ -1022,14 +1039,14 @@
 }
 
 .cta-banner-content strong {
-    color: #c0a77d;
+    color: var(--button-bg);
     font-weight: 700;
 }
 
 .cta-enroll-btn {
     display: inline-flex;
     align-items: center;
-    background: #c0a77d;
+    background: var(--button-bg);
     color: #043053;
     padding: 20px 45px;
     border-radius: 14px;
@@ -1225,138 +1242,161 @@
 /* ============================================
    CONTACT & MAP SECTION (FLOATING CARD LAYOUT)
    ============================================ */
-.contact-map-section.floating-card-layout {
-    position: relative;
+/* Split Contact Map Section */
+.contact-map-section.split-layout {
+    background: #f8faff;
     padding: 0;
-    overflow: hidden;
-    min-height: 650px;
-    display: flex;
-    align-items: center;
+    min-height: auto;
+    display: block;
 }
 
-.full-width-map {
+.contact-map-grid {
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    min-height: 550px;
+    width: 100%;
+}
+
+.map-column {
+    position: relative;
+    height: 100%;
+    min-height: 450px;
+}
+
+.map-column iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    filter: grayscale(0.1) contrast(1.1);
 }
 
-.full-width-map iframe {
-    width: 100%;
-    height: 100%;
-    display: block;
-    filter: grayscale(0.2) contrast(1.1);
-}
-
-.floating-card-container {
+.info-column-card {
+    background: var(--heading-color);
+    color: white;
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
     position: relative;
-    z-index: 2;
-    pointer-events: none;
-    /* Let clicks pass through the container to the map if not on the card */
+    overflow: hidden;
 }
 
-.floating-contact-card {
-    pointer-events: auto;
-    /* Enable clicks on the card itself */
-    max-width: 480px;
-    background: rgba(4, 48, 83, 0.85);
-    /* Deep blue with transparency */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    padding: 50px;
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    color: #ffffff;
-}
-
-.floating-contact-card .contact-title {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 40px;
-    color: #ffffff;
-    position: relative;
-}
-
-.floating-contact-card .contact-title::after {
+.info-column-card::before {
     content: '';
     position: absolute;
-    left: 0;
-    bottom: -15px;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(192, 167, 125, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.info-card-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.info-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.info-divider {
     width: 60px;
     height: 4px;
     background: #c0a77d;
+    margin-bottom: 40px;
+    border-radius: 2px;
 }
 
-.contact-item {
+.contact-detail-item {
     display: flex;
-    gap: 24px;
-    margin-bottom: 30px;
-    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 35px;
 }
 
-.contact-icon-circle {
-    flex: 0 0 52px;
-    height: 52px;
+.detail-icon {
+    width: 48px;
+    height: 48px;
     background: rgba(192, 167, 125, 0.15);
     border: 1px solid rgba(192, 167, 125, 0.3);
-    border-radius: 14px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
-    color: #c0a77d;
+    color: var(--button-bg);
+    font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
-.contact-text {
-    flex: 1;
-}
-
-.contact-text .label {
+.detail-text label {
     display: block;
-    font-size: 11px;
+    font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-bottom: 5px;
+    color: var(--button-bg);
     font-weight: 700;
-    color: #c0a77d;
-    opacity: 0.9;
+    margin-bottom: 5px;
 }
 
-.contact-text .value {
-    display: block;
-    font-size: 19px;
-    font-weight: 600;
-    line-height: 1.4;
+.detail-text p,
+.detail-text a {
+    font-size: 1.1rem;
     color: #ffffff;
+    text-decoration: none;
+    line-height: 1.5;
+    font-weight: 500;
+    display: block;
+}
+
+.detail-text a:hover {
+    color: var(--button-bg);
+}
+
+.branch-cta-row {
+    margin-top: 45px;
+}
+
+.btn-directions {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--button-bg);
+    color: #043053;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-directions:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 1100px) {
+    .contact-map-grid {
+        grid-template-columns: 1fr 400px;
+    }
 }
 
 @media (max-width: 991px) {
-    .contact-map-section.floating-card-layout {
-        flex-direction: column-reverse;
-        /* Map below card on mobile */
-        min-height: auto;
+    .contact-map-grid {
+        grid-template-columns: 1fr;
     }
 
-    .full-width-map {
-        position: relative;
+    .map-column {
         height: 400px;
     }
 
-    .floating-card-container {
-        padding: 40px 15px;
-        background: #043053;
-        /* Solid background for mobile legibility */
-    }
-
-    .floating-contact-card {
-        max-width: 100%;
-        backdrop-filter: none;
-        background: transparent;
-        padding: 0;
-        box-shadow: none;
-        border: none;
+    .info-column-card {
+        padding: 50px 30px;
     }
 }

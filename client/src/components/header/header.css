@@ -25,8 +25,8 @@
 }
 
 .whats-new-btn {
-    background-color: #ffb300;
-    color: #000;
+    background-color: var(--button-bg);
+    color: var(--heading-color);
     border: none;
     padding: 8px 18px;
     font-size: 13px;
@@ -38,7 +38,7 @@
 }
 
 .whats-new-btn:hover {
-    background-color: #ffa000;
+    background-color: var(--button-bg);
 }
 
 /* Branches Section */

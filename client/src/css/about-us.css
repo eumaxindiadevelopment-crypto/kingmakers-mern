@@ -193,7 +193,7 @@
 .mv-icon {
   font-size: 2.5rem;
   margin-right: 20px;
-  color: #c0a77d;
+  color: var(--button-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -393,182 +393,214 @@
   position: relative;
 }
 
-.section-header-centered {
-  text-align: center;
-  margin-bottom: 70px;
-}
-
-.section-header-centered h2 {
-  font-size: 3rem;
-  color: #043053;
-  margin-bottom: 15px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.section-header-centered .subtitle {
-  font-size: 1.2rem;
-  color: var(--button-bg);
-  font-weight: 500;
-  margin-bottom: 25px;
-}
-
-.header-line {
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #0a5a8f, #c0a77d);
-  margin: 0 auto;
-  border-radius: 2px;
-}
-
-.directors-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.director-card {
-  background: #fff;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+/* Directors Section Redesign - High-End Executive Style */
+.directors-list {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  gap: 150px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
 }
 
-.director-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-}
-
-.director-image-wrapper {
+.director-row {
+  display: flex;
+  align-items: center;
+  gap: 100px;
   position: relative;
-  width: 100%;
-  height: 380px;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.director-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.director-image-side {
+  flex: 0 0 420px;
+  position: relative;
+  z-index: 2;
+}
+
+.director-image-box {
+  position: relative;
+  border-radius: 40px;
   overflow: hidden;
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.15);
+  border: 8px solid #ffffff;
+  aspect-ratio: 4/5;
+  background: #f0f0f0;
 }
 
-.director-image-container {
-  width: 100%;
-  height: 100%;
+/* Decorative background element behind image */
+.director-image-side::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 150px;
+  height: 150px;
+  background: var(--button-bg);
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(20px);
 }
 
-.director-image {
+.director-row.reverse .director-image-side::after {
+  left: auto;
+  right: -30px;
+}
+
+.director-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 1.2s ease;
 }
 
-.director-card:hover .director-image {
-  transform: scale(1.1);
+.director-row:hover .director-img {
+  transform: scale(1.1) rotate(2deg);
 }
 
-.director-social {
-  position: absolute;
-  bottom: -50px;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(4, 48, 83, 0.9), transparent);
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  transition: all 0.4s ease;
-  opacity: 0;
-}
-
-.director-card:hover .director-social {
-  bottom: 0;
-  opacity: 1;
-}
-
-.social-icon {
-  width: 40px;
-  height: 40px;
-  background: #c0a77d;
-  color: #043053;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
-}
-
-.social-icon:hover {
-  background: #ffffff;
-  transform: translateY(-3px);
-}
-
-.director-info {
-  padding: 30px;
-  text-align: center;
+.director-content-side {
   flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.director-header-info {
+  margin-bottom: 35px;
+}
+
+.director-header-info h3 {
+  font-size: 3rem;
+  color: var(--heading-color);
+  margin: 0 0 10px 0;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.director-edu {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--button-bg);
+  font-weight: 600;
+  margin-top: 5px;
+  font-style: normal;
+}
+
+.director-badges {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-.director-info h3 {
-  font-size: 1.6rem;
-  color: #043053;
-  margin: 0 0 10px 0;
+.badge-designation {
+  font-size: 1.1rem;
   font-weight: 700;
-}
-
-.designation-badge {
-  display: inline-block;
-  background: rgba(10, 90, 143, 0.1);
-  color: #0a5a8f;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 15px;
+  color: var(--heading-color);
   text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  padding-left: 50px;
 }
 
-.director-info .credentials {
-  font-size: 1rem;
-  color: var(--button-bg);
-  margin-bottom: 20px;
-  font-style: italic;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.info-divider {
-  width: 50px;
+.badge-designation::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 40px;
   height: 2px;
-  background: #f0f0f0;
-  margin: 0 auto 20px;
+  background: var(--button-bg);
 }
 
-.director-info .description {
-  font-size: 0.95rem;
-  line-height: 1.7;
+.badge-credentials {
+  font-size: 1rem;
   color: #666;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  font-weight: 500;
+  padding-left: 50px;
 }
 
-.director-card:hover .description {
-  -webkit-line-clamp: initial;
-  line-clamp: initial;
-  overflow: visible;
+.director-quote-box {
+  position: relative;
+  margin-top: 40px;
+  padding: 0 0 0 0;
+}
+
+.quote-image {
+  width: 60px;
+  height: auto;
+  opacity: 0.2;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.director-text {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: #333;
+  font-style: normal;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+  padding-left: 20px;
+  border-left: 2px solid rgba(192, 167, 125, 0.3);
+}
+
+/* Updated Responsive for Directors */
+@media (max-width: 1100px) {
+  .director-row {
+    gap: 60px;
+    padding: 0 20px;
+  }
+
+  .director-image-side {
+    flex: 0 0 350px;
+  }
+
+  .director-header-info h3 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .directors-list {
+    gap: 100px;
+  }
+
+  .director-row,
+  .director-row.reverse {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .director-image-side {
+    flex: 0 0 auto;
+    width: 300px;
+  }
+
+  .badge-designation {
+    padding-left: 0;
+  }
+
+  .badge-designation::before {
+    display: none;
+  }
+
+  .badge-credentials {
+    padding-left: 0;
+  }
+
+  .director-text {
+    padding-left: 0;
+    border-left: none;
+    border-top: 2px solid rgba(192, 167, 125, 0.3);
+    padding-top: 20px;
+  }
 }
 
 /* CTA Section */

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import './faq.css';
 
@@ -107,9 +108,9 @@ const FAQ = () => {
                             <p>
                                 Our expert counsellors are here to guide you — no obligation, just honest advice.
                             </p>
-                            <a href="#contact" className="btn-primary faq-contact-btn">
+                            <Link to="/contact-us/" className="btn-primary faq-contact-btn">
                                 Talk to a Counsellor
-                            </a>
+                            </Link>
                             {/* <div className="faq-contact-meta">
                                 <span>📞 Available Mon – Sat, 9am – 7pm</span>
                             </div> */}

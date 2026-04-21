@@ -404,10 +404,10 @@ const TNPSC = () => {
       {/* Eligibility Section */}
       <section className="eligibility-section">
         <div className="container-tnpsc">
-          <div className="section-head">
-            <span className="section-tag">Eligibility</span>
+          <div className="section-head eligibility-section-head">
+            {/* <span className="section-tag">Eligibility</span> */}
             <h2>TNPSC Exam Eligibility Criteria</h2>
-            <p className="section-subtitle">Check the eligibility requirements for each TNPSC group exam before you apply.</p>
+            {/* <p className="section-subtitle">Check the eligibility requirements for each TNPSC group exam before you apply.</p> */}
           </div>
           <div className="eligibility-table-wrap">
             <table className="eligibility-table">

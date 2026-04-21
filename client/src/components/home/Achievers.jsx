@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../../css/achievers.css';
 
 const achieversData = [
@@ -173,10 +174,10 @@ const Achievers = () => {
 
                 {/* View More Button */}
                 <div className="achievers-footer">
-                    <a href="/achievers/" className="btn-primary achievers-more-btn">
+                    <Link to="/achievers/" className="btn-primary achievers-more-btn">
                         View All Achievers
                         <i className="fa-solid fa-arrow-right"></i>
-                    </a>
+                    </Link>
                 </div>
 
             </div>

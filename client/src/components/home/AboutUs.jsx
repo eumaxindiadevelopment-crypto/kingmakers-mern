@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './about.css';
 
 const highlights = [
@@ -80,8 +81,8 @@ const AboutUs = () => {
 
                         {/* CTA */}
                         <div className="home-about-cta">
-                            <button className="btn btn-primary">Explore Our Story</button>
-                            <a href="#courses" className="about-link-cta">View Courses →</a>
+                            <Link to="/about-us/" className="btn btn-primary">Explore Our Story</Link>
+                            <Link to="/upsc-course/" className="about-link-cta">View Courses →</Link>
                         </div>
                     </div>
                 </div>

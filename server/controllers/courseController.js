@@ -13,6 +13,7 @@ exports.getCourses = async (req, res) => {
 
         console.log(`Fetching courses for category: ${category || 'All'}...`);
         const courses = await Course.find(filter).sort({ order: 1, createdAt: -1 });
+
         console.log(`Found ${courses.length} courses`);
         res.json(courses);
     } catch (err) {

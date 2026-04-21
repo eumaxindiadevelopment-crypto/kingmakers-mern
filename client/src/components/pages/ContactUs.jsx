@@ -3,12 +3,67 @@ import '../../css/contact.css';
 import API from '../../apiConfig';
 
 const branches = [
-  { name: 'Anna Nagar (HO)', address: 'Sri Sai Tower, 2nd & 3rd Floor, AI-101, 4th Avenue, Shanthi Colony, Anna Nagar, Chennai - 600040', phone: '+91 94442 27273' },
-  { name: 'Trichy', address: 'Vignesh Plaza, 3rd Floor, Thillai Nagar Main Road, Trichy - 620018', phone: '+91 94442 27273' },
-  { name: 'Madurai', address: 'No. 7, 1st Floor, Gokhale Road, Chokkikulam, Madurai - 625002', phone: '+91 94442 27273' },
-  { name: 'Coimbatore', address: 'No. 123, 1st Floor, Arts College Road, Opp. Govt Arts College, Coimbatore - 641018', phone: '+91 94442 27273' },
-  { name: 'Salem', address: 'No. 45, Near New Bus Stand, Rajaji Street, Salem - 636004', phone: '+91 94442 27273' },
-  { name: 'Pondicherry', address: 'No. 12, Vallalar Salai, Near Venkata Subba Reddiar Square, Pondicherry - 605011', phone: '+91 94442 27273' }
+
+  { 
+    name: 'Chennai - Sri Sai Tower', 
+    address: '62, 6th Ave, P Block, Anna Nagar, Chennai, Tamil Nadu 600040, India', 
+    phone: '+91 94442 27273',
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d500659.8882578366!2d80.214381!3d13.092518000000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52642383c81151%3A0x595634384c28fd05!2sKINGMAKERS%20IAS%20ACADEMY!5e1!3m2!1sen!2sus!4v1776682004662!5m2!1sen!2sus"
+  },
+    { 
+    name: 'Chennai - Kalam Tower', 
+    address: 'W-4, 5th Main Rd, Anna Nagar, Chennai, Tamil Nadu 600040', 
+    phone: '+91 94442 27273',
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d500668.3125788847!2d80.216929!3d13.088372!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52655a923f85f9%3A0x7074e85bb42f206c!2sKingMakers%20School%20of%20Banking!5e1!3m2!1sen!2sus!4v1776682178766!5m2!1sen!2sus"
+  },
+  { 
+    name: 'Trichy', 
+    address: 'No.8, Star Avenue, Old Karur Road, Mela Chinthamani, Trichy-620 003.', 
+    phone: '+91 94442 27273',
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d504855.43539601774!2d78.689521!3d10.836477!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf562f3766a4f%3A0xc9342095f49f4517!2sKingMakers%20IAS%20Academy%20-%20Trichy%20Branch!5e1!3m2!1sen!2sus!4v1776682324851!5m2!1sen!2sus"
+  },
+  { 
+    name: 'Madurai', 
+    address: 'Vikashni Building, Plot No 760, W Main Rd, Anna Nagar, Madurai-625020', 
+    phone: '+91 94442 27273',
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d506332.78824778955!2d78.141051!3d9.922457!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c53994bcf501%3A0xc15e4a54b67d7f2c!2sKingMakers%20IAS%20Academy%20-%20Madurai%20Branch!5e1!3m2!1sen!2sus!4v1776683117605!5m2!1sen!2sus"
+  },
+  { 
+    name: 'Coimbatore', 
+    address: '308, Peranaidu layout (Nehru Street), Ram Nagar, Coimbatore - 641 009.', 
+    phone: '+91 94442 27273',
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d504550.4689675175!2d76.963941!3d11.01582!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859f11df25f01%3A0x6e876908ef4a3f9e!2sKingMakers%20IAS%20Academy%20-%20Coimbatore%20Branch!5e1!3m2!1sen!2sus!4v1776683186381!5m2!1sen!2sus"
+  },
+  { 
+    name: 'Salem', 
+    address: '2nd Floor, Shanthi Plaza,, 1/5, Brindhavan Road, Fairlands, Salem, Tamil Nadu 636004', 
+    phone: '+91 94442 27273',
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d503396.0356408236!2d78.143196!3d11.670079!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1d9a814bb4b%3A0x9bad72579e7c00f!2sKingMakers%20IAS%20Academy!5e1!3m2!1sen!2sus!4v1776683304173!5m2!1sen!2sus"
+  },
+  { 
+    name: 'Pondicherry', 
+    address: '1st Floor, Vasavi Mall, above KFC, Mothilal Nagar, Uzhavar Karai, Puducherry, 605009', 
+    phone: '+91 94442 27273',
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d502917.1501150725!2d79.78814!3d11.931095!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a536100446eab0f%3A0x242a81ade1dd1b41!2sKingMakers%20IAS%20Academy!5e1!3m2!1sen!2sus!4v1776683244007!5m2!1sen!2sus"
+  },
+    { 
+    name: 'Namakkal', 
+    address: 'Paavai College of Education, Paavai Nagar, NH 44, Pachal, Tamil Nadu 637018, India', 
+    phone: '+91 94442 27273',
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d503858.4002673701!2d78.15883600000001!3d11.412485!3m2!1i1024!2i768!4f13.1!2m1!1sPaavai%20College%20of%20Education%2C%20Paavai%20Nagar%2C%20NH%2044%2C%20Pachal%2C%20Tamil%20Nadu%20637018!5e1!3m2!1sen!2sus!4v1776683525797!5m2!1sen!2sus"
+  },
+      { 
+    name: 'Thanjavur', 
+    address: 'GTM Complex, No. 11, 12, &13, Karupps Nagar Extension, Trichy Main Road, Thanjavur - 613005', 
+    phone: '+91 94442 27273',
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d505011.57270169497!2d79.109358!3d10.743512!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baabf59142c433d%3A0x2e1472364bcdc22c!2sKINGMAKERS%20IAS%20ACADEMY!5e1!3m2!1sen!2sus!4v1776683620805!5m2!1sen!2sus"
+  },
+    { 
+    name: 'New Delhi', 
+    address: '11-B/8 First Floor, Tewari House, Pusa Road, New Delhi - 110005', 
+    phone: '+91 94442 27273',
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3524.343213343076!2d77.18189467521425!3d28.64334540076991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s11-B%2F8%20First%20Floor%2C%20Tewari%20House%2C%20Pusa%20Road%2C%20New%20Delhi%20-%20110005!5e1!3m2!1sen!2sin!4v1776684910388!5m2!1sen!2sin"
+  },
 ];
 
 const ContactUs = () => {
@@ -244,23 +299,39 @@ const ContactUs = () => {
 
       {/* Branches Section */}
       <div className="branches-section">
-        <div className="container">
+        <div className="container-fluid px-lg-5">
           <div className="section-header">
-            <h2>Our Branches</h2>
-            <p>Visit any of our centers across Tamil Nadu and more</p>
+            <h2>Our Coaching Centres</h2>
+            <p>Find the nearest KingMakers IAS Academy branch and start your journey today</p>
           </div>
 
-          <div className="branches-grid">
+          <div className="branches-grid-fluid">
             {branches.map((branch, index) => (
-              <div key={index} className="branch-card">
-                {/* <div className="branch-icon"><i className={`fa ${branch.icon}`}></i></div> */}
-                <h3>{branch.name}</h3>
-                <p className="branch-address">{branch.address}</p>
-                {/* <div className="branch-actions">
-                  <a href={`tel:${branch.phone}`} className="branch-phone">
-                    <i className="fa fa-phone"></i> Call
-                  </a>
-                </div> */}
+              <div key={index} className="branch-card-fluid">
+                <div className="branch-map-wrapper">
+                  <iframe
+                    src={branch.mapUrl}
+                    width="100%"
+                    height="250"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`${branch.name} Location Map`}
+                  ></iframe>
+                </div>
+                <div className="branch-card-content">
+                  <h3>{branch.name}</h3>
+                  <div className="branch-address-box">
+                    <i className="fa fa-map-marker-alt"></i>
+                    <p className="branch-address-text">{branch.address}</p>
+                  </div>
+                  <div className="branch-cta-footer">
+                    <a href={`tel:${branch.phone}`} className="branch-call-btn">
+                      <i className="fa fa-phone"></i> {branch.phone}
+                    </a>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

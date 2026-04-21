@@ -32,7 +32,7 @@ const HeaderMiddle = () => {
 
                 {/* Branches Section */}
                 <div className="header-branches">
-                    <div className="branch-item">
+                    <Link to="/best-ias-coaching-centre-in-chennai-sri-sai-tower/" className="branch-item" style={{ textDecoration: 'none' }}>
                         <div className="branch-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" fill="none" stroke="currentColor" strokeWidth="1.2">
                                 {/* Base and Main Floor */}
@@ -55,9 +55,9 @@ const HeaderMiddle = () => {
                             </svg>
                         </div>
                         <div className="branch-label">Chennai</div>
-                    </div>
+                    </Link>
                     <div className="branch-divider">|</div>
-                    <div className="branch-item">
+                    <Link to="/best-ias-coaching-centre-in-delhi/" className="branch-item" style={{ textDecoration: 'none' }}>
                         <div className="branch-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 85" fill="none" stroke="currentColor" strokeWidth="1.2">
                                 {/* Main Structure */}
@@ -79,9 +79,9 @@ const HeaderMiddle = () => {
                             </svg>
                         </div>
                         <div className="branch-label">Delhi</div>
-                    </div>
+                    </Link>
                      <div className="branch-divider">|</div>
-                    <div className="branch-item">
+                    <Link to="/best-ias-coaching-centre-in-trichy/" className="branch-item" style={{ textDecoration: 'none' }}>
                         <div className="branch-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 85" fill="none" stroke="currentColor" strokeWidth="1.2">
                                 <title>Trichy Building</title>
@@ -95,10 +95,10 @@ const HeaderMiddle = () => {
                             </svg>
                         </div>
                         <div className="branch-label">Trichy</div>
-                    </div>
+                    </Link>
 
                      <div className="branch-divider">|</div>
-                    <div className="branch-item">
+                    <Link to="/best-ias-coaching-centre-in-coimbatore/" className="branch-item" style={{ textDecoration: 'none' }}>
                         <div className="branch-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 85" fill="none" stroke="currentColor" strokeWidth="1.2">
                                 <title>Clock Tower, Coimbatore</title>
@@ -112,10 +112,10 @@ const HeaderMiddle = () => {
                             </svg>
                         </div>
                         <div className="branch-label">Coimbatore</div>
-                    </div>
+                    </Link>
 
                      <div className="branch-divider">|</div>
-                    <div className="branch-item">
+                    <Link to="/best-ias-coaching-centre-in-madurai/" className="branch-item" style={{ textDecoration: 'none' }}>
                         <div className="branch-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 85" fill="none" stroke="currentColor" strokeWidth="1.2">
                                 {/* Madurai Meenakshi Gopuram Style */}
@@ -128,11 +128,11 @@ const HeaderMiddle = () => {
                             </svg>
                         </div>
                         <div className="branch-label">Madurai</div>
-                    </div>
+                    </Link>
 
 
                      <div className="branch-divider">|</div>
-                    <div className="branch-item">
+                    <Link to="/best-ias-coaching-centre-in-pondicherry/" className="branch-item" style={{ textDecoration: 'none' }}>
                         <div className="branch-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 85" fill="none" stroke="currentColor" strokeWidth="1.2">
                                 <title>Aayi Mandapam, Pondicherry</title>
@@ -149,7 +149,7 @@ const HeaderMiddle = () => {
                             </svg>
                         </div>
                         <div className="branch-label">Puducherry</div>
-                    </div>
+                    </Link>
 
                       {/* <div className="branch-divider">|</div>
                     <div className="branch-item">

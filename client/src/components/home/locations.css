@@ -224,7 +224,7 @@
 
 .location-status-tag {
     display: inline-block;
-    background: #d79e04;
+    background: var(--button-bg);
     color: #ffffff;
     font-size: 10px;
     font-weight: 700;

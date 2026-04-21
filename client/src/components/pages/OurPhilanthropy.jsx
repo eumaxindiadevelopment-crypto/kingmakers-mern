@@ -103,20 +103,20 @@ const OurPhilanthropy = () => {
       {/* ── Hero ─────────────────────────────── */}
       <section className="philanthropy-hero">
         <div className="philanthropy-hero-content">
-          <span className="philanthropy-hero-badge">Giving Back to Society</span>
+          {/* <span className="philanthropy-hero-badge">Giving Back to Society</span> */}
           <h1>Our Philanthropy</h1>
-          <p>
+          {/* <p>
             The first step toward change is awareness.
             The second step is acceptance.
-          </p>
-          <div className="phil-hero-accent"></div>
+          </p> */}
+          {/* <div className="phil-hero-accent"></div> */}
         </div>
       </section>
 
       {/* ── Awareness Program ─────────────────── */}
       <section className="awareness-section">
         <div className="awareness-inner">
-          <p className="section-eyebrow">What We Do</p>
+          {/* <p className="section-eyebrow">What We Do</p> */}
           <h2>KingMakers Awareness Program</h2>
           <div className="awareness-card">
             <p>
@@ -137,7 +137,7 @@ const OurPhilanthropy = () => {
 
           {/* Text */}
           <div className="unnakul-text">
-            <p className="section-eyebrow">Our Signature Initiative</p>
+            {/* <p className="section-eyebrow">Our Signature Initiative</p> */}
             <h2>Unnakul Oru IAS</h2>
             <h3>— The IAS in You</h3>
             <p>
@@ -177,7 +177,7 @@ const OurPhilanthropy = () => {
       <section className="stipend-section">
         <div className="stipend-inner">
           <div className="section-title-block">
-            <p className="section-eyebrow">Financial Empowerment</p>
+            {/* <p className="section-eyebrow">Financial Empowerment</p> */}
             <h2>Stipend Programme</h2>
             <p>
               Supporting dedicated aspirants with monthly stipends to ensure 
@@ -220,7 +220,7 @@ const OurPhilanthropy = () => {
       <section className="phil-testimonials">
         <div className="phil-testimonials-inner">
           <div className="section-title-block">
-            <p className="section-eyebrow">Student Voices</p>
+            {/* <p className="section-eyebrow">Student Voices</p> */}
             <h2>What Our Aspirants Say</h2>
             <p>Real stories from students whose lives were touched by our programs.</p>
           </div>
@@ -231,7 +231,7 @@ const OurPhilanthropy = () => {
                 <span className="quote-icon">"</span>
                 <p>{t.text}</p>
                 <div className="testimonial-author">
-                  <div className="author-avatar">{t.initial}</div>
+                  {/* <div className="author-avatar">{t.initial}</div> */}
                   <div className="author-info">
                     <strong>{t.name}</strong>
                     <span>{t.title}</span>

@@ -18,7 +18,8 @@
 
 .navbar-logo {
     flex-shrink: 0;
-    display: none; /* Hidden on desktop by default as HeaderMiddle has it */
+    display: none;
+    /* Hidden on desktop by default as HeaderMiddle has it */
 }
 
 /* Show logo on mobile */
@@ -41,7 +42,7 @@
 
 .navbar-menu a {
     font-family: 'Figtree', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--heading-color);
     padding: 10px 16px;
@@ -173,29 +174,41 @@
 }
 
 .nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.dropdown-link-label {
     font-family: 'Figtree', sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: var(--heading-color);
-    padding: 10px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    color: var(--heading-color) !important;
+    padding: 10px 0 10px 16px;
     transition: color 0.3s ease;
-    white-space: nowrap;
-    user-select: none;
+    text-decoration: none;
 }
 
-.nav-dropdown-toggle:hover {
-    color: var(--button-bg);
+.nav-dropdown-arrow-wrap {
+    padding: 10px 16px 10px 8px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.dropdown-link-label:hover,
+.nav-dropdown-arrow-wrap:hover {
+    color: var(--button-bg) !important;
 }
 
 .nav-dropdown-arrow {
     font-size: 10px;
     transition: transform 0.25s ease;
     display: inline-block;
+    color: inherit;
 }
 
 .nav-dropdown:hover .nav-dropdown-arrow {
@@ -250,11 +263,21 @@
 @media (max-width: 768px) {
     .nav-dropdown-toggle {
         width: 100%;
-        padding: 14px 0;
         font-size: 18px;
         border-bottom: 1px solid var(--border-color);
         border-radius: 0;
         justify-content: space-between;
+        padding: 0;
+    }
+
+    .dropdown-link-label {
+        flex: 1;
+        padding: 14px 0 14px 0;
+        border-right: 1px solid var(--border-color);
+    }
+
+    .nav-dropdown-arrow-wrap {
+        padding: 14px 20px;
     }
 
     .nav-dropdown-menu {

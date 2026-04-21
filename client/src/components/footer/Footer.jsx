@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './footer.css';
 
 const Footer = () => {
@@ -17,20 +18,20 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>Quick Links</h4>
                         <ul className="footer-links">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#faculties">Faculties</a></li>
-                            <li><a href="#achievers">Achievers</a></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/about-us/">About Us</Link></li>
+                            <li><Link to="/faculties/">Faculties</Link></li>
+                            <li><Link to="/achievers/">Achievers</Link></li>
                         </ul>
                     </div>
 
                     <div className="footer-col">
                         <h4>Important Links</h4>
                         <ul className="footer-links">
-                            <li><a href="#courses">UPSC</a></li>
-                            <li><a href="#courses">TNPSC</a></li>
-                            <li><a href="#courses">Banking</a></li>
-                            <li><a href="#courses">Learning Circle</a></li>
+                            <li><Link to="/upsc-course/">UPSC</Link></li>
+                            <li><Link to="/tnpsc-course/">TNPSC</Link></li>
+                            <li><Link to="/events/">Events</Link></li>
+                            <li><Link to="/blogs/">Blogs</Link></li>
                         </ul>
                     </div>
 
@@ -42,7 +43,7 @@ const Footer = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
-                                <span>8th Floor, Rayala Towers, Anna Salai, Chennai, India</span>
+                                <span>62, 6th Ave, P Block, Anna Nagar, Chennai - 600040</span>
                             </div>
                             <div className="footer-contact-item">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -63,7 +64,7 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <div className="footer-bottom-content">
                         <div className="footer-copyright">
-                            <p> ©{new Date().getFullYear()} Kingmakers IAS Academy. All Rights Reserved. Designed and Developed By Clicktots Technologies</p>
+                            <p> ©{new Date().getFullYear()} Kingmakers IAS Academy. All Rights Reserved.</p>
                         </div>
                         <div className="footer-social">
                             <a href="https://www.facebook.com/KingmakersIasAcademy/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">

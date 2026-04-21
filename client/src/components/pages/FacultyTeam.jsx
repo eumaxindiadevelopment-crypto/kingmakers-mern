@@ -225,12 +225,12 @@ const FacultyTeam = () => {
                 <div className="faculty-hero-bg-circle circle-1"></div>
                 <div className="faculty-hero-bg-circle circle-2"></div>
                 <div className="faculty-hero-content">
-                    <p className="faculty-hero-subtitle">Meet Our Esteemed</p>
+                    {/* <p className="faculty-hero-subtitle">Meet Our Esteemed</p> */}
                     <h1>Our Faculty Team</h1>
-                    <div className="faculty-hero-accent"></div>
-                    <p className="faculty-hero-desc">
+                    {/* <div className="faculty-hero-accent"></div> */}
+                    {/* <p className="faculty-hero-desc">
                         Highly skilled UPSC coaching experts dedicated to shaping the next generation of civil servants
-                    </p>
+                    </p> */}
                 </div>
             </section>
 

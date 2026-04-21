@@ -23,9 +23,9 @@ const TrichyIasPage = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await fetch(`${API}/api/courses?type=UPSC`);
+        const res = await fetch(`${API}/api/courses?category=UPSC`);
         const data = await res.json();
-        const published = Array.isArray(data) ? data.filter(c => c.isPublished) : [];
+        const published = Array.isArray(data) ? data.filter(c => c.status === 'Published') : [];
         setDbCourses(published);
       } catch (err) {
         console.error('Error fetching UPSC courses:', err);
@@ -56,32 +56,32 @@ const TrichyIasPage = () => {
 
   const whyChooseUs = [
     {
-      icon: '👨‍🏫',
+      icon: <i className="fas fa-user-tie"></i>,
       title: 'Learn from IAS & Civil Service Officers',
       desc: 'Get mentored by serving and retired IAS, IPS, and IRS officers who bring real-world administrative insights into your preparation. Their guidance helps you understand the exam beyond textbooks and develop the mindset needed to become a civil servant.'
     },
     {
-      icon: '📖',
+      icon: <i className="fas fa-book-open"></i>,
       title: 'Comprehensive & Structured UPSC Preparation',
       desc: 'Our program covers the entire UPSC syllabus including Prelims, Mains, and Interview in a well-structured format. Each subject is taught with conceptual clarity, making it easier for aspirants to retain and apply knowledge effectively.'
     },
     {
-      icon: '📈',
+      icon: <i className="fas fa-chess"></i>,
       title: 'Proven 5-Phase Preparation Strategy',
       desc: 'KingMakers follows a scientifically designed 5-phase approach that ensures step-by-step mastery of the UPSC exam. From foundation building to final interview preparation, every stage is strategically planned for maximum results.'
     },
     {
-      icon: '📊',
+      icon: <i className="fas fa-file-signature"></i>,
       title: 'Extensive Test Series & Performance Tracking',
       desc: 'Practice is key to success in UPSC. Our program includes thousands of MCQs, answer writing sessions, and full-length mock tests with detailed performance analysis to help you improve consistently.'
     },
     {
-      icon: '🤝',
+      icon: <i className="fas fa-users-cog"></i>,
       title: 'Personalized Mentorship & Doubt Clearing',
       desc: 'Every aspirant receives individual attention through mentorship programs, regular feedback sessions, and dedicated doubt-clearing classes. This ensures no student is left behind in their preparation journey.'
     },
     {
-      icon: '💻',
+      icon: <i className="fas fa-desktop"></i>,
       title: 'Flexible Learning – Online & Offline',
       desc: `Whether you prefer classroom learning in ${location.city} or online preparation from anywhere, KingMakers offers flexible learning modes. Our online platform provides live classes, recorded sessions, and continuous mentor support.`
     }
@@ -343,93 +343,95 @@ const TrichyIasPage = () => {
         </div>
       </section>
 
-      {/* Programs & Courses Section */}
-      <section className="upsc-programs">
+      <section className="batches-header-section" style={{ padding: '4rem 0 1rem' }}>
         <div className="container-upsc">
-          <h2>Our UPSC Programs</h2>
-          <div className="programs-grid">
-            {loading ? (
-              <div className="text-center py-5">Loading courses...</div>
-            ) : dbCourses.length === 0 ? (
-              <div className="text-center py-5">No courses available at the moment.</div>
-            ) : (
-              dbCourses.map((program) => (
-                <div key={program._id} className="program-card">
-                  <div className="program-header">
-                    <h3>{program.name}</h3>
-                  </div>
-                  <p className="program-description">{program.description}</p>
-                  <div className="program-details">
-                    <div className="detail-item">
-                      <span className="detail-label">Year / Duration:</span>
-                      <span className="detail-value">{program.year}</span>
-                    </div>
-                    <div className="detail-item">
-                      <span className="detail-label">Fee:</span>
-                      <span className="price">{program.fee}</span>
-                    </div>
-                  </div>
-                  <div className="program-actions">
-                    {program.schedulePdf && (
-                      <a
-                        href={program.schedulePdf}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="btn-schedule"
-                        style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
-                      >
-                        View Schedule
-                      </a>
-                    )}
-                    <button className="btn-enroll">Pay Now</button>
-                  </div>
-                </div>
-              ))
-            )}
+          <div className="section-head" style={{ marginBottom: '1rem', textAlign: 'center' }}>
+            {/* <span className="section-tag" style={{ margin: '0 auto 1rem' }}>Batches</span> */}
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Upcoming Batches in Our Best UPSC Academy in Trichy</h2>
+            <p className="section-subtitle" style={{ maxWidth: '800px', margin: '0 auto' }}>Find the perfect batch for your UPSC preparation from our diverse course offerings.</p>
           </div>
         </div>
       </section>
 
-      {/* Upcoming Batches Section */}
-      <section className="batches-section">
-        <div className="container-upsc">
-          <div className="section-head">
-            <span className="section-tag">Batches</span>
-            <h2>Upcoming Batches in Our Best UPSC Academy in {location.city}</h2>
-            <p className="section-subtitle">Register early to secure your seat in our upcoming batches.</p>
-          </div>
-          <div className="batches-table-wrap">
-            <table className="batches-table">
-              <thead>
-                <tr>
-                  <th>Course</th>
-                  <th>Start Date</th>
-                  <th>Mode / Regular or Weekend</th>
-                  <th>Batch / Timing</th>
-                </tr>
-              </thead>
-              <tbody>
-                {loading ? (
-                  <tr><td colSpan="4" className="text-center">Loading...</td></tr>
-                ) : dbCourses.length === 0 ? (
-                  <tr><td colSpan="4" className="text-center">No upcoming batches announced.</td></tr>
-                ) : (
-                  dbCourses.map((batch) => (
-                    <tr key={batch._id}>
-                      <td className="batch-course">{batch.name}</td>
-                      <td><span className="batch-date-badge">{batch.startDate}</span></td>
+
+
+      {/* Dynamic Course-wise Batch Sections */}
+      {dbCourses.filter(c => c.upcomingBatches?.length > 0).map((course) => (
+        <section className="batches-section" key={course._id} style={{ padding: '2rem 0 4rem' }}>
+          <div className="container-upsc">
+            <div className="course-batch-heading" style={{ textAlign: 'left', marginBottom: '2.5rem' }}>
+              <h3 style={{ fontSize: '26px', fontWeight: '800', color: '#043053', marginBottom: '10px' }}>{course.title}</h3>
+              {/* <p style={{ color: '#0a5a8f', fontWeight: '600', fontSize: '1.1rem' }}>Comprehensive Program Batch Schedule</p> */}
+            </div>
+            
+            <div className="batches-table-wrap">
+              <table className="batches-table">
+                <thead>
+                  <tr>
+                    <th>Batch</th>
+                    <th>Regular/Weekend</th>
+                    <th>Starts on</th>
+                    <th>Fee (Incl. GST)</th>
+                    <th className="text-center" style={{ width: '320px' }}>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {(course.upcomingBatches || []).map((batch, idx) => (
+                    <tr key={`${course._id}-${idx}`}>
+                      <td className="batch-course">{batch.batchName}</td>
                       <td>{batch.mode}</td>
-                      <td>{batch.batch}</td>
+                      <td><span className="batch-date-badge">{batch.startDate}</span></td>
+                      <td>Rs. {batch.fees?.toLocaleString('en-IN')}/-</td>
+                      <td className="text-center">
+                        <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
+                          <button 
+                            className="btn-enroll" 
+                            style={{ padding: '0.4rem 1rem', fontSize: '0.8rem', whiteSpace: 'nowrap', flex: 'none', width: 'auto' }} 
+                            onClick={() => batch.paymentLink && (window.location.href = batch.paymentLink)}
+                          >
+                            Pay Here
+                          </button>
+                          {batch.showSchedule && (
+                            <button 
+                              className="btn-enroll" 
+                              style={{ 
+                                padding: '0.4rem 1rem', 
+                                fontSize: '0.8rem', 
+                                background: '#e5e7eb', 
+                                color: '#374151', 
+                                whiteSpace: 'nowrap',
+                                border: '1px solid #d1d5db',
+                                flex: 'none',
+                                width: 'auto'
+                              }} 
+                              onClick={() => window.open(batch.schedulePdf || course.schedulePdf, '_blank')}
+                            >
+                              Schedule View
+                            </button>
+                          )}
+                        </div>
+                      </td>
                     </tr>
-                  ))
-                )}
-              </tbody>
-            </table>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
+
+      {dbCourses.filter(c => c.upcomingBatches?.length > 0).length === 0 && !loading && (
+        <section className="batches-section">
+          <div className="container-upsc text-center py-5">
+            <p className="no-batches-msg">No upcoming batches announced at the moment. Please contact us for more information.</p>
+          </div>
+        </section>
+      )}
 
 
+
+      {/* Achievers Section */}
+      <Achievers />
 
       {/* CTA Banner Section */}
       <section className="location-cta-banner">
@@ -454,10 +456,6 @@ const TrichyIasPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Achievers Section */}
-      <Achievers />
-
 
       {/* FAQ Section */}
       <section className="faq-section" id="faq">
@@ -527,58 +525,69 @@ const TrichyIasPage = () => {
         </div>
       </section>
 
-     {/* <section className='contact-map-section floating-card-layout'>
-        <div className="full-width-map">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.73030365737!2d78.6826012!3d10.8319693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf50ff2dfbc5d%3A0x6339896a5382216e!2sKingMakers%20IAS%20Academy!5e0!3m2!1sen!2sin!4v1712585400000!5m2!1sen!2sin" 
-            width="100%" 
-            height="650" 
-            style={{ border: 0 }} 
-            allowFullScreen="" 
-            loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade"
-            title="KingMakers IAS Academy Trichy Map"
-          ></iframe>
-        </div>
-        
-        <div className="container floating-card-container">
-          <div className="floating-contact-card">
-            <h2 className="contact-title">Contact Trichy Branch</h2>
-            
-            <div className="contact-item">
-              <div className="contact-icon-circle">
-                <i className="fa fa-phone"></i>
+      <section className="contact-map-section split-layout">
+        <div className="contact-map-grid">
+          {/* Map Column */}
+          <div className="map-column">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d504855.43539601774!2d78.689521!3d10.836477!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf562f3766a4f%3A0xc9342095f49f4517!2sKingMakers%20IAS%20Academy%20-%20Trichy%20Branch!5e1!3m2!1sen!2sus!4v1776686226357!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: "450px" }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="KingMakers IAS Academy Trichy Map"
+            ></iframe>
+          </div>
+
+          {/* Info Column */}
+          <div className="info-column-card">
+            <div className="info-card-inner">
+              <h2 className="info-title">Trichy Branch</h2>
+              <div className="info-divider"></div>
+              
+              <div className="contact-detail-item">
+                <div className="detail-icon">
+                  <i className="fa fa-map-marker-alt"></i>
+                </div>
+                <div className="detail-text">
+                  <label>Our Address</label>
+                  <p>No.8, Star Avenue, Old Karur Road, Mela Chinthamani, Trichy-620 003.</p>
+                </div>
               </div>
-              <div className="contact-text">
-                <p className="label">Call Us</p>
-                <p className="value">+91-9444224422</p>
+
+              <div className="contact-detail-item">
+                <div className="detail-icon">
+                  <i className="fa fa-phone-alt"></i>
+                </div>
+                <div className="detail-text">
+                  <label>Call Us</label>
+                  <a href="tel:+919444227273">+91 94442 27273</a>
+                </div>
               </div>
-            </div>
-            
-            <div className="contact-item">
-              <div className="contact-icon-circle">
-                <i className="fa fa-envelope"></i>
+
+              <div className="contact-detail-item">
+                <div className="detail-icon">
+                  <i className="fa fa-envelope"></i>
+                </div>
+                <div className="detail-text">
+                  <label>Email Address</label>
+                  <a href="mailto:info@kingmakersiasacademy.com">info@kingmakersiasacademy.com</a>
+                </div>
               </div>
-              <div className="contact-text">
-                <p className="label">Email Address</p>
-                <p className="value">info@kingmakersiasacademy.com</p>
-              </div>
-            </div>
-            
-            <div className="contact-item">
-              <div className="contact-icon-circle">
-                <i className="fa fa-map-marker"></i>
-              </div>
-              <div className="contact-text">
-                <p className="label">Visit Branch</p>
-                <p className="value">123, Main Street, Trichy</p>
+
+              <div className="branch-cta-row">
+                <a href="https://maps.app.goo.gl/Yt9A8r6f5r5p5r5r5" target="_blank" rel="noopener noreferrer" className="btn-directions">
+                  <i className="fa fa-location-arrow"></i> Get Directions
+                </a>
               </div>
             </div>
           </div>
         </div>
-     </section> */}
+      </section>
 
-     <LocationsSection />      
+      <LocationsSection />
     </div>
   );
 };

@@ -8,7 +8,7 @@ const PresidentTestimonials = () => {
         {
             name: "Shri. RAM NATH KOVIND",
             title: "Hon'ble Former President of India",
-            image: "/images/President/shri-ram-nath-kovind.webp",
+            image: "/images/President/shri-ram-nath-kovind-new.webp",
             quotes: [
                 "KingMakers Academy puts a special emphasis on educating students from rural areas and especially from socially and economically weaker sections. This commitment deserves highest appreciation.",
                 "You are giving these students not just knowledge but also the confidence to compete with the best. I congratulate KingMakers IAS academy for its noble mission. I am confident that many of the future nation builders of India will emerge from these very halls."
@@ -17,7 +17,7 @@ const PresidentTestimonials = () => {
         {
             name: "Bharath Ratna Shri. PRANAB MUKHERJEE",
             title: "Hon'ble Former President of India",
-            image: "/images/President/pranab-mukherjee.webp",
+            image: "/images/President/pranab-mukherjee-new.webp",
             quotes: [
                 "I am happy to know that KingMakers IAS Academy is going to train up and prepare the students boys and girls coming from rural background and lower stratum of society, so that they can equip themselves and acquire the knowledge to compete with those who got better education, those who had better family background and better working environment.",
                 "I wish KingMakers IAS Academy all success in their mission and in their objective. I do hope that future administrators of the country will emanate from KingMakers IAS academy and do their job very successfully."
@@ -32,9 +32,9 @@ const PresidentTestimonials = () => {
         <section className="presidential-section">
             <div className="container">
                 <div className="presidential-header">
-                    <span className="presidential-badge">Statesmanship Endorsements</span>
+                    {/* <span className="presidential-badge">Statesmanship Endorsements</span> */}
                     <h2>Voices of India's Statesmanship</h2>
-                    <div className="presidential-line"></div>
+                    {/* <div className="presidential-line"></div> */}
                 </div>
 
                 <div className="presidential-carousel-outer">

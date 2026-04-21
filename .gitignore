@@ -2,7 +2,11 @@ node_modules/
 client/node_modules/
 server/node_modules/
 client/dist/
+dist/
 server/uploads/
 .env
 .DS_Store
 *.log
+*.zip
+.vscode/
+.idea/

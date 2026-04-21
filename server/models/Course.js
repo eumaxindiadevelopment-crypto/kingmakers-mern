@@ -29,7 +29,7 @@ const CourseSchema = new mongoose.Schema({
         fees: { type: Number, default: 0 },
         paymentLink: { type: String, trim: true },
         showSchedule: { type: Boolean, default: false },
-        schedulePdf: { type: String }
+        schedulePdf: { type: String },
     }],
 
     // Management

@@ -20,7 +20,8 @@
 
 :root {
   --heading-color: #022873;
-  --button-bg: #D79E04;
+  /* --button-bg: #D79E04; */
+  --button-bg: #FBBD23;
   --button-text: #ffffff;
   --body-text: #212529;
   --dark-gray: #333333;

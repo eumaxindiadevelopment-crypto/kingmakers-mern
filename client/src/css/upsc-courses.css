@@ -221,7 +221,7 @@
 }
 
 .upsc-page .batches-table thead tr {
-  background: linear-gradient(135deg, #043053, #0a5a8f);
+  background: var(--bggradient-color);
   color: white;
 }
 
@@ -363,13 +363,13 @@
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border-top: 4px solid #0a5a8f;
+  border-top: 4px solid var(--heading-color);
 }
 
 .upsc-page .feature-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-  border-top-color: #c0a77d;
+  border-top-color: var(--button-bg);
 }
 
 .upsc-page .feature-icon {
@@ -396,13 +396,13 @@
 /* Program Structure Section */
 .upsc-page .program-structure {
   padding: 80px 20px;
-  background: white;
+  background: var(--bggradient-color);
   position: relative;
 }
 
 .upsc-page .program-structure h2 {
   font-size: 2.5rem;
-  color: var(--heading-color);
+  color: var(--button-bg);
   text-align: center;
   margin-bottom: 50px;
   font-weight: 700;
@@ -448,7 +448,7 @@
 }
 
 .upsc-page .phase-number {
-  background: linear-gradient(135deg, #0a5a8f, #1a7ab3);
+  background: var(--bggradient-color);
   color: white;
   width: 50px;
   height: 50px;
@@ -470,7 +470,7 @@
 
 .upsc-page .phase-card .duration {
   font-size: 0.9rem;
-  color: #c0a77d;
+  color: #000;
   font-weight: 600;
   margin: 0 0 15px 0;
 }
@@ -678,7 +678,7 @@
 }
 
 .upsc-page .btn-enroll {
-  background: linear-gradient(135deg, #0a5a8f, #1a7ab3);
+  background: var(--heading-color);
   color: white;
 }
 

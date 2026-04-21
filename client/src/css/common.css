@@ -89,13 +89,13 @@
 }
 
 .section-title-block h2::after {
-    content: '';
+    /* content: '';
     display: block;
     width: 56px;
     height: 3px;
     background: var(--gold);
     border-radius: 2px;
-    margin: 10px auto 0;
+    margin: 10px auto 0; */
 }
 
 .section-title-block .subtitle {
@@ -169,8 +169,8 @@
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #d79e04 0%, #d79e04 60%, #d79e04 100%);
-    color: var(--white);
+    background: linear-gradient(135deg, var(--button-bg) 0%, var(--button-bg) 60%, var(--button-bg) 100%);
+    color: var(--heading-color);
     border-radius: var(--radius-full);
     letter-spacing: 0.6px;
     box-shadow: 0 4px 18px rgba(176, 140, 60, 0.38);
@@ -181,7 +181,7 @@
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #d4b37a 0%, #c09a56 60%, #a87e3e 100%);
+    background: linear-gradient(135deg, var(--heading-color) 0%, var(--heading-color) 60%, var(--heading-color) 100%);
     transform: translateY(-3px);
     box-shadow: 0 8px 28px rgba(176, 140, 60, 0.52);
     color: var(--white);

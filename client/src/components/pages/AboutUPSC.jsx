@@ -228,7 +228,7 @@ const AboutUPSC = () => {
       {/* ── Hero ── */}
       <section className="au-hero">
         <div className="au-hero-inner">
-          <span className="au-hero-tag">Civil Services</span>
+          {/* <span className="au-hero-tag">Civil Services</span> */}
           <h1>About UPSC</h1>
           <p>
             Everything you need to know about the Union Public Service Commission Civil Services Examination
@@ -302,12 +302,12 @@ const AboutUPSC = () => {
           {/* Why Prestigious */}
           <section className="au-why-prestigious">
             <div className="container-au">
-              <div className="au-section-head">
+              <div className="au-section-head why-prestigious">
                 <span className="au-section-tag">Significance</span>
                 <h2>Why is UPSC So Prestigious?</h2>
-                <p className="au-section-sub">
+                {/* <p className="au-section-sub">
                   The UPSC CSE is more than an exam — it is a life-defining journey that shapes the future leaders of India.
-                </p>
+                </p> */}
               </div>
               <div className="au-prestige-grid">
                 <div className="au-prestige-card">
@@ -351,7 +351,7 @@ const AboutUPSC = () => {
           <section className="au-eligibility">
             <div className="container-au">
               <div className="au-section-head">
-                <span className="au-section-tag">Who Can Apply</span>
+                {/* <span className="au-section-tag">Who Can Apply</span> */}
                 <h2>Eligibility Criteria</h2>
                 <p className="au-section-sub">
                   Check the age, educational, and attempt criteria for Civil Services and Forest Service examinations.

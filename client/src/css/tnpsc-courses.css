@@ -251,6 +251,10 @@
   padding-bottom: 18px;
 }
 
+.eligibility-section-head h2 {
+  color: var(--button-bg) !important;
+}
+
 .tnpsc-intro .section-head h2 {
   color: var(--heading-color);
 }
@@ -259,7 +263,7 @@
   color: #000;
 }
 
-.tnpsc-page .section-head h2::after {
+/* .tnpsc-page .section-head h2::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -269,7 +273,7 @@
   height: 4px;
   background: linear-gradient(90deg, #0a5a8f, #c0a77d);
   border-radius: 2px;
-}
+} */
 
 .tnpsc-page .section-subtitle {
   font-size: 0.95rem;
@@ -581,7 +585,7 @@
 }
 
 .tnpsc-page .batches-table thead tr {
-  background: linear-gradient(135deg, #043053, #0a5a8f);
+  background: var(--bggradient-color);
   color: white;
 }
 
@@ -666,7 +670,7 @@
    ============================================ */
 .tnpsc-page .eligibility-section {
   padding: 90px 20px;
-  background: #ffffff;
+  background: var(--bggradient-color);
 }
 
 .tnpsc-page .eligibility-table-wrap {
@@ -744,7 +748,7 @@
   padding: 11px 30px;
   border: 2px solid #0a5a8f;
   background: transparent;
-  color: #0a5a8f;
+  color: var(--heading-color);
   border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 700;
@@ -758,7 +762,7 @@
 }
 
 .tnpsc-page .tab-btn.tab-active {
-  background: linear-gradient(135deg, #043053, #0a5a8f);
+  background: var(--bggradient-color);
   color: white;
   border-color: transparent;
   box-shadow: 0 4px 15px rgba(10, 90, 143, 0.3);
@@ -846,7 +850,7 @@
 }
 
 .tnpsc-page .syllabus-topic-item:hover {
-  border-left-color: #0a5a8f;
+  border-left-color: var(--bggradient-color);
   background: rgba(10, 90, 143, 0.03);
 }
 

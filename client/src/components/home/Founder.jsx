@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import './founder.css';
 
@@ -71,8 +72,8 @@ const Founder = () => {
                         </div> */}
 
                         <div className="founder-cta">
-                            <a href="#about" className="btn-primary">Learn About Us</a>
-                            <a href="#contact" className="founder-contact-link">Get in Touch →</a>
+                            {/* <a href="#about" className="btn-primary">Learn About Us</a> */}
+                            <Link to="/about-us/" className="founder-contact-link">Explore Our Story →</Link>
                         </div>
 
                     </div>

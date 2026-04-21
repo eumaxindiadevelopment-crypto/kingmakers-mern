@@ -1,44 +1,222 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../../css/commitment.css';
 
-const mentorData = [
+const facultyData = [
     {
-        name: 'Mr. Elango S.',
-        designation: 'Managing Director & Mentor',
-        image: '/images/faculties/Mr.-Elango-S-212x300.webp',
+        name: "Mr. Sathyamoorthi",
+        subject: "Geography",
+        initial: "S",
+        color: "#043053",
+        image: "/images/faculty/Sathyamoorthi.webp"
     },
     {
-        name: 'Mr. Bharath',
-        designation: 'Academic Dean',
-        image: '/images/faculties/Mr.-Bharath-1-212x300.webp',
+        name: "Mr. Arun, IPoS (Ex)",
+        subject: "Psychology",
+        initial: "A",
+        color: "#0a5a8f",
+        image: "/images/faculty/Arun.webp"
     },
     {
-        name: 'Ms. Madhavi',
-        designation: 'Senior General Manager',
-        image: '/images/faculties/Ms.-Madhavi-212x300.webp',
+        name: "Mr. Sadik, M.A.",
+        subject: "History",
+        initial: "S",
+        color: "#0a5a8f",
+        image: "/images/faculty/Sadik.webp"
     },
     {
-        name: 'Mr. Harikrishnan K.',
-        designation: 'Academic Coordinator',
-        image: '/images/faculties/Mr.-Harikrishnan-K-212x300.webp',
+        name: "Mr. Sabarinathan",
+        subject: "Public Administration",
+        initial: "S",
+        color: "#1a7ab3",
+        image: "/images/faculty/Sabarinathan.webp"
     },
     {
-        name: 'Ms. Vijetha Dhinakaran',
-        designation: 'Academic Coordinator',
-        image: '/images/faculties/Ms.-Vijetha-Dhinakaran-212x300.webp',
+        name: "Mr. Vivekanandhan",
+        subject: "CSAT – English Comprehension",
+        initial: "V",
+        color: "#043053",
+        image: "/images/faculty/Vivekanandhan.webp"
     },
     {
-        name: 'Mr. Dhinakaran',
-        designation: 'Academic Coordinator',
-        image: '/images/faculties/IMG_9563-final-image-227x300.jpg',
+        name: "Mr. Sathiya Paul Deepak S",
+        subject: "PSIR",
+        initial: "S",
+        color: "#043053",
+        image: "/images/faculty/Sathiya-Paul-Deepak.webp"
     },
+    {
+        name: "Ms. Vijetha Dhinakaran",
+        subject: "Sociology",
+        initial: "V",
+        color: "#8B5E3C",
+        image: "/images/faculty/Vijetha-Dhinakaran.webp"
+    },
+    {
+        name: "Ms. Madhavi",
+        subject: "Mentorship Programme",
+        initial: "M",
+        color: "#6B4226",
+        image: "/images/faculty/Madhavi.webp"
+    },
+    {
+        name: "Ms. Guhapriya",
+        subject: "Mentorship Programme",
+        initial: "G",
+        color: "#8B5E3C",
+        image: "/images/faculty/Guhapriya.webp"
+    },
+    {
+        name: "Ms. Adhithya",
+        subject: "Environment, Current Affairs",
+        initial: "A",
+        color: "#0a5a8f",
+        image: "/images/faculty/Adhithya.webp"
+    },
+    {
+        name: "Ms. Sathyakalavani",
+        subject: "Geography, Current Affairs",
+        initial: "S",
+        color: "#043053",
+        image: "/images/faculty/Sathyakalavani.webp"
+    },
+    {
+        name: "Mr. Prabhakaran R",
+        subject: "Tamil Lit Optional, International Relations, Ethics",
+        initial: "P",
+        color: "#1a7ab3",
+        image: "/images/faculty/Prabhakaran.webp"
+    },
+    {
+        name: "Mr. Prabhakaran A",
+        subject: "Anthropology Optional, World History, History & Ethics",
+        initial: "P",
+        color: "#043053",
+        image: "/images/faculty/Prabhakaran-two.webp"
+    },
+    {
+        name: "Mr. Adil Baig",
+        subject: "Economy, Internal Security, IR, Ethics",
+        initial: "A",
+        color: "#0a5a8f",
+        image: "/images/faculty/Adil-Baig.webp"
+    },
+    {
+        name: "Dr. Vignesh",
+        subject: "Geography, Internal Security",
+        initial: "V",
+        color: "#1a7ab3",
+        image: "/images/faculty/Vignesh.webp"
+    },
+    {
+        name: "Mr. Sri Iyappan",
+        subject: "CSAT",
+        initial: "S",
+        color: "#043053",
+        image: "/images/faculty/Sri-Iyappan.webp"
+    },
+    {
+        name: "Mr. Balajee K S",
+        subject: "Environment, Geography",
+        initial: "B",
+        color: "#6B4226",
+        image: "/images/faculty/Balajee.webp"
+    },
+    {
+        name: "Mr. Prasad",
+        subject: "Economy, IR",
+        initial: "P",
+        color: "#0a5a8f",
+        image: "/images/faculty/Prasad.webp"
+    },
+    {
+        name: "Ms. Vahinisri D",
+        subject: "Geography, Polity, History & Current Affairs",
+        initial: "V",
+        color: "#8B5E3C",
+        image: "/images/faculty/Vahinisri.webp"
+    },
+    {
+        name: "Mr. Bharath",
+        subject: "Agriculture, Geography, Environment",
+        initial: "B",
+        color: "#1a7ab3",
+        image: "/images/faculty/Bharath.webp"
+    },
+    {
+        name: "Mr. Akash K",
+        subject: "Economy",
+        initial: "A",
+        color: "#043053",
+        image: "/images/faculty/Akash.webp"
+    },
+   
+    {
+        name: "Ms. Priyanka",
+        subject: "Economy",
+        initial: "P",
+        color: "#8B5E3C",
+        image: "/images/faculty/Priyanka.webp"
+    },
+   
+    {
+        name: "Mr. Aravindhan T",
+        subject: "Economy, Geography",
+        initial: "A",
+        color: "#1a7ab3",
+        image: "/images/faculty/Aravindhan.webp"
+    },
+    {
+        name: "Mr. Ramachandran M",
+        subject: "INM, TN Development Administration",
+        initial: "R",
+        color: "#6B4226",
+        image: "/images/faculty/Ramachandran.webp"
+    },
+    {
+        name: "Mr. Elango S",
+        subject: "History, Tamil Litt.",
+        initial: "E",
+        color: "#043053",
+        image: "/images/faculty/Elango.webp"
+    },
+    {
+        name: "Mr. Muthukumaran M",
+        subject: "Science, INM",
+        initial: "M",
+        color: "#0a5a8f",
+        image: "/images/faculty/Muthukumaran.webp"
+    },
+    //  {
+    //     name: "Mr. Vetriselvan",
+    //     subject: "Polity",
+    //     initial: "V",
+    //     color: "#0a5a8f"
+    // },
+    //  {
+    //     name: "Mr. Sharan S",
+    //     subject: "History, Polity",
+    //     initial: "S",
+    //     color: "#1a7ab3"
+    // },
+    // {
+    //     name: "Mr. Junaid Ahmed",
+    //     subject: "Polity, IR",
+    //     initial: "J",
+    //     color: "#043053"
+    // },
+    // {
+    //     name: "Mr. Kesavamoorthi",
+    //     subject: "Polity, IR",
+    //     initial: "K",
+    //     color: "#0a5a8f"
+    // },
 ];
 
 const Commitment = () => {
     const [visibleCards, setVisibleCards] = useState(4);
     const [current, setCurrent] = useState(0);
     const timerRef = useRef(null);
-    const total = mentorData.length;
+    const total = facultyData.length;
 
     // Update visible cards based on screen size
     useEffect(() => {
@@ -109,22 +287,31 @@ const Commitment = () => {
                             className="faculty-carousel-track"
                             style={{ transform: `translateX(calc(-${current} * (100% / ${visibleCards})))` }}
                         >
-                            {mentorData.map((mentor, index) => (
+                            {facultyData.map((mentor, index) => (
                                 <div className="faculty-slide" key={index} style={{ flex: `0 0 calc(100% / ${visibleCards})` }}>
                                     <div className="faculty-card">
-                                        {/* Photo */}
+                                        {/* Photo or Initial Placeholder */}
                                         <div className="faculty-img-wrap">
-                                            <img
-                                                src={mentor.image}
-                                                alt={mentor.name}
-                                                className="faculty-photo"
-                                            />
+                                            {mentor.image ? (
+                                                <img
+                                                    src={mentor.image}
+                                                    alt={mentor.name}
+                                                    className="faculty-photo"
+                                                />
+                                            ) : (
+                                                <div 
+                                                    className="faculty-photo-placeholder"
+                                                    style={{ backgroundColor: mentor.color || '#0a5a8f' }}
+                                                >
+                                                    {mentor.initial || mentor.name.charAt(0)}
+                                                </div>
+                                            )}
                                         </div>
 
                                         {/* Info */}
                                         <div className="faculty-info">
                                             <h4>{mentor.name}</h4>
-                                            <span className="faculty-designation">{mentor.designation}</span>
+                                            <span className="faculty-designation">{mentor.subject}</span>
                                         </div>
                                     </div>
                                 </div>

@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import './locations.css';
 
 const locations = [
-    { city: 'Chennai', name: 'Chennai - Sri Sai Tower', slug: 'chennai-sri-sai-tower', image: '/images/location/sri-sai-tower.webp' },
-    { city: 'Chennai', name: 'Chennai - Kalam Tower', slug: 'chennai-kalam-tower', image: '/images/location/chennai-branch.webp' },
+    { city: 'Chennai', name: 'Sri Sai Tower', slug: 'chennai-sri-sai-tower', image: '/images/location/sri-sai-tower.webp' },
+    { city: 'Chennai', name: 'Kalam Tower', slug: 'chennai-kalam-tower', image: '/images/location/chennai-branch.webp' },
     { city: 'Salem', name: 'Salem', slug: 'salem', image: '/images/location/selam-branch.webp' },
     { city: 'Trichy', name: 'Trichy', slug: 'trichy', image: '/images/location/thiruchy-branch.webp' },
     { city: 'Coimbatore', name: 'Coimbatore', slug: 'coimbatore', image: '/images/location/coimbator-branch.webp' },
@@ -11,6 +11,7 @@ const locations = [
     { city: 'Pondicherry', name: 'Pondicherry', slug: 'pondicherry', image: '/images/location/pondichary-branch.webp' },
     { city: 'Namakkal', name: 'Namakkal', slug: 'namakkal', image: '/images/location/Namakkal.webp' },
     { city: 'Thanjavur', name: 'Thanjavur', slug: 'thanjavur', image: '/images/location/Thanjavur.webp' },
+    // { city: 'Delhi', name: 'New Delhi', slug: 'delhi', image: '/images/location/delhi-branch.webp' }, // Note: Need to ensure this image exists or use placeholder
 ];
 
 const LocationsSection = () => {
@@ -42,8 +43,8 @@ const LocationsSection = () => {
                                     Can't find your city? We also offer live online batches accessible from anywhere in India. 
                                     Experience the same premium classroom experience with live interactive sessions, 
                                 </p>
-                                <a href="#contact" className="btn-primary">Contact Us</a>
-                                <a href="#courses" className="locations-link">View Online Courses →</a>
+                                <Link to="/contact-us/" className="btn-primary">Contact Us</Link>
+                                <Link to="/upsc-course/" className="locations-link">View Online Courses →</Link>
                                 <div className="locations-cta-meta">
                                     <span>⭐ 4.9 / 5 Student Rating</span>
                                     <span>🎓 1,000+ Officers Placed</span>
@@ -55,7 +56,7 @@ const LocationsSection = () => {
                         <div className="locations-cards-grid">
                             {locations.map((loc, index) => (
                                 <Link 
-                                    to={`/best-ias-coaching-centre-in-${loc.slug}`}
+                                    to={`/best-ias-coaching-centre-in-${loc.slug}/`}
                                     className="location-card" 
                                     key={index}
                                     style={{ backgroundImage: `url(${loc.image})`, textDecoration: 'none' }}

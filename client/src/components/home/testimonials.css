@@ -14,7 +14,7 @@
 }
 
 .pride-header-band h2 {
-    font-size: 48px;
+    font-size: 34px;
     color: #fff;
     font-weight: 800;
     margin-bottom: 20px;
@@ -112,14 +112,14 @@
 }
 
 .pride-card-inner {
-    display: flex;
-    flex-direction: column;
+    position: relative;
     height: 100%;
+    overflow: hidden;
 }
 
 .pride-card-img-3d {
     width: 100%;
-    height: 260px;
+    height: 70%;
     overflow: hidden;
     background: #f0f0f0;
 }
@@ -136,39 +136,53 @@
     transform: scale(1.05);
 }
 
-/* Quote Icon Decoration */
+/* Info Overlay Container */
+.pride-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+/* Quote Icon Decoration (Revised for overlay) */
 .pride-quote-icon {
     position: absolute;
-    top: 5px;
-    left: 20px;
-    font-size: 100px;
+    top: 20px;
+    right: 20px;
+    font-size: 60px;
     font-family: serif;
-    color: rgba(0, 0, 0, 0.05);
+    color: rgba(255, 255, 255, 0.15);
     line-height: 1;
     z-index: 1;
     pointer-events: none;
 }
 
 .pride-card-quote {
-    padding: 20px 30px;
-    flex: 1;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
     z-index: 2;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .pride-card-quote p {
-    font-size: 15px;
-    color: #444;
-    font-style: italic;
-    line-height: 1.6;
+    font-size: 14px;
+    color: #000;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4;
     margin: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    /* -webkit-line-clamp: 2; */
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -176,18 +190,19 @@
 /* Brand Footer */
 .pride-card-footer {
     background: var(--button-bg);
-    padding: 20px;
+    padding: 15px 20px;
     text-align: center;
-    color: #ffffff;
+    /* color: #ffffff; */
     position: relative;
     z-index: 2;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .pride-card-footer h4 {
     font-size: 20px;
     font-weight: 700;
     margin: 0 0 5px;
-    color: #ffffff;
+    color: var(--heading-color);
     letter-spacing: 0.5px;
 }
 
@@ -276,7 +291,7 @@
     }
 
     .pride-header-band h2 {
-        font-size: 38px;
+        font-size: 34px;
     }
 }
 

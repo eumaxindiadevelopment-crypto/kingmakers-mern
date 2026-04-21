@@ -3,36 +3,41 @@
    ============================ */
 
 .founder-section {
-    padding: var(--section-padding);
-    /* background: linear-gradient(150deg, var(--heading-color) 0%, #084a7a 60%, #0a5a92 100%); */
     background: linear-gradient(90deg, #022873 0%, #0b3fa6 50%, #022873 100%);
+    padding: 100px 20px;
+    text-align: left;
     position: relative;
     overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Dot-grid texture */
 .founder-section::before {
     content: '';
     position: absolute;
-    inset: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-    background-size: 26px 26px;
-    pointer-events: none;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(192, 167, 125, 0.05);
+    border-radius: 50%;
+    animation: float 20s ease-in-out infinite;
 }
 
 /* Decorative quote mark */
 .founder-section::after {
-    content: '"';
+    content: '';
     position: absolute;
-    top: -30px;
-    right: 4%;
-    font-family: 'Figtree', sans-serif;
-    font-size: 300px;
-    font-weight: 900;
-    color: rgba(192, 167, 125, 0.06);
-    line-height: 1;
-    user-select: none;
-    pointer-events: none;
+    bottom: -20%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    animation: float 25s ease-in-out infinite reverse;
 }
 
 /* Gold top bar */
@@ -207,7 +212,7 @@
     font-style: italic;
     font-size: 17px;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.88);
+    color: #fff;
 }
 
 .founder-quote cite {
@@ -215,7 +220,7 @@
     margin-top: 10px;
     font-style: normal;
     font-family: 'Figtree', sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--button-bg);
     letter-spacing: 0.3px;
@@ -225,7 +230,7 @@
 .founder-para {
     font-size: 18px;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.72);
+    color: #fff;
     margin: 0;
 }
 

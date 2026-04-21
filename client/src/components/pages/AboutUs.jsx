@@ -6,27 +6,22 @@ const AboutUs = () => {
     {
       id: 1,
       name: 'Boominathan M.',
-      designation: 'Director',
+      designation: 'Founder & Director - KingMakers IAS Academy',
       credentials: 'Master\'s in Economics, Pursuing Doctorate',
       description: 'What makes KingMakers IAS Academy the best in IAS coaching is our successful track record of nurturing dreams of 1000+ aspirants like you into the reality of becoming IAS within a span of 13 years. We are proud to be one of our kind having shown a deep commitment to the best interests of every aspirant associated with us in their journey towards becoming a civil servant. The distinctive feature of our academy lies in the mode of training offered to the candidates.',
-      image: '/images/directors/Boominathan.webp'
+      image: '/images/boominathan-new.webp',
+      education: 'MA.MPhil.,Ph.D'
     },
     {
       id: 2,
       name: 'Prof., Dr., S. Sathyashree Boominathan',
-      designation: 'Director',
+      designation: 'Co-Founder & Director - KingMakers IAS Academy',
       credentials: 'Psychologist & Life Coach',
       description: 'Our strong team of mentors including 13 retired civil ser- vants (6 IAS, 6 IRS and 1 IRAS) is committed to offer 360° training, mentoring and external motivation to every aspirant entering the portals of the KingMakers IAS Academy with the vision of cracking India most competitive & prestigious Civil Services Examination. The sole mission that joins us together is the love for our nation and the inherent responsibility in contributing to its growth by fostering the future civil servants of the nation.',
-      image: '/images/directors/ProfileN.webp'
+      education: 'M.A., M.S.,D.C.C.P.,D.S.P.,D.EFT.,D.Hyp.,D.Mont.,Ph.D.,',
+      image: '/images/Sathyashree.jpg'
     },
-    {
-      id: 3,
-      name: 'Anand Sahu',
-      designation: 'Honorary Director',
-      credentials: 'Ministry of Labour and Employment, Government of India',
-      description: 'Ministry of Labour and Employment, Government of India Member: Minimum Wages Advisory Board · New Delhi, India',
-      image: '/images/directors/anand_sahu.webp'
-    }
+
   ];
 
   const stats = [
@@ -164,24 +159,28 @@ const AboutUs = () => {
             <p className="subtitle">Meet the visionary leaders behind KingMakers IAS Academy</p>
             <div className="header-line"></div>
           </div>
-          <div className="directors-grid">
-            {directors.map((director) => (
-              <div key={director.id} className="director-card">
-                <div className="director-image-wrapper">
-                  <div className="director-image-container">
-                    <img src={director.image} alt={director.name} className="director-image" />
+          <div className="directors-list">
+            {directors.map((director, index) => (
+              <div key={director.id} className={`director-row ${index % 2 === 1 ? 'reverse' : ''}`}>
+                <div className="director-image-side">
+                  <div className="director-image-box">
+                    <img src={director.image} alt={director.name} className="director-img" />
+                    <div className="director-overlay"></div>
                   </div>
-                  {/* <div className="director-social">
-                    <a href="#" className="social-icon"><i className="fab fa-linkedin-in"></i></a>
-                    <a href="#" className="social-icon"><i className="fab fa-twitter"></i></a>
-                  </div> */}
                 </div>
-                <div className="director-info">
-                  <h3>{director.name}</h3>
-                  <div className="designation-badge">{director.designation}</div>
-                  <p className="credentials">{director.credentials}</p>
-                  <div className="info-divider"></div>
-                  <p className="description">{director.description}</p>
+                <div className="director-content-side">
+                  <div className="director-header-info">
+                    <h3>{director.name} <span className="director-edu">({director.education})</span></h3>
+                    <div className="director-badges">
+                      <span className="badge-designation">{director.designation}</span>
+                      <span className="badge-credentials">{director.credentials}</span>
+                    </div>
+                  </div>
+                  <div className="director-quote-box">
+                    {/* <img src="/images/premium-quote.png" alt="quote" className="quote-image" /> */}
+                    <p className="director-text">{director.description}</p>
+                    <div className="quote-accent"></div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -189,19 +188,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      {/* <section className="about-cta">
-        <h2>Ready to Start Your Journey?</h2>
-        <p>Join thousands of successful civil service officers who started with us</p>
-        <div className="cta-buttons">
-          <button className="cta-btn primary">
-            <a href="tel:+919444227273">📞 Call Us Now</a>
-          </button>
-          <button className="cta-btn secondary">
-            <a href="mailto:kingmakersiasacademy@gmail.com">📧 Send Enquiry</a>
-          </button>
-        </div>
-      </section> */}
+
     </div>
   );
 };

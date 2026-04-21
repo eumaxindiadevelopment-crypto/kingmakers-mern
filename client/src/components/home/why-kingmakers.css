@@ -3,15 +3,21 @@
    ============================ */
 
 .why-section {
-    padding: var(--section-padding);
+    /* padding: var(--section-padding);
     background: linear-gradient(180deg, #ffffff 0%, #f8f5ef 100%);
+    position: relative;
+    overflow: hidden; */
+
+    padding: var(--section-padding);
+    background: url(/images/bg/aciver-bg.jpg) no-repeat center center / cover;
+    background-attachment: fixed;
     position: relative;
     overflow: hidden;
 }
 
 /* Faint background watermark */
 .why-section::before {
-    content: 'WHY US';
+    /* content: 'WHY US';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -23,13 +29,22 @@
     pointer-events: none;
     white-space: nowrap;
     letter-spacing: 16px;
-    user-select: none;
+    user-select: none; */
+
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 26, 101, 0.9) 0%, rgba(1, 22, 90, 0.85) 100%);
+    z-index: 0;
 }
 
 /* ---- Header ---- */
 .why-header {
     text-align: center;
     margin-bottom: 56px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
 }
 
 .why-badge {
@@ -49,14 +64,14 @@
 
 .why-header h2 {
     font-size: 36px;
-    color: var(--heading-color);
+    color: #fff;
     margin-bottom: 14px;
 }
 
 .why-header p {
     max-width: 480px;
     margin: 0 auto;
-    color: var(--body-text);
+    color: rgba(255, 255, 255, 0.85);
     font-size: 18px;
     line-height: 1.75;
 }
@@ -66,6 +81,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 /* ---- Base Card ---- */

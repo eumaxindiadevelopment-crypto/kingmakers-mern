@@ -3,61 +3,67 @@ import './testimonials.css';
 
 const mentors = [
     {
-        name: 'Balachandran',
-        service: 'IAS Officer',
-        rank: 'AIR 5 - UPSC 2021',
-        quote: "Kingmakers' commitment to student success is unparalleled. Their personalised approach helped me clear UPSC on the very first attempt.",
-        image: '/images/our-pride-our-mentors/balachandhran-ias-e1708407152847.jpg',
+        name: 'Shri. D.P.Agrwal, Former UPSC Chairman',
+        designation: 'Personality Development Training',
+        image: '/images/our-pride-our-mentors/Agrawal.webp',
     },
     {
-        name: 'K.P. Singh',
-        service: 'IRS Officer',
-        rank: 'AIR 8 - UPSC 2020',
-        quote: 'The mentors at Kingmakers provide exactly what an aspirant needs — direction and emotional support throughout the rigorous journey.',
-        image: '/images/our-pride-our-mentors/KPSingh_IRS-e1708406971886.png',
+        name: 'Shri. Chhatar Singh IAS (R)',
+        designation: "Personality Development Training, Coach & Mentor",
+        image: '/images/our-pride-our-mentors/chhatar-singh-ias.webp',
     },
     {
-        name: 'Sivasailam',
-        service: 'IAS Officer',
-        rank: 'AIR 7 - UPSC 2019',
-        quote: 'The environment here is competitive yet supportive. The Good Morning Tests built my accuracy and discipline like nothing else.',
-        image: '/images/our-pride-our-mentors/Sivasailam.png',
+        name: 'Shri. Vivek Harinarain IAS (R)',
+        designation: "Personality Development Training, Coach & Mentor",
+        image: '/images/our-pride-our-mentors/Vivek-Harinarain.webp',
     },
     {
-        name: 'Tamizhvendan',
-        service: 'IRS Officer',
-        rank: 'AIR 10 - UPSC 2022',
-        quote: "Kingmakers is not just an academy — it's a family. Mr. Elango's personal feedback helped me refine my Mains strategy significantly.",
-        image: '/images/our-pride-our-mentors/tamizhvendan-irs-300x300.jpg',
+        name: 'Shri.B.S.Baswan IAS(R)',
+        designation: 'Personality Development Training Coach & Mentor',
+        image: '/images/our-pride-our-mentors/baswan-ias.webp',
     },
     {
-        name: 'Vengadesh Narayan',
-        service: 'IRAS Officer',
-        rank: 'AIR 1 - UPSC 2018',
-        quote: 'The study materials and interview guidance program are top-notch. It truly prepares you for the real pressure of civil services.',
-        image: '/images/our-pride-our-mentors/vengadesh-narayan-iras.jpg',
+        name: 'Shri. Sivasailam IAS(R)',
+        designation: 'Coach & Mentor, Panelist for Interview Guidance Program',
+        image: '/images/our-pride-our-mentors/Sivasailam.webp',
     },
     {
-        name: 'Sekar',
-        service: 'IRS Officer',
-        rank: 'AIR 4 - UPSC 2017',
-        quote: "One of the best academies if you're serious about TNPSC or UPSC. The teachers go above and beyond to clarify doubts.",
-        image: '/images/our-pride-our-mentors/sekar-irs.jpg',
+        name: 'Shri.G. Balachandharan IAS(R)',
+        designation: "Teaches Ethics, Social Issues and Panelist for Interview Guidance Program",
+        image: '/images/our-pride-our-mentors/balachandhran.webp',
     },
     {
-        name: 'Vivek',
-        service: 'IAS Officer',
-        rank: 'AIR 2 - UPSC 2021',
-        quote: 'The writing practice sessions transformed my Mains answers. Kingmakers shaped not just my knowledge but my expression.',
-        image: '/images/our-pride-our-mentors/Vivek_crop1-e1708339568186-258x300.jpg',
+        name: 'Smt.B.Bhamathi IAS(R)',
+        designation: 'Personality Development Training Coach & Mentor',
+        image: '/images/our-pride-our-mentors/bhamathi-ias.webp',
     },
     {
-        name: 'D.P. Agrawal',
-        service: 'IAS Officer',
-        rank: 'AIR 3 - UPSC 2015',
-        quote: 'A well-structured academy with exceptional faculty. The focus on both Prelims and Mains is perfectly balanced across all programs.',
-        image: '/images/our-pride-our-mentors/dp-agrawal.jpg',
+        name: 'Mr.S.S.Jawahar IAS(R)',
+        designation: 'Handles Essay Enrichment Program, Current Affairs and panelist for interview guidance program & Mentor',
+        image: '/images/our-pride-our-mentors/Jawahar.webp',
     },
+    {
+        name: 'Shri R. Sekar IRS(R)',
+        designation: 'Teaches GST, Public finance, Ethics, Economic Development and Schemes of Government of India; Panelist for Interview Guidance Program & Mentor.',
+        image: '/images/our-pride-our-mentors/sekar.webp',
+    },
+    {
+        name: 'Dr.V.Thiruppugazh IAS(R)',
+        designation: 'General Studies, Essay, Disaster Management, Personality Development Training Coach & Mentor',
+        image: '/images/our-pride-our-mentors/thiruppugazh-ias.webp',
+    },
+    {
+        name: 'Shri.Tamizh Vendhan IAS(R)',
+        designation: 'Personality Development Training Coach & Mentor',
+        image: '/images/our-pride-our-mentors/tamizh-vendan-ias.webp',
+    },
+    {
+        name: 'Shri.Venkadesh Narayanan IRAS(R)',
+        designation: "Teaches Georaphy,CSAT and Essay; Panelist for Interview Guidance Program & Mentor",
+        image: '/images/our-pride-our-mentors/venkadesh-narayanan.webp',
+    },
+
+
 ];
 
 const Testimonials = () => {
@@ -160,11 +166,8 @@ const Testimonials = () => {
                                             onClick={() => setCurrent(i)}
                                         >
                                             <div className="pride-card-3d">
-                                                {/* Quote mark decoration */}
-                                                <div className="pride-quote-icon">"</div>
-
                                                 <div className="pride-card-inner">
-                                                    {/* Photo */}
+                                                    {/* Photo container stays full height */}
                                                     <div className="pride-card-img-3d">
                                                         <img
                                                             src={m.image}
@@ -173,15 +176,14 @@ const Testimonials = () => {
                                                         />
                                                     </div>
 
-                                                    {/* Quote overlay or text */}
-                                                    <div className="pride-card-quote">
-                                                        <p>{m.quote}</p>
-                                                    </div>
-
-                                                    {/* Orange Footer */}
-                                                    <div className="pride-card-footer">
-                                                        <h4>{m.name}</h4>
-                                                        <span className="pride-card-rank">{m.rank}</span>
+                                                    {/* Unified Info Overlay */}
+                                                    <div className="pride-card-overlay">
+                                                        <div className="pride-card-footer">
+                                                            <h4>{m.name}</h4>
+                                                        </div>
+                                                        <div className="pride-card-quote">
+                                                            <p>{m.designation}</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

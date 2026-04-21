@@ -53,25 +53,31 @@ const Navbar = () => {
                 <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
                     <Link to="/" onClick={closeMenu}>Home</Link>
                     <div className={`nav-dropdown ${isAboutOpen ? 'mobile-open' : ''}`}>
-                        <span className="nav-dropdown-toggle" onClick={() => setIsAboutOpen(!isAboutOpen)}>
-                            About Us <span className="nav-dropdown-arrow">&#9660;</span>
-                        </span>
+                        <div className="nav-dropdown-toggle">
+                            <Link to="/about-us/" onClick={closeMenu} className="dropdown-link-label">About Us</Link>
+                            <span className="nav-dropdown-arrow-wrap" onClick={() => setIsAboutOpen(!isAboutOpen)}>
+                                <span className="nav-dropdown-arrow">&#9660;</span>
+                            </span>
+                        </div>
                         <div className="nav-dropdown-menu">
-                            <Link to="/about-us/" onClick={closeMenu}>About Us</Link>
+                            {/* <Link to="/about-us/" onClick={closeMenu}>About Us</Link> */}
                             <Link to="/faculty-team/" onClick={closeMenu}>Faculty Team</Link>
                             <Link to="/our-philanthropy/" onClick={closeMenu}>Our Philanthropy</Link>
                         </div>
                     </div>
                     <div className={`nav-dropdown ${isUpscOpen ? 'mobile-open' : ''}`}>
-                        <span className="nav-dropdown-toggle" onClick={() => setIsUpscOpen(!isUpscOpen)}>
-                            UPSC <span className="nav-dropdown-arrow">&#9660;</span>
-                        </span>
+                        <div className="nav-dropdown-toggle">
+                            <Link to="/upsc-course/" onClick={closeMenu} className="dropdown-link-label">UPSC</Link>
+                            <span className="nav-dropdown-arrow-wrap" onClick={() => setIsUpscOpen(!isUpscOpen)}>
+                                <span className="nav-dropdown-arrow">&#9660;</span>
+                            </span>
+                        </div>
                         <div className="nav-dropdown-menu">
-                            <Link to="/upsc/" onClick={closeMenu}>UPSC Courses</Link>
                             <Link to="/about-upsc/" onClick={closeMenu}>About UPSC</Link>
+                            <Link to="/upsc-course/" onClick={closeMenu}>UPSC Courses</Link>
                         </div>
                     </div>
-                    <Link to="/tnpsc/" onClick={closeMenu}>TNPSC</Link>
+                    <Link to="/tnpsc-course/" onClick={closeMenu}>TNPSC</Link>
                     {/* <a href="/#courses" onClick={closeMenu}>Courses</a> */}
                     <Link to="/achievers/" onClick={closeMenu}>Achievers</Link>
                     <Link to="/blogs/" onClick={closeMenu}>Blog</Link>
