@@ -16,8 +16,8 @@ const app = express();
 app.use(cors({
     origin: [
         'http://localhost:5173',
-        // Add your production domain here when deploying to VPS
-        // e.g., 'https://yourdomain.com'
+        'https://glamyfashions.com',
+        'http://glamyfashions.com',
     ],
     credentials: true
 }));
