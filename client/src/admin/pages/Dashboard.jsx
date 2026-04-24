@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
 
 import API from '../../apiConfig';
 
@@ -16,21 +15,18 @@ const StatCard = ({ icon, label, count, sub, color, to }) => (
 );
 
 const Dashboard = () => {
-  const { admin } = useAuth();
   const [stats, setStats] = useState(null);
   const [recentLeads, setRecentLeads] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const headers = { Authorization: `Bearer ${admin?.token}` };
-
     const fetchStats = async () => {
       try {
         // Fetch all lead sources + blogs + achievers concurrently
         const [upscRes, tnpscRes, contactRes, blogsRes, achieversRes] = await Promise.all([
-          fetch(`${API}/api/leads?source=upsc&limit=5`, { headers }).then(r => r.json()),
-          fetch(`${API}/api/leads?source=tnpsc&limit=1`, { headers }).then(r => r.json()),
-          fetch(`${API}/api/leads?source=contact&limit=1`, { headers }).then(r => r.json()),
+          fetch(`${API}/api/leads?source=upsc&limit=5`).then(r => r.json()),
+          fetch(`${API}/api/leads?source=tnpsc&limit=1`).then(r => r.json()),
+          fetch(`${API}/api/leads?source=contact&limit=1`).then(r => r.json()),
           fetch(`${API}/api/blogs`).then(r => r.json()),
           // fetch(`${API}/api/achievers`).then(r => r.json()),
         ]);
@@ -66,7 +62,7 @@ const Dashboard = () => {
     };
 
     fetchStats();
-  }, [admin]);
+  }, []);
 
   const now = new Date();
   const greeting = now.getHours() < 12 ? 'Good morning' : now.getHours() < 17 ? 'Good afternoon' : 'Good evening';
@@ -91,7 +87,7 @@ const Dashboard = () => {
       {/* Header */}
       <div className="dash-header">
         <div>
-          <h2 className="dash-welcome">{greeting}, {admin?.name} 👋</h2>
+          <h2 className="dash-welcome">{greeting} 👋</h2>
           <p className="dash-date">{dateStr}</p>
         </div>
         <Link to="/admin/leads/upsc" className="dash-action-btn">

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { getMediaUrl } from '../../utils/mediaUtils';
 import './events.css';
 
 import API from '../../apiConfig';
@@ -93,7 +94,7 @@ const EventDetail = () => {
           
           <div className="wp-lightbox-content">
             <img 
-              src={selectedImgIndex === -1 ? event.image : event.gallery[selectedImgIndex]} 
+              src={getMediaUrl(selectedImgIndex === -1 ? event.image : event.gallery[selectedImgIndex])} 
               className="wp-lightbox-img" 
               alt="Enlarged" 
               onClick={(e) => e.stopPropagation()} 
@@ -129,7 +130,7 @@ const EventDetail = () => {
           <div className="event-main-content">
             {event.image && (
               <div className="event-featured-image">
-                <img src={event.image} alt={event.title} onClick={() => setSelectedImgIndex(-1)} />
+                <img src={getMediaUrl(event.image)} alt={event.title} onClick={() => setSelectedImgIndex(-1)} />
               </div>
             )}
             <div className="event-full-description" dangerouslySetInnerHTML={{ __html: event.description }} />
@@ -140,7 +141,7 @@ const EventDetail = () => {
                 <div className="event-gallery-grid-new">
                   {event.gallery.map((url, idx) => (
                     <div key={idx} className="premium-gallery-item" onClick={() => setSelectedImgIndex(idx)}>
-                      <img src={url} alt={`Gallery ${idx + 1}`} />
+                      <img src={getMediaUrl(url)} alt={`Gallery ${idx + 1}`} />
                       <div className="gallery-item-hover">
                         <i className="fa-solid fa-plus"></i>
                       </div>

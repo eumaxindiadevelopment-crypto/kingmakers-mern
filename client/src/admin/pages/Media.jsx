@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
 
 import API from '../../apiConfig';
+import { getMediaUrl } from '../../utils/mediaUtils';
 
 const Media = () => {
-  const { admin } = useAuth();
   const location = useLocation();
   const [view, setView] = useState('library'); // 'library' | 'upload'
   const [mediaItems, setMediaItems] = useState([]);
@@ -15,9 +14,6 @@ const Media = () => {
   const [dragActive, setDragActive] = useState(false);
   const [selectedMedia, setSelectedMedia] = useState(null);
   const fileInputRef = useRef(null);
-
-  const token = admin?.token;
-  const headers = { Authorization: `Bearer ${token}` };
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -32,9 +28,7 @@ const Media = () => {
   const fetchMedia = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${API}/api/media`, {
-        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }
-      });
+      const res = await fetch(`${API}/api/media`);
       const data = await res.json();
       setMediaItems(Array.isArray(data) ? data : []);
     } catch (err) {
@@ -66,7 +60,6 @@ const Media = () => {
       try {
         await fetch(`${API}/api/media`, {
           method: 'POST',
-          headers: { Authorization: `Bearer ${token}` },
           body: formData
         });
       } catch (err) {
@@ -108,8 +101,7 @@ const Media = () => {
     
     try {
       await fetch(`${API}/api/media/${id}`, {
-        method: 'DELETE',
-        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }
+        method: 'DELETE'
       });
       fetchMedia();
     } catch (err) {
@@ -118,8 +110,9 @@ const Media = () => {
   };
 
   const copyToClipboard = (url) => {
-    navigator.clipboard.writeText(url);
-    alert('Image URL copied to clipboard!');
+    const absoluteUrl = getMediaUrl(url);
+    navigator.clipboard.writeText(absoluteUrl);
+    alert('URL copied to clipboard!');
   };
 
   const handleUpdateMedia = async (e) => {
@@ -127,7 +120,7 @@ const Media = () => {
     try {
       const res = await fetch(`${API}/api/media/${selectedMedia._id}`, {
         method: 'PUT',
-        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           altText: selectedMedia.altText,
           title: selectedMedia.title,
@@ -217,7 +210,7 @@ const Media = () => {
               {mediaItems.map(item => (
                 <div key={item._id} className="wp-media-item" onClick={() => setSelectedMedia(item)}>
                   {item.mimetype.startsWith('image/') ? (
-                    <img src={item.url} alt={item.originalName} className="wp-media-thumbnail" />
+                    <img src={getMediaUrl(item.url)} alt={item.originalName} className="wp-media-thumbnail" />
                   ) : (
                     <div className="wp-media-document-icon">📄<br/><span style={{fontSize: '0.75rem', wordBreak: 'break-all'}}>{item.originalName}</span></div>
                   )}
@@ -246,9 +239,9 @@ const Media = () => {
               {/* Left Column - Preview */}
               <div className="wp-modal-preview">
                 {selectedMedia.mimetype.startsWith('image/') ? (
-                  <img src={selectedMedia.url} alt={selectedMedia.title} className="wp-preview-img" />
+                  <img src={getMediaUrl(selectedMedia.url)} alt={selectedMedia.title} className="wp-preview-img" />
                 ) : selectedMedia.mimetype.startsWith('video/') ? (
-                  <video src={selectedMedia.url} controls className="wp-preview-video" />
+                  <video src={getMediaUrl(selectedMedia.url)} controls className="wp-preview-video" />
                 ) : (
                   <div className="wp-preview-document">📄<br/>{selectedMedia.originalName}</div>
                 )}
@@ -305,7 +298,7 @@ const Media = () => {
 
                   <div className="wp-form-group">
                     <label>File URL</label>
-                    <input type="text" value={selectedMedia.url} readOnly />
+                    <input type="text" value={getMediaUrl(selectedMedia.url)} readOnly />
                     <button type="button" className="wp-btn-copy" onClick={() => copyToClipboard(selectedMedia.url)}>Copy URL to clipboard</button>
                   </div>
 

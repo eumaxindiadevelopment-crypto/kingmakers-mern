@@ -12,10 +12,9 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const login = (adminData, token) => {
-    const data = { ...adminData, token };
-    localStorage.setItem('km_admin', JSON.stringify(data));
-    setAdmin(data);
+  const login = (adminData) => {
+    localStorage.setItem('km_admin', JSON.stringify(adminData));
+    setAdmin(adminData);
   };
 
   const logout = () => {

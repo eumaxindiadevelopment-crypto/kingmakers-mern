@@ -1,12 +1,10 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { useAuth } from '../context/AuthContext';
 
 import API from '../../apiConfig';
 
 const sourceLabels = { upsc: 'UPSC Enquiry', tnpsc: 'TNPSC Enquiry', contact: 'Contact Forms' };
 
 const LeadsTable = ({ type, title }) => {
-  const { admin } = useAuth();
   const [leads, setLeads] = useState([]);
   const [stats, setStats] = useState({ totalThisMonth: 0, newToday: 0, contactedThisMonth: 0, pendingThisMonth: 0 });
   const [loading, setLoading] = useState(true);
@@ -18,8 +16,6 @@ const LeadsTable = ({ type, title }) => {
   const [noteInput, setNoteInput] = useState('');
   const [updatingId, setUpdatingId] = useState(null);
 
-  const headers = { Authorization: `Bearer ${admin?.token}` };
-
   const fetchLeads = useCallback(async () => {
     setLoading(true);
     try {
@@ -28,7 +24,7 @@ const LeadsTable = ({ type, title }) => {
       if (statusFilter) params.set('status', statusFilter);
       if (startDate) params.set('startDate', startDate);
       if (endDate)   params.set('endDate', endDate);
-      const res = await fetch(`${API}/api/leads?${params}`, { headers });
+      const res = await fetch(`${API}/api/leads?${params}`);
       const data = await res.json();
       setLeads(data.leads || []);
       setStats(data.stats || {});
@@ -37,7 +33,7 @@ const LeadsTable = ({ type, title }) => {
     } finally {
       setLoading(false);
     }
-  }, [type, search, statusFilter, startDate, endDate, admin?.token]);
+  }, [type, search, statusFilter, startDate, endDate]);
 
   useEffect(() => { fetchLeads(); }, [fetchLeads]);
 
@@ -46,7 +42,7 @@ const LeadsTable = ({ type, title }) => {
     try {
       const res = await fetch(`${API}/api/leads/${id}/status`, {
         method: 'PUT',
-        headers: { ...headers, 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status })
       });
       const updated = await res.json();
@@ -59,7 +55,7 @@ const LeadsTable = ({ type, title }) => {
   const handleSaveNote = async (id) => {
     const res = await fetch(`${API}/api/leads/${id}/status`, {
       method: 'PUT',
-      headers: { ...headers, 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ notes: noteInput })
     });
     const updated = await res.json();
@@ -69,7 +65,7 @@ const LeadsTable = ({ type, title }) => {
 
   const handleDelete = async (id) => {
     if (!window.confirm('Delete this enquiry permanently?')) return;
-    await fetch(`${API}/api/leads/${id}`, { method: 'DELETE', headers });
+    await fetch(`${API}/api/leads/${id}`, { method: 'DELETE' });
     setLeads(prev => prev.filter(l => l._id !== id));
     if (selectedLead?._id === id) setSelectedLead(null);
   };
@@ -92,7 +88,7 @@ const LeadsTable = ({ type, title }) => {
     setNoteInput(lead.notes || '');
     // Mark as read
     if (!lead.isRead) {
-      fetch(`${API}/api/leads/${lead._id}/read`, { method: 'PUT', headers });
+      fetch(`${API}/api/leads/${lead._id}/read`, { method: 'PUT' });
     }
   };
 

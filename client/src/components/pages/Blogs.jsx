@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import EnquiryForm from '../forms/EnquiryForm';
+import { getMediaUrl } from '../../utils/mediaUtils';
 import './blog.css';
 
 import API from '../../apiConfig';
@@ -48,7 +49,7 @@ const Blogs = () => {
                   <article className="group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col w-full h-full border border-gray-100 overflow-hidden transform hover:-translate-y-2">
                     <Link to={`/blogs/${blog.slug}`} className="block relative h-64 overflow-hidden">
                       {blog.image ? (
-                        <img src={blog.image} alt={blog.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+                        <img src={getMediaUrl(blog.image)} alt={blog.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out" />
                       ) : (
                         <div className="w-full h-full bg-gradient-to-br from-[#1B365D] to-[#2a4d80] flex items-center justify-center">
                           <span className="text-white text-opacity-20 text-6xl">📄</span>

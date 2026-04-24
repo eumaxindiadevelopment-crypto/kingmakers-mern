@@ -7,6 +7,7 @@ import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import API from '../../apiConfig';
 import {locations} from '../../data/locations';
+import { getMediaUrl } from '../../utils/mediaUtils';
 
 const LocationPage = ({ citySlug }) => {
 
@@ -397,7 +398,7 @@ const LocationPage = ({ citySlug }) => {
                   >
                     <div className="facility-card-modern glass-card shadow-sm">
                       <div className="facility-image-wrapper">
-                        <img src={item.image} alt={`${item.text} facility at Kingmakers IAS Academy ${location.city}`} />
+                        <img src={getMediaUrl(item.image)} alt={`${item.text} facility at Kingmakers IAS Academy ${location.city}`} />
                       </div>
                       <div className="facility-card-body">
                         <h4 style={{ color: '#043053' }}>{item.text}</h4>
@@ -483,7 +484,7 @@ const LocationPage = ({ citySlug }) => {
                                 flex: 'none',
                                 width: 'auto'
                               }} 
-                              onClick={() => window.open(batch.schedulePdf || course.schedulePdf, '_blank')}
+                              onClick={() => window.open(getMediaUrl(batch.schedulePdf || course.schedulePdf), '_blank')}
                             >
                               Schedule View
                             </button>

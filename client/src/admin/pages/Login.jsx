@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import API from '../../apiConfig';
+import { AdminLoginData } from '../../data/AdminLoginData';
 
 const Login = () => {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -10,25 +10,24 @@ const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
-    try {
-      const res = await fetch(`${API}/api/auth/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.message);
-      login(data, data.token);
+
+    // Match credentials against static AdminLoginData
+    const match = AdminLoginData.find(
+      (u) => u.email === form.email && u.password === form.password
+    );
+
+    if (match) {
+      login({ email: match.email, role: match.role });
       navigate('/admin/dashboard');
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
+    } else {
+      setError('Invalid email or password');
     }
+
+    setLoading(false);
   };
 
   return (

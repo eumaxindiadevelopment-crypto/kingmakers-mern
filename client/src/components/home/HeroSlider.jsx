@@ -1,47 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import './hero.css';
 
-import API from '../../apiConfig';
-
-// Fallback images when DB has no sliders
-// const FALLBACK = [
-//     { imageUrl: '/images/slider/slider-1.jpeg', title: 'KingMakers IAS Academy' },
-//     { imageUrl: '/images/slider/slider-2.jpg',  title: 'KingMakers IAS Academy' },
-//     { imageUrl: '/images/slider/slider-3.jpg',  title: 'KingMakers IAS Academy' },
-//     { imageUrl: '/images/slider/slider-4.jpeg', title: 'KingMakers IAS Academy' },
-//     { imageUrl: '/images/slider/slider-5.jpg',  title: 'KingMakers IAS Academy' },
-// ];
+const SLIDES = [
+    { imageUrl: '/images/slider/slider-1.jpeg', title: 'KingMakers IAS Academy' },
+    { imageUrl: '/images/slider/slider-2.jpg', title: 'KingMakers IAS Academy' },
+    { imageUrl: '/images/slider/slider-3.jpeg', title: 'KingMakers IAS Academy' },
+    { imageUrl: '/images/slider/slider-4.jpg', title: 'KingMakers IAS Academy' },
+    { imageUrl: '/images/slider/slider-5.jpg', title: 'KingMakers IAS Academy' },
+    { imageUrl: '/images/slider/slider-6.jpg', title: 'KingMakers IAS Academy' },
+];
 
 const HeroSlider = () => {
-    const [slides, setSlides] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
-
-    // Fetch published sliders from the API; fallback to local images
-    useEffect(() => {
-        fetch(`${API}/api/sliders?status=published`)
-            .then(r => r.json())
-            .then(data => {
-                if (Array.isArray(data) && data.length > 0) {
-                    setSlides(data);
-                } else {
-                    setSlides(FALLBACK);
-                }
-            })
-            .catch(() => setSlides(FALLBACK));
-    }, []);
+    const slides = SLIDES;
 
     useEffect(() => {
-        if (slides.length === 0) return;
         const timer = setInterval(() => {
             setCurrentSlide(prev => (prev === slides.length - 1 ? 0 : prev + 1));
         }, 5000);
         return () => clearInterval(timer);
-    }, [slides]);
+    }, []);
 
     const nextSlide = () => setCurrentSlide(prev => (prev === slides.length - 1 ? 0 : prev + 1));
     const prevSlide = () => setCurrentSlide(prev => (prev === 0 ? slides.length - 1 : prev - 1));
-
-    if (slides.length === 0) return null;
 
     return (
         <section className="hero-slider">

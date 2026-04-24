@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Editor } from '@tinymce/tinymce-react';
 import MediaLibraryModal from '../components/MediaLibraryModal';
+import { getMediaUrl } from '../../utils/mediaUtils';
 
 import API from '../../apiConfig';
 
@@ -386,9 +387,10 @@ const Events = () => {
                         <td>
                           <div className="event-cell-info">
                             <img 
-                              src={ev.image || '/images/placeholder.jpg'} 
+                              src={getMediaUrl(ev.image)} 
                               alt={ev.title} 
                               className="event-cell-thumb" 
+                              onError={(e) => { e.target.src = '/images/placeholder.jpg'; }}
                             />
                             <div className="event-cell-title">{ev.title}</div>
                           </div>

@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 
 import API from '../../apiConfig';
+import { getMediaUrl } from '../../utils/mediaUtils';
 
-const MediaLibraryModal = ({ token, onSelect, onClose, allowMultiple = false, type = 'image' }) => {
+const MediaLibraryModal = ({ onSelect, onClose, allowMultiple = false, type = 'image' }) => {
   const [view, setView] = useState('library'); // 'library' | 'upload'
   const [mediaItems, setMediaItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,9 +16,7 @@ const MediaLibraryModal = ({ token, onSelect, onClose, allowMultiple = false, ty
   const fetchMedia = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${API}/api/media`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await fetch(`${API}/api/media`);
       const data = await res.json();
       const filteredData = Array.isArray(data)
         ? data.filter((item) => {
@@ -32,7 +31,7 @@ const MediaLibraryModal = ({ token, onSelect, onClose, allowMultiple = false, ty
     } finally {
       setLoading(false);
     }
-  }, [token]);
+  }, []);
 
   useEffect(() => {
     fetchMedia();
@@ -54,7 +53,6 @@ const MediaLibraryModal = ({ token, onSelect, onClose, allowMultiple = false, ty
       try {
         const res = await fetch(`${API}/api/media`, {
           method: 'POST',
-          headers: { Authorization: `Bearer ${token}` },
           body: formData,
         });
         
@@ -226,7 +224,7 @@ const MediaLibraryModal = ({ token, onSelect, onClose, allowMultiple = false, ty
                         >
                           {item.mimetype && item.mimetype.startsWith('image/') ? (
                             <img
-                              src={item.url}
+                              src={getMediaUrl(item.url)}
                               alt={item.altText || item.originalName}
                               className="media-lib-thumb"
                               onError={(e) => { e.target.src = '/images/placeholder.jpg'; }}
@@ -271,7 +269,7 @@ const MediaLibraryModal = ({ token, onSelect, onClose, allowMultiple = false, ty
                 <div className="attachment-details">
                   <div className="attachment-preview-mini">
                     {selected.mimetype?.startsWith('image/') ? (
-                      <img src={selected.url} alt="selected" />
+                      <img src={getMediaUrl(selected.url)} alt="selected" />
                     ) : (
                       <div className="pdf-preview-mini" style={{ background: '#f8fafc', padding: '20px', textAlign: 'center' }}>
                          <i className="fa-solid fa-file-pdf" style={{ fontSize: '3rem', color: '#ef4444' }}></i>
@@ -296,11 +294,11 @@ const MediaLibraryModal = ({ token, onSelect, onClose, allowMultiple = false, ty
                     </div>
                     <div className="mini-field">
                       <label>File URL</label>
-                      <input type="text" value={selected.url} readOnly />
+                      <input type="text" value={getMediaUrl(selected.url)} readOnly />
                       <button 
                         className="copy-url-btn"
                         onClick={() => {
-                          navigator.clipboard.writeText(selected.url);
+                          navigator.clipboard.writeText(getMediaUrl(selected.url));
                           alert('URL copied!');
                         }}
                       >
@@ -314,7 +312,7 @@ const MediaLibraryModal = ({ token, onSelect, onClose, allowMultiple = false, ty
                   <p><strong>{selected.length}</strong> items selected</p>
                   <div className="multi-preview-stack">
                     {selected.slice(0, 5).map(s => (
-                      <img key={s._id} src={s.url} alt="selected" className="stack-img" />
+                      <img key={s._id} src={getMediaUrl(s.url)} alt="selected" className="stack-img" />
                     ))}
                     {selected.length > 5 && <span className="stack-more">+{selected.length - 5}</span>}
                   </div>

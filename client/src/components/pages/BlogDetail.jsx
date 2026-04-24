@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import EnquiryForm from '../forms/EnquiryForm';
+import { getMediaUrl } from '../../utils/mediaUtils';
 import './blog.css';
 
 import API from '../../apiConfig';
@@ -227,7 +228,7 @@ const BlogDetail = () => {
               <h1 className="hero-title-king">{blog.title}</h1>
               <div className="hero-image-container">
                 {blog.image ? (
-                  <img src={blog.image} alt={blog.title} />
+                  <img src={getMediaUrl(blog.image)} alt={blog.title} />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-white/20 text-6xl">📄</div>
                 )}
@@ -347,7 +348,7 @@ const BlogDetail = () => {
                 {recentBlogs.map(post => (
                   <Link to={`/blogs/${post.slug}`} key={post._id} className="recent-post-item group">
                     <div className="recent-thumb">
-                      <img src={post.image || '/logo.png'} alt={post.title} />
+                      <img src={getMediaUrl(post.image)} alt={post.title} />
                     </div>
                     <div className="recent-info">
                       <span className="text-[10px] font-bold text-[#DAA520] uppercase tracking-wider mb-1 block">

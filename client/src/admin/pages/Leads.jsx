@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useAuth } from '../context/AuthContext';
 
 import API from '../../apiConfig';
 
 const Leads = () => {
-  const { admin } = useAuth();
   const [leads, setLeads] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
 
   const fetchLeads = async () => {
     const params = filter !== 'all' ? `?source=${filter}` : '';
-    const res = await fetch(`${API}/api/leads${params}`, {
-      headers: { Authorization: `Bearer ${admin?.token}` },
-    });
+    const res = await fetch(`${API}/api/leads${params}`);
     const data = await res.json();
     setLeads(Array.isArray(data) ? data : []);
     setLoading(false);
@@ -25,7 +21,6 @@ const Leads = () => {
     if (!window.confirm('Delete this lead?')) return;
     await fetch(`${API}/api/leads/${id}`, {
       method: 'DELETE',
-      headers: { Authorization: `Bearer ${admin?.token}` },
     });
     setLeads(leads.filter(l => l._id !== id));
   };
@@ -33,7 +28,6 @@ const Leads = () => {
   const handleMarkRead = async (id) => {
     const res = await fetch(`${API}/api/leads/${id}/read`, {
       method: 'PUT',
-      headers: { Authorization: `Bearer ${admin?.token}` },
     });
     const updated = await res.json();
     setLeads(leads.map(l => l._id === id ? updated : l));

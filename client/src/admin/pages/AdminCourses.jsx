@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import MediaLibraryModal from '../components/MediaLibraryModal';
+import { getMediaUrl } from '../../utils/mediaUtils';
 
 import API from '../../apiConfig';
 
@@ -366,7 +367,7 @@ const AdminCourses = ({ type }) => {
                   <i className="fa-solid fa-photo-film" style={{ marginRight: '8px' }}></i>
                   Select from Media Library
                 </button>
-                {form.schedulePdf && <a href={form.schedulePdf} target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: 'var(--admin-success)', fontWeight: '600' }}>📄 PDF Linked</a>}
+                {form.schedulePdf && <a href={getMediaUrl(form.schedulePdf)} target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: 'var(--admin-success)', fontWeight: '600' }}>📄 PDF Linked</a>}
               </div>
             </div>
           </div>

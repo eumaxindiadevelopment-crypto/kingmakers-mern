@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Editor } from '@tinymce/tinymce-react';
 import MediaLibraryModal from '../components/MediaLibraryModal';
+import { getMediaUrl } from '../../utils/mediaUtils';
 
 import API from '../../apiConfig';
 
@@ -705,7 +706,7 @@ const Blogs = () => {
                 {form.image ? (
                   <div className="wp-featured-image-wrap">
                     <img
-                      src={form.image}
+                      src={getMediaUrl(form.image)}
                       alt="featured"
                       className="wp-featured-preview"
                       onClick={() => setMediaPickerOpen(true)}
@@ -902,9 +903,10 @@ const Blogs = () => {
                     <td>
                       <div className="event-cell-info">
                         <img 
-                          src={blog.image || '/images/placeholder.jpg'} 
+                          src={getMediaUrl(blog.image)} 
                           alt={blog.title} 
                           className="event-cell-thumb" 
+                          onError={(e) => { e.target.src = '/images/placeholder.jpg'; }}
                         />
                         <div className="event-cell-brand">
                            <div className="event-cell-title" style={{ cursor: 'pointer' }} onClick={() => openEdit(blog)}>{blog.title}</div>

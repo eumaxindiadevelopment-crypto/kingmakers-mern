@@ -5,9 +5,9 @@ const videoData = [
      {
         id: 'TOhkdVsTcog',
         name: 'Mr. Harikishore.',
-        service: 'TNPSC Grop II ',
+        service: 'TNPSC Group II ',
         caption: 'How Kingmakers helped me crack TNPSC in the first attempt with targeted study plans.',
-        rank: 'TNPSC Grop II  – 2023',
+        rank: 'TNPSC Group II  – 2023',
     },
     {
         id: 'xax-AAGW2xQ',
@@ -36,7 +36,7 @@ const videoData = [
         name: 'Ms. Sindhu N Raghavan.',
         service: 'IRS Officer',
         caption: 'Writing practice at Kingmakers helped me score over 130 in GS Papers. Highly recommended!',
-        rank: 'AIR - 336 2023',
+        rank: 'AIR 336 - UPSC 2023',
     },
     // {
     //     id: 'Fh06cITwHI0',

@@ -1,0 +1,20 @@
+this is api link for the website fetch the data from the database
+
+api link : https://glamyfashions.com/api/sliders
+api link : https://glamyfashions.com/api/events
+api link : https://glamyfashions.com/api/blogs
+api link : https://glamyfashions.com/api/achievers
+api link : https://glamyfashions.com/api/media
+api link : https://glamyfashions.com/api/courses
+api link : https://glamyfashions.com/api/sliders
+
+
+Admin login link
+http://localhost:5173/admin/sliders
+
+
+
+git status -s
+git add -A
+git commit -m "added deshbaord"
+git push origin main

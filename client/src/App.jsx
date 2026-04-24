@@ -69,7 +69,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
             {/* ===== Admin Panel ===== */}
-            <Route path="/admin/login" element={<Login />} />
+            <Route path="/admin" element={<Login />} />
             <Route path="/admin/*" element={<AdminApp />} />
 
           </Routes>

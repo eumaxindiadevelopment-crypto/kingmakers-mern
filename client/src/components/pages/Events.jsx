@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getMediaUrl } from '../../utils/mediaUtils';
 import './events.css';
 
 import API from '../../apiConfig';
@@ -63,9 +64,10 @@ const Events = () => {
                 <article key={event._id} className="event-card-new">
                   <div className="event-card-inner">
                     <img 
-                      src={event.image || 'https://via.placeholder.com/600x400?text=Kingmakers+IAS+Event'} 
+                      src={getMediaUrl(event.image)} 
                       alt={event.title} 
                       className="event-bg-img"
+                      onError={(e) => { e.target.src = '/images/event-placeholder.jpg'; }}
                     />
                     <div className="event-overlay-bar">
                       <h3 className="event-title-new">{event.title}</h3>

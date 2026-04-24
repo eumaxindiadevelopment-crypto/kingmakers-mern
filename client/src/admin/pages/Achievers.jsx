@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { getMediaUrl } from '../../utils/mediaUtils';
 
 import API from '../../apiConfig';
 
@@ -15,7 +16,7 @@ const Achievers = () => {
   const [examFilter, setExamFilter] = useState('all');
 
   const token = admin?.token;
-  const headers = { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' };
+  const headers = { 'Content-Type': 'application/json' };
 
   const fetchAchievers = async () => {
     const params = examFilter !== 'all' ? `?exam=${examFilter}` : '';
@@ -113,7 +114,7 @@ const Achievers = () => {
             {achievers.map(a => (
               <div key={a._id} className="achiever-card">
                 <div className="achiever-photo">
-                  {a.photo ? <img src={a.photo} alt={a.name} /> : <div className="achiever-initials">{a.name?.charAt(0)}</div>}
+                  {a.photo ? <img src={getMediaUrl(a.photo)} alt={a.name} /> : <div className="achiever-initials">{a.name?.charAt(0)}</div>}
                 </div>
                 <div className="achiever-info">
                   <h4>{a.name}</h4>

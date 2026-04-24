@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import { useAuth } from '../context/AuthContext';
 
 import API from '../../apiConfig';
+import { getMediaUrl } from '../../utils/mediaUtils';
 
 const EMPTY_FORM = {
   title: '',
@@ -18,11 +18,7 @@ import MediaLibraryModal from '../components/MediaLibraryModal';
    Main AdminSliders Component
 ───────────────────────────────────────── */
 const AdminSliders = ({ openNew = false }) => {
-  const { admin } = useAuth();
-  const headers = {
-    Authorization: `Bearer ${admin?.token}`,
-    'Content-Type': 'application/json',
-  };
+  const headers = { 'Content-Type': 'application/json' };
 
   const [sliders, setSliders] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -57,9 +53,7 @@ const AdminSliders = ({ openNew = false }) => {
     try {
       const params = new URLSearchParams();
       if (statusFilter) params.set('status', statusFilter);
-      const res = await fetch(`${API}/api/sliders?${params}`, {
-        headers: { Authorization: `Bearer ${admin?.token}` },
-      });
+      const res = await fetch(`${API}/api/sliders?${params}`);
       const data = await res.json();
       setSliders(Array.isArray(data) ? data : []);
     } catch (e) {
@@ -67,7 +61,7 @@ const AdminSliders = ({ openNew = false }) => {
     } finally {
       setLoading(false);
     }
-  }, [statusFilter, admin?.token]);
+  }, [statusFilter]);
 
   useEffect(() => { fetchSliders(); }, [fetchSliders]);
 
@@ -141,7 +135,6 @@ const AdminSliders = ({ openNew = false }) => {
     if (!window.confirm(`Delete "${title}"?`)) return;
     await fetch(`${API}/api/sliders/${id}`, {
       method: 'DELETE',
-      headers: { Authorization: `Bearer ${admin?.token}` },
     });
     setSliders((prev) => prev.filter((s) => s._id !== id));
   };
@@ -226,9 +219,9 @@ const AdminSliders = ({ openNew = false }) => {
               {paginated.map((slider) => (
                 <tr key={slider._id}>
                   <td>
-                    <div className="sliders-thumb-wrap">
+                    <div className="sliders-td-img">
                       <img
-                        src={slider.imageUrl}
+                        src={getMediaUrl(slider.imageUrl)}
                         alt={slider.altText || slider.title}
                         className="sliders-thumb"
                         onError={(e) => { e.target.src = '/images/placeholder.jpg'; }}
@@ -329,7 +322,7 @@ const AdminSliders = ({ openNew = false }) => {
                 {form.imageUrl && (
                   <div className="sliders-img-preview">
                     <img
-                      src={form.imageUrl}
+                      src={getMediaUrl(form.imageUrl)}
                       alt="Selected preview"
                       onError={(e) => { e.target.style.display = 'none'; }}
                     />
@@ -406,7 +399,6 @@ const AdminSliders = ({ openNew = false }) => {
       {/* ── Media Library Popup ── */}
       {showMediaLib && (
         <MediaLibraryModal
-          token={admin?.token}
           onSelect={handleMediaSelect}
           onClose={() => setShowMediaLib(false)}
         />

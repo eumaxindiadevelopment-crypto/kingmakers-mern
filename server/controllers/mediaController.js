@@ -23,15 +23,13 @@ const uploadMedia = async (req, res) => {
             return res.status(400).json({ message: 'No file uploaded' });
         }
 
-        const API_URL = process.env.NODE_ENV === 'production' ? 'https://kingmakersiasacademy.com' : 'http://localhost:5000';
-
         // Extract YYYY/MM from the current Date (exactly as saved by multer)
         const date = new Date();
         const year = date.getFullYear().toString();
         const month = (date.getMonth() + 1).toString().padStart(2, '0');
 
-        // Assemble URL mapping the static route to the new nested directories
-        const fileUrl = `${API_URL}/uploads/${year}/${month}/${req.file.filename}`;
+        // Assemble portable URL mapping (relative to root)
+        const fileUrl = `/uploads/${year}/${month}/${req.file.filename}`;
 
         const media = await Media.create({
             filename: req.file.filename,

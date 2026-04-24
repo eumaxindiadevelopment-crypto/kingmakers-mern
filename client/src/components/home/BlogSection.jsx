@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import API from '../../apiConfig';
+import { getMediaUrl } from '../../utils/mediaUtils';
 import './blog.css';
 
 const BlogSection = () => {
@@ -45,7 +46,7 @@ const BlogSection = () => {
                     <div className="blog-card blog-card--featured" data-aos="fade-right">
                         <div className="blog-img">
                             <img
-                                src={featured.image || 'https://via.placeholder.com/800x600?text=Kingmakers+IAS'}
+                                src={getMediaUrl(featured.image)}
                                 alt={featured.title}
                                 className="blog-photo"
                             />
@@ -68,7 +69,7 @@ const BlogSection = () => {
                             <div className="blog-card blog-card--small" key={blog._id} data-aos="fade-left" data-aos-delay={i * 100}>
                                 <div className="blog-img">
                                     <img
-                                        src={blog.image || 'https://via.placeholder.com/400x300?text=Kingmakers+IAS'}
+                                        src={getMediaUrl(blog.image)}
                                         alt={blog.title}
                                         className="blog-photo"
                                     />

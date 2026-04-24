@@ -13,7 +13,7 @@ const ProtectedRoute = ({ children }) => {
     );
   }
 
-  return admin ? children : <Navigate to="/admin/login" replace />;
+  return admin ? children : <Navigate to="/admin" replace />;
 };
 
 export default ProtectedRoute;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import API from '../../apiConfig';
+import { getMediaUrl } from '../../utils/mediaUtils';
 import './events-home.css';
 
 const EventSection = () => {
@@ -51,7 +52,7 @@ const EventSection = () => {
                                 <span className="month">{new Date(event.date).toLocaleString('default', { month: 'short' })}</span>
                             </div>
                             <div className="event-home-img">
-                                <img src={event.image || '/images/event-placeholder.jpg'} alt={event.title} />
+                                <img src={getMediaUrl(event.image)} alt={event.title} />
                                 <div className="event-type-label">{event.location || 'Online'}</div>
                             </div>
                             <div className="event-home-content">
